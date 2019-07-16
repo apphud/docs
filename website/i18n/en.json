@@ -3,13 +3,9 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "",
     "docs": {
       "welcome": {
-        "title": "Welcome",
-        "sidebar_label": "Example Page"
-      },
-      "ru-welcome": {
         "title": "Welcome",
         "sidebar_label": "Example Page"
       }
