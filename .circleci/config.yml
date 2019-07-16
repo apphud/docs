@@ -19,5 +19,8 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - deploy-website
-#         filters: *filter-only-master
+      - deploy-website:
+        filters:
+          branches:
+            ignore:
+              - gh-pages
