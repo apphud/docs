@@ -1,7 +1,6 @@
 ---
 id: welcome
 title: Welcome
-sidebar_label: Example Page
+sidebar_label: First Category
 ---
 
-# HI

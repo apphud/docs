@@ -32,16 +32,10 @@ const siteConfig = {
   // Used for publishing and more
   projectName: 'docs',
   organizationName: 'apphud',
-  // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'welcome', label: 'Docs'},
-    // {doc: 'doc4', label: 'API'},
-    // {page: 'help', label: 'Help'},
-    {blog: false, label: 'Blog'},
   ],
 
   // If you have users set above, you add it here:
@@ -54,8 +48,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#8e5417',
-    secondaryColor: '#633a10',
+    primaryColor: '#0085ff',
+    secondaryColor: '#1a344b',
   },
 
   /* Custom fonts for website */
