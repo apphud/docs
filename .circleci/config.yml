@@ -20,7 +20,6 @@ workflows:
   build-and-deploy:
     jobs:
       - deploy-website:
-        filters:
-          branches:
-            ignore:
-              - gh-pages
+        branches:
+          ignore:
+            - gh-pages
