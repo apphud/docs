@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="ru"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Apphud SDK integration · Apphud Docs</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;интеграция-apphud-sdk&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#интеграция-apphud-sdk&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Интеграция Apphud SDK&lt;/h1&gt;
+"/><meta name="docsearch:language" content="ru"/><meta property="og:title" content="Apphud SDK integration · Apphud Docs"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.apphud.com/"/><meta property="og:description" content="&lt;h1&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;интеграция-apphud-sdk&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#интеграция-apphud-sdk&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Интеграция Apphud SDK&lt;/h1&gt;
+"/><meta property="og:image" content="https://docs.apphud.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.apphud.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/ru"><img class="logo" src="/img/favicon.ico" alt="Apphud Docs"/><h2 class="headerTitleWithLogo">Apphud Docs</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/ru/welcome" target="_self">Документация</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>Русский</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/sdk-integration">English</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/ru/welcome">Добро Пожаловать</a></li><li class="navListItem"><a class="navItem" href="/docs/ru/creating-app">Creating app</a></li><li class="navListItem"><a class="navItem" href="/docs/ru/adding-products">Adding products</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/ru/sdk-integration">Apphud SDK integration</a></li><li class="navListItem"><a class="navItem" href="/docs/ru/events">Events</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/ru/user-data">Users data</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Apphud SDK integration</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="интеграция-apphud-sdk"></a><a href="#интеграция-apphud-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Интеграция Apphud SDK</h1>
+<h2><a class="anchor" aria-hidden="true" id="требования"></a><a href="#требования" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Требования</h2>
+<p>iOS 11.2 и выше, Xcode 10 и выше, Swift 5.0 и выше.</p>
+<h2><a class="anchor" aria-hidden="true" id="установка"></a><a href="#установка" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Установка</h2>
+<p>Apphud SDK может быть установлен через CocoaPods или вручную.</p>
+<h5><a class="anchor" aria-hidden="true" id="установка-через-cocoapods"></a><a href="#установка-через-cocoapods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Установка через CocoaPods</h5>
+<p>Добавьте эту строку в Podfile:</p>
+<pre><code class="hljs css language-ruby">pod <span class="hljs-string">'apphud'</span>
+</code></pre>
+<p>И выполните в терминале:</p>
+<pre><code class="hljs">pod <span class="hljs-keyword">install</span>
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="установка-вручную"></a><a href="#установка-вручную" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Установка вручную</h5>
+<p>Добавьте все файлы из папки <code>Source</code> в ваш проект.</p>
+<h2><a class="anchor" aria-hidden="true" id="настройка-apphud-sdk"></a><a href="#настройка-apphud-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Настройка Apphud SDK</h2>
+<p>Инициализируйте SDK в <code>AppDelegate</code>:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-keyword">import</span> apphud
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: <span class="hljs-keyword">Any</span>]?)</span></span> -&gt; <span class="hljs-type">Bool</span> {
+    
+  <span class="hljs-type">Apphud</span>.start(apiKey: <span class="hljs-string">"YOUR_API_KEY"</span>)
+  
+  <span class="hljs-comment">// the rest of your code</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p>API-ключ – это уникальный идентификатор вашего приложения в Apphud. Он находится в настройках вашего приложения в Apphud в разделе <em>&quot;General&quot;</em>:</p>
+<p><img src="../Images/API-key.png" alt="API-key"></p>
+<h2><a class="anchor" aria-hidden="true" id="отправка-событий-о-подписках"></a><a href="#отправка-событий-о-подписках" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Отправка событий о подписках</h2>
+<p>Apphud отслеживает все события связанные с авто-возобновляемыми подписками: ее оформление, продление, отмена, возврат денег и прочие.</p>
+<blockquote>
+<p>Полный список отслеживаемых событий доступен <a href="http://google.com">здесь</a>.</p>
+</blockquote>
+<p>Вам нужно только вызвать этот метод, когда пользователь совершает покупку:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-comment">// when purchase is completed</span>
+<span class="hljs-type">Apphud</span>.submitPurchase(productIdentifier, callback: { (subscription, error) <span class="hljs-keyword">in</span>
+     <span class="hljs-comment">// returns a subscription class that has been purchased and an optional error</span>
+})
+</code></pre>
+<p>Этот метод отправляет чек (App Store receipt) на сервер Apphud, где происходит его проверка и возвращает объект класса <code>ApphudSubscription</code>, который содержит информацию о подписке, в том числе дату ее предполагаемого продления. Для более подробной информации просмотрите файл <code>ApphudSubscription.swift</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="конвертация-валют"></a><a href="#конвертация-валют" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Конвертация валют</h2>
+<p>Базовая валюта Apphud – доллар США. Все транзакции автоматически конвертируются в доллар США в момент создания соответствующего события.</p>
+<h2><a class="anchor" aria-hidden="true" id="восстановление-покупок"></a><a href="#восстановление-покупок" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Восстановление покупок</h2>
+<p>Если в вашем приложении нет механизма, позволяющего определить, активна подписка пользователя или нет, то вам нужно реализовать восстановление подписок. Если у вас уже реализовано восстановление, то дополнительно ничего делать не нужно: Apphud автоматически получит и отправит последний чек на сервер, когда восстановление выполнится.</p>
+<p>Однако, вы можете вызвать его принудительно с помощью:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-type">Apphud</span>.restoreSubscriptions()
+</code></pre>
+<p>При успешном восстановлении SDK отправит чек на сервер Apphud. Состояние подписки пользователя будет обновлено.</p>
+<h2><a class="anchor" aria-hidden="true" id="настройка-делегата"></a><a href="#настройка-делегата" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Настройка делегата</h2>
+<p>Вы можете задать делегат, вызвав:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-type">Apphud</span>.setDelegate(<span class="hljs-keyword">self</span>)
+</code></pre>
+<p>Вызывайте этот метод в любое время, но только <strong>после инициализации</strong> Apphud SDK.</p>
+<p>В протоколе <code>ApphudDelegate</code> реализовано два опциональных метода.</p>
+<h5><a class="anchor" aria-hidden="true" id="изменение-состояния-подписки"></a><a href="#изменение-состояния-подписки" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Изменение состояния подписки</h5>
+<p>Первый метод протокола <code>ApphudDelegate</code>:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-meta">@objc</span> <span class="hljs-keyword">optional</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">apphudSubscriptionsUpdated</span><span class="hljs-params">(<span class="hljs-number">_</span> subscriptions : [ApphudSubscription])</span></span>
+</code></pre>
+<p>вызывается в случае изменения состояния подписки.</p>
+<blockquote>
+<p>Этот метод <strong>не вызывается</strong> сразу после <code>Apphud.submitPurchase</code>, потому что тот имеет свой completion block.</p>
+</blockquote>
+<p>Есть два случая, когда вызывается этот метод:</p>
+<ul>
+<li>подписка восстанавливается;</li>
+<li>изменяется состояние подписки. Например, с триала (<code>trial</code>) на обычную (<code>regular</code>).</li>
+</ul>
+<p>Apphud SDK запрашивает состояние подписки всякий раз при запуске приложения, после покупки и восстановления подписки.</p>
+<h5><a class="anchor" aria-hidden="true" id="изменение-userid"></a><a href="#изменение-userid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Изменение <code>userID</code></h5>
+<p>Второй метод:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-meta">@objc</span> <span class="hljs-keyword">optional</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">apphudDidChangeUserID</span><span class="hljs-params">(<span class="hljs-number">_</span> userID : String)</span></span>
+</code></pre>
+<p>вызывается при изменении идентификатора пользователя – <code>userID</code>. <code>userID</code> однозначно идентифицирует пользователя, даже если он использует несколько устройств. Более подробно о том, как работает идентификация пользователя в Apphud, поговорим ниже.</p>
+<p>Есть три случая, когда вызывается этот метод:</p>
+<ul>
+<li>при первом запуске, когда устройство успешно зарегистрировалось на сервере Apphud;</li>
+<li>когда пользователь восстановил или оформил покупку на другом устройстве;</li>
+<li>после вызова метода <code>Apphud.updateUserID(_ userID : String)</code>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="id-пользователя"></a><a href="#id-пользователя" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ID пользователя</h2>
+<p>В Apphud SDK используются два идентификатора: идентификатор устройства и идентификатор пользователя.</p>
+<h3><a class="anchor" aria-hidden="true" id="идентификатор-устройства"></a><a href="#идентификатор-устройства" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Идентификатор устройства</h3>
+<p>ID устройства однозначно идентифицирует устройство. Apphud генерирует его при первом запуске приложения на основе UUID и сохраняет в Keychain. Этот идентификатор используется в системных целях. Доступа к нему нет.</p>
+<h3><a class="anchor" aria-hidden="true" id="идентификатор-пользователя"></a><a href="#идентификатор-пользователя" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Идентификатор пользователя</h3>
+<p>ID пользователя идентифицирует его, даже если он использует несколько устройств. Этот идентификатор генерируется при первом запуске приложения, но может измениться позднее.</p>
+<blockquote>
+<p><code>UserID</code> может измениться, если пользователь впервые запустил приложение на другом своем устройстве и восстановил покупки. В этом случае критерием объединения двух пользователей выступит чек (App Store receipt). Получив чек с нового устройства, Apphud просматривает базу существующих подписок. Если будет найдена существующая подписка с совпадающим <code>transaction_id</code>, то пользователи будут объединены: новый пользователь будет удален. В этом случае предполагается, что новое устройство принадлежит одному и тому же пользователю.</p>
+</blockquote>
+<p>Если идентификатор пользователя изменится, Apphud SDK вызовет метод <code>apphudDidChangeUserID</code> делегата <code>ApphudDelegate</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="идентификатор-пользователя-и-интеграции"></a><a href="#идентификатор-пользователя-и-интеграции" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Идентификатор пользователя и интеграции</h3>
+<p>Если вы используете интеграции и отправляете события о подписках в сторонние системы аналитики, например, Amplitude, то нужно соотнести идентификатор пользователя в Apphud с идентификатором пользователя в системе аналитики. Есть два способа это сделать.</p>
+<h5><a class="anchor" aria-hidden="true" id="используя-apphud-userid"></a><a href="#используя-apphud-userid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Используя Apphud <code>userID</code></h5>
+<p>При инициализации SDK добавьте строку:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-type">Apphud</span>.start(apiKey: <span class="hljs-string">"YOUR_API_KEY"</span>)
+<span class="hljs-type">Apphud</span>.setDelegate(<span class="hljs-keyword">self</span>)
+<span class="hljs-type">Amplitude</span>.instance()?.setUserId(<span class="hljs-type">Apphud</span>.userID()) <span class="hljs-comment">// or any other analytics</span>
+</code></pre>
+<p>Выше мы говорили, что <code>userID</code> может измениться, если пользователь восстанавливает покупку на другом устройстве. Поэтому нужно обновлять идентификатор аналитики при изменении <code>userID</code>:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">apphudDidChangeUserID</span><span class="hljs-params">(<span class="hljs-number">_</span> userID: String)</span></span> {
+    <span class="hljs-type">Amplitude</span>.instance()?.setUserId(userID) <span class="hljs-comment">// or any other analytics</span>
+}
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="используя-собственный-userid"></a><a href="#используя-собственный-userid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Используя собственный <code>userID</code></h5>
+<p>Используйте этот способ, только если вы уверены что ваш <code>userID</code> однозначно идентифицирует пользователя, даже если он использует несколько устройств. Например, если у вас реализована аутентификация пользователя через логин и пароль, вы можете использовать логин в качестве <code>userID</code>. Единственное требование – обновлять Apphud <code>userID</code> и <code>userID</code>, используемый в аналитике, одновременно.</p>
+<p>Это можно сделать, например, при запуске приложения:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-comment">// at AppDelegate</span>
+<span class="hljs-type">Apphud</span>.start(apiKey: <span class="hljs-string">"YOUR_API_KEY"</span>, userID: <span class="hljs-string">"YOUR_OWN_USER_ID"</span>)
+<span class="hljs-type">Amplitude</span>.instance()?.setUserId(<span class="hljs-string">"YOUR_OWN_USER_ID"</span>) <span class="hljs-comment">// or any other analytics</span>
+</code></pre>
+<p>или позже, например, после аутентификации:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-comment">// if authenticated</span>
+<span class="hljs-type">Apphud</span>.updateUserID(<span class="hljs-string">"YOUR_OWN_USER_ID"</span>)
+<span class="hljs-type">Amplitude</span>.instance()?.setUserId(<span class="hljs-string">"YOUR_OWN_USER_ID"</span>) <span class="hljs-comment">// or any other analytics</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ru/adding-products"><span class="arrow-prev">← </span><span>Назад</span></a><a class="docs-next button" href="/docs/ru/events"><span>Далее</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#требования">Требования</a></li><li><a href="#установка">Установка</a></li><li><a href="#настройка-apphud-sdk">Настройка Apphud SDK</a></li><li><a href="#отправка-событий-о-подписках">Отправка событий о подписках</a></li><li><a href="#конвертация-валют">Конвертация валют</a></li><li><a href="#восстановление-покупок">Восстановление покупок</a></li><li><a href="#настройка-делегата">Настройка делегата</a></li><li><a href="#id-пользователя">ID пользователя</a><ul class="toc-headings"><li><a href="#идентификатор-устройства">Идентификатор устройства</a></li><li><a href="#идентификатор-пользователя">Идентификатор пользователя</a></li><li><a href="#идентификатор-пользователя-и-интеграции">Идентификатор пользователя и интеграции</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Apphud Docs" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/ru/doc1.html">Getting Started (or other categories)</a><a href="/docs/ru/doc2.html">Guides (or other categories)</a><a href="/docs/ru/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/ru/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Apphud</section></footer></div></body></html>
