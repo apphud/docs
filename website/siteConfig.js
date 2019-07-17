@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Apphud Docs', // Title for your website.
+  title: 'Documentation', // Title for your website.
   tagline: '',
   url: 'https://docs.apphud.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -35,7 +35,9 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'welcome', label: 'Docs'},
+  //  {doc: 'welcome', label: 'Docs'},
+    {href: 'https://apphud.com', label: 'Get Apphud'}
+    {href: 'https://apphud.com/contacts', label: 'Contacts'}
   ],
 
   // If you have users set above, you add it here:
