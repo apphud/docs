@@ -1,7 +1,7 @@
 ---
 id: welcome
 title: Welcome
-sidebar_label: First Category
+sidebar_label: Something here
 ---
 
 # Добро пожаловать
