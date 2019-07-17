@@ -1,5 +1,5 @@
 {
   "docs": {
-    "Welcome title": ["welcome"]
+    "Documentation": ["welcome", "creating-app"]
   }
 }
