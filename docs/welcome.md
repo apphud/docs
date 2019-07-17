@@ -1,9 +1,7 @@
 ---
 id: welcome
 title: Welcome
-sidebar_label: Something here
 ---
-
 # Добро пожаловать
 
 Apphud это инструмент для мониторинга авто-возобновляемых подписок в iOS-приложениях. Скоро добавим поддержку Android.
