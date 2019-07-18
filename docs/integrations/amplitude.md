@@ -11,15 +11,15 @@ Amplitude это мощная система мобильной аналитик
 1. [Откройте Amplitude](https://analytics.amplitude.com/) и войдите в ваш аккаунт.
 2. Кликните на *"Manage Data"* в нижней части экрана:
 
-![Amplitude-step-1](../../Images/Amplitude-step-1.png)
+![Amplitude-step-1](../assets/amplitude-step-1.jpeg)
 
 3. Выберите ваше приложение:
 
-![Amplitude-step-2](../../Images/Amplitude-step-2.png)
+![Amplitude-step-2](../assets/amplitude-step-2.jpeg)
 
 4. Скопируйте *Amplitude API Key*:
 
-![Amplitude-step-3](../../Images/Amplitude-step-3.png)
+![Amplitude-step-3](../assets/amplitude-step-3.jpeg)
 
 5. В [Apphud](https://app.apphud.com) перейдите в раздел *"Integrations"* и добавьте Amplitude: 
 

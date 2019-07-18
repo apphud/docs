@@ -48,7 +48,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 API-ключ – это уникальный идентификатор вашего приложения в Apphud. Он находится в настройках вашего приложения в Apphud в разделе *"General"*:
 
-![API-key](../Images/API-key.png)
+![API-key](assets/api-key.jpeg)
 
 ## Отправка событий о подписках
 

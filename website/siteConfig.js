@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'Documentation', // Title for your website.
-  tagline: '',
+  tagline: 'Apphud',
   url: 'https://docs.apphud.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -44,8 +44,8 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
+  headerIcon: 'img/docs-logo.png',
+  footerIcon: 'img/docs-logo.png',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
@@ -69,7 +69,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Apphud`,
+  copyright: `Copyright © ${new Date().getFullYear()} Softeam Inc.`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -88,6 +88,9 @@ const siteConfig = {
   ogImage: 'img/undraw_online.svg',
   twitterImage: 'img/undraw_tweetstorm.svg',
 
+  scrollToTop: true,
+
+  twitterUsername: `apphud`,
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
 
