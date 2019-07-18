@@ -61,6 +61,7 @@ const siteConfig = {
       "Serif"
     ],
     myOtherFont: [
+      "Ubuntu",
       "-apple-system",
       "system-ui"
     ]
