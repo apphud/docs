@@ -55,10 +55,9 @@ const siteConfig = {
   },
 
   /* Custom fonts for website */
-  /*
   fonts: {
     myFont: [
-      "Times New Roman",
+      "Ubuntu",
       "Serif"
     ],
     myOtherFont: [
@@ -66,7 +65,6 @@ const siteConfig = {
       "system-ui"
     ]
   },
-  */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Softeam Inc.`,
@@ -93,6 +91,11 @@ const siteConfig = {
   twitterUsername: `apphud`,
 
   disableHeaderTitle: true,
+
+  stylesheets: [
+    "https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i&display=swap",
+    "/css/code-block-buttons.css"
+  ],
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
 
