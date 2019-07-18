@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting started": ["welcome", "creating-app", "adding-products", "sdk-integration", "events"],
+    "Getting started": ["welcome", "creating-app", "adding-products", "sdk-integration", "events", "testing"],
     "Integrations": ["integrations", "amplitude", "slack", "telegram"],
     "Other": ["user-data"]
   }
