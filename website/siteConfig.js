@@ -94,7 +94,7 @@ const siteConfig = {
   disableHeaderTitle: true,
 
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i&display=swap",
+    "https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i",
     "/css/code-block-buttons.css"
   ],
   // Show documentation's last contributor's name.
