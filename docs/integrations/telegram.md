@@ -9,7 +9,7 @@ title: Telegram
 
 1. Перейдите по ссылке https://t.me/integram_bot или откройте Telegram и найдите в поиске бота *@integram_bot*:
 
-![integram-bot](../assets/integram-bot.jpg)
+![integram-bot](assets/integram-bot.jpg)
 
 2. Нажмите *"Start"* и выберите *"Webhook"*:
 
@@ -20,3 +20,6 @@ title: Telegram
 ![integram-webhook-url](../assets/integram-webhook-url.jpg)
 
 4. Перейдите на страницу "Integrations" в [Apphud](https://app.apphud.com) и
+
+
+
