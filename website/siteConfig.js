@@ -45,7 +45,7 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/docs-logo.svg',
-  footerIcon: 'img/docs-logo.png',
+  footerIcon: 'img/docs-footer.svg',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
@@ -91,6 +91,8 @@ const siteConfig = {
   scrollToTop: true,
 
   twitterUsername: `apphud`,
+
+  disableHeaderTitle: true,
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
 
