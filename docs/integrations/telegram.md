@@ -7,7 +7,7 @@ title: Telegram
 
 ## Как добавить интеграцию?
 
-1. Перейдите по ссылке https://t.me/integram_bot или откройте Telegram и найдите в поиске бота *@integram_bot*:
+1. Перейдите по ссылке [https://t.me/integram_bot](https://t.me/integram_bot){:target="_blank"} или откройте Telegram и найдите в поиске бота *@integram_bot*:
 
 ![integram-bot](assets/integram-bot.jpg)
 
@@ -15,11 +15,11 @@ title: Telegram
 
 ![integram-webhook](../assets/integram-webhook.jpg)
 
-3. Скопируйте Webhook URL из бота [@bullhorn_bot](https://t.me/bullhorn_bot):
+3. Скопируйте Webhook URL из бота [@bullhorn_bot](https://t.me/bullhorn_bot){:target="_blank"}:
 
 ![integram-webhook-url](../assets/integram-webhook-url.jpg)
 
-4. Перейдите на страницу "Integrations" в [Apphud](https://app.apphud.com) и
+4. Перейдите на страницу "Integrations" в [Apphud](https://app.apphud.com){:target="_blank"} и
 
 
 
