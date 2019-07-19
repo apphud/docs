@@ -3,21 +3,50 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "",
+    "tagline": "Apphud",
     "docs": {
+      "adding-products": {
+        "title": "Adding products"
+      },
+      "amplitude": {
+        "title": "Amplitude"
+      },
+      "creating-app": {
+        "title": "Creating app"
+      },
+      "events": {
+        "title": "Events"
+      },
+      "integrations": {
+        "title": "Integrations"
+      },
+      "sdk-integration": {
+        "title": "Apphud SDK integration"
+      },
+      "slack": {
+        "title": "Slack"
+      },
+      "telegram": {
+        "title": "Telegram"
+      },
+      "testing": {
+        "title": "Testing"
+      },
+      "user-data": {
+        "title": "user-data"
+      },
       "welcome": {
-        "title": "Welcome",
-        "sidebar_label": "First Category"
+        "title": "Welcome"
       }
     },
     "links": {
-      "Docs": "Docs",
-      "Blog": "Blog"
+      "Get Apphud": "Get Apphud",
+      "Contacts": "Contacts"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Getting started": "Getting started",
+      "Integrations": "Integrations",
+      "Other": "Other"
     }
   },
   "pages-strings": {
