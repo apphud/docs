@@ -1,9 +1,7 @@
 ---
 id: adding-products
-title: Adding products
+title: Добавление продуктов
 ---
-# Добавление продуктов
-
 Структура групп продуктов (подписок) и самих продуктов (подписок) внутри них должна **точно соответствовать** их структуре в <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Это требуется для правильной работы сервиса.
 
 > К сожалению, у Apple нет API для загрузки продуктов из <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Поэтому вам придется вручную продублировать их структуру в Apphud.
@@ -15,10 +13,10 @@ title: Adding products
 
 Нажмите *“Add products group”*, чтобы добавить новую группу продуктов. Придумайте название для нее, которое будет использовано в отчетах.
 
-// картинка
+![adding-products-group](assets/adding-products-group.png)
 
 ## Добавление продукта
 
-Чтобы создать продукт, нажмите *“Add a product”*. Введите идентификатор *“product_id”* и нажмите *“Create”*.
+Чтобы создать продукт, нажмите *“Add a product”*. Введите *Product ID* и нажмите *“Create”*.
 
-// картинка
+![adding-product](assets/adding-product.png)

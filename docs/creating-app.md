@@ -1,9 +1,7 @@
 ---
 id: creating-app
-title: Creating app
+title: Создание приложения
 ---
-# Создание приложения
-
 Чтобы создать приложение, выберите пункт меню *"Add new app"* в выпадающем списке в верхней части экрана:
 
 ![New-app-step-1](assets/new-app-step-1.jpeg)
@@ -41,9 +39,9 @@ title: Creating app
 
 ## Subscription Status URL
 
-Мы настоятельно рекомендуем вставить сгенерированный *Subscription Status URL* в настройках вашего приложения в <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Это позволит сильно увеличить точность создавамых событий.
+Мы настоятельно рекомендуем вставить сгенерированный *Subscription Status URL* в настройках вашего приложения в <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Это позволит сильно увеличить точность создаваемых событий и в реальном времени узнавать, *когда* пользователь отключает возобновление подписки.
 
-> Более подробно о создаваемых событиях можете почитать [здесь](events.md)
+> Более подробно о создаваемых событиях можно почитать [здесь](events.md)
 
 1. Откройте <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, перейдите в раздел *“My Apps”* и выберите нужное приложение.
 2. В разделе *"General Information"* найдите поле *"Subscription Status URL"*, вставьте сгенерированный URL в это поле и сохраните изменения.

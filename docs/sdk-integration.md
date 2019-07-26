@@ -1,8 +1,8 @@
 ---
 id: sdk-integration
-title: Apphud SDK integration
+title: Интеграция Apphud SDK
 ---
-# Интеграция Apphud SDK
+В этом разделе мы расскажем, как добавить Apphud SDK в ваше iOS-приложение.
 
 ## Требования
 
@@ -48,7 +48,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 API-ключ – это уникальный идентификатор вашего приложения в Apphud. Он находится в настройках вашего приложения в Apphud в разделе *"General"*:
 
-![API-key](assets/api-key.jpeg)
+![API-key](assets/sdk-token.png)
 
 ## Отправка событий о подписках
 
