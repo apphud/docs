@@ -6,22 +6,25 @@
     "tagline": "Apphud",
     "docs": {
       "adding-products": {
-        "title": "Adding products"
+        "title": "Добавление продуктов"
       },
       "amplitude": {
         "title": "Amplitude"
       },
       "creating-app": {
-        "title": "Creating app"
+        "title": "Создание приложения"
       },
       "events": {
-        "title": "Events"
+        "title": "События"
       },
       "integrations": {
-        "title": "Integrations"
+        "title": "Интеграции"
+      },
+      "sandbox": {
+        "title": "Тестирование покупок"
       },
       "sdk-integration": {
-        "title": "Apphud SDK integration"
+        "title": "Интеграция Apphud SDK"
       },
       "slack": {
         "title": "Slack"
@@ -33,10 +36,10 @@
         "title": "Testing"
       },
       "user-data": {
-        "title": "Users data"
+        "title": "Собираемые данные"
       },
       "welcome": {
-        "title": "Welcome"
+        "title": "Добро пожаловать"
       }
     },
     "links": {
@@ -44,9 +47,9 @@
       "Contacts": "Contacts"
     },
     "categories": {
-      "Getting started": "Getting started",
-      "Integrations": "Integrations",
-      "Other": "Other"
+      "Начало работы": "Начало работы",
+      "Интеграции": "Интеграции",
+      "Прочее": "Прочее"
     }
   },
   "pages-strings": {

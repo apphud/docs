@@ -19,7 +19,7 @@ title: Telegram
 
 ![integram-webhook-url](assets/integram-webhook-url.png)
 
-4. Перейдите на страницу "Integrations" в <a href="https://app.apphud.com/" target="_blank">Apphud</a> и
+4. Перейдите на страницу "Integrations" в <a href="https://app.apphud.com/" target="_blank">Apphud</a> и нажмите ""
 
 ## События
 

@@ -37,7 +37,8 @@ const siteConfig = {
   headerLinks: [
   //  {doc: 'welcome', label: 'Docs'},
     {href: 'https://apphud.com', label: 'Get Apphud'},
-    {href: 'https://apphud.com/contacts', label: 'Contacts'}
+    {href: 'https://apphud.com/contacts', label: 'Contacts'},
+    {languages: false}
   ],
 
   // If you have users set above, you add it here:
