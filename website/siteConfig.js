@@ -59,6 +59,8 @@ const siteConfig = {
   fonts: {
     myFont: [
       "Ubuntu",
+      "-apple-system",
+      "system-ui",
       "Serif"
     ],
     myOtherFont: [
@@ -95,7 +97,7 @@ const siteConfig = {
   disableHeaderTitle: true,
 
   stylesheets: [
-    "https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i",
+    "https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i",
     "/css/code-block-buttons.css"
   ],
   // Show documentation's last contributor's name.
