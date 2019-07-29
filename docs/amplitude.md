@@ -80,19 +80,18 @@ Amplitude это мощная система мобильной аналитик
 * `[Apphud] subscription_renewed`,
 * `[Apphud] subscription_refunded` 
 
-также могут опционально отправляться встроенные в Amplitude события типа *Track Revenue*. Более подробно можно почитать <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">здесь</a>. Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
+могут опционально отправляться встроенные в Amplitude параметры, относящиеся к отслеживанию покупок. Более подробно можно почитать <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">здесь</a>. Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
 
 **// Картинка**
 
 Вот описание параметров, которые отсылаются вместе с этими событиями:
 
-| Параметр          | Тип        | Описание                                                     |
-| ----------------- | ---------- | ------------------------------------------------------------ |
-| `productID`       | String     | ID продукта                                                  |
-| `quantity`        | Integer    | Количество продуктов в покупке. *Всегда равно 1*             |
-| `price`           | Float      | Цена покупки в долларах США                                  |
-| `revenueType`     | String     | Информация о событии. Возможные значения: `trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded` |
-| `eventProperties` | Dictionary | Дополнительная информация. Это словарь содержит такие поля:<br>– `local_price`: Float – цена покупки в валюте пользователя;<br>– `currency`: String – код валюты пользователя;<br>– `offer_type`: String – тип вводного предложения. Возможные значения: `pay_as_you_go`, `pay_up_front`. Это опциональное поле;<br>– `unit`: String – единица измерения длительности вводного предложения. Это опциональное поле;<br>– `units_count`: Integer – число `unit`-ов в длительности вводного предложения. Это опциональное поле;<br>– `reason`: String – причина возврата денег. Это опциональное поле. |
+| Параметр      | Тип     | Описание                                                     |
+| ------------- | ------- | ------------------------------------------------------------ |
+| `productID`   | String  | ID продукта                                                  |
+| `quantity`    | Integer | Количество продуктов в покупке. *Всегда равно 1*             |
+| `price`       | Float   | Цена покупки в долларах США                                  |
+| `revenueType` | String  | Название события. Возможные значения: `trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded` |
 
 ## Свойства пользователя 
 
@@ -109,3 +108,4 @@ Amplitude это мощная система мобильной аналитик
 | `[Apphud] payments_count`       | Integer |
 
 ## Отправка тестового события
+

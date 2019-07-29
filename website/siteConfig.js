@@ -90,7 +90,7 @@ const siteConfig = {
   ogImage: 'img/undraw_online.svg',
   twitterImage: 'img/undraw_tweetstorm.svg',
 
-  scrollToTop: true,
+  scrollToTop: false,
 
   twitterUsername: `apphud`,
 
