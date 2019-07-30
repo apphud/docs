@@ -19,44 +19,57 @@ title: Telegram
 
 ![integram-webhook-url](assets/integram-webhook-url.png)
 
-4. Перейдите на страницу "Integrations" в <a href="https://app.apphud.com/" target="_blank">Apphud</a> и нажмите ""
+4. В <a href="https://app.apphud.com/" target="_blank">Apphud</a> перейдите в раздел *"Integrations"* и добавьте Telegram:
+
+![telegram-adding-integration](assets/telegram-adding-integration.png)
+
+5. Вставьте скопированный *Webhook URL* в поле *"Webhook"*:
+
+![telegram-webhook](assets/telegram-webhook.png)
+
+6. При желании отключите ненужные уведомления, которые вы не хотите получать:
+
+![telegram-disable-events](assets/telegram-disable-events.png)
+
+7. Поставьте галочку напротив *"Enable this integration"*:
+
+![telegram-enable-integration](assets/telegram-enable-integration.png)
+
+8. Сохраните изменения:
+
+![telegram-save](assets/telegram-save.png)
 
 ## События
 
 В таблице ниже указаны возможные события и их параметры, которые отсылаются в Telegram. Вы можете отключить отправку некоторых событий в настройках интеграции.
 
 > Более подробно о событиях можете почитать [здесь](events.md), а о том, что означает каждый из параметров – [здесь](integrations.md).
->
 
-| Событие                                                      | Наименование                     | Параметры                                                    |
-| ------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------ |
-| *Триальный период*                                           |                                  |                                                              |
-| Оформление триала                                            | `[Apphud] Trial Started`         | `app`: String<br>`products_group`: String<br>                |
-| Успешная конвертация триала в обычную подписку               | `[Apphud] trial_converted`       | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
-| Неудачная конвертация триала в обычную подписку              | `[Apphud] trial_expired`         | `product_id`: String<br>`reason`: String                     |
-| *Вводное предложение*                                        |                                  |                                                              |
-| Оформление вводного предложения                              | `[Apphud] intro_started`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
-| Успешное продление вводного предложения                      | `[Apphud] intro_renewed`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
-| Успешная конвертация вводного предложения в обычную подписку | `[Apphud] intro_converted`       | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
-| Неудачная конвертация вводного предложения в обычную подписку | `[Apphud] intro_expired`         | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
-| Возврат денег в пределах вводного предложения                | `[Apphud] intro_refunded`        | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
-| *Обычная подписка*                                           |                                  |                                                              |
-| Успешное оформление подписки                                 | `[Apphud] subscription_started`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
-| Успешное продление подписки                                  | `[Apphud] subscription_renewed`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
-| Неудачное продление подписки                                 | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
-| Возврат денег                                                | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
-| *Настройки авто-возобновления*                               |                                  |                                                              |
-| Отключение авто-возобновления                                | `[Apphud] autorenew_disabled`    | `product_id`: String<br>`reason`: String                     |
-| Включение авто-возобновления                                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
+| Событие                                                      | Наименование                 | Параметры и их типы                                          |
+| ------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------ |
+| *Триальный период*                                           |                              |                                                              |
+| Оформление триала                                            | `Trial Started`              | `app_name`<br>`group_name`<br>`product_id`<br>`user_id`      |
+| Успешная конвертация триала в обычную подписку               | `Trial Converted`            | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br>`price_description` |
+| Неудачная конвертация триала в обычную подписку              | `Trial Expired`              |                                                              |
+| *Вводное предложение*                                        |                              |                                                              |
+| Оформление вводного предложения                              | `Intro Started`              |                                                              |
+| Успешное продление вводного предложения                      | `Intro Renewed`              |                                                              |
+| Успешная конвертация вводного предложения в обычную подписку | `Intro Converted`            |                                                              |
+| Неудачная конвертация вводного предложения в обычную подписку | `Intro Expired`              |                                                              |
+| Возврат денег в пределах вводного предложения                | `Intro Refunded`             |                                                              |
+| *Обычная подписка*                                           |                              |                                                              |
+| Успешное оформление подписки                                 | `Subscription Started`       |                                                              |
+| Успешное продление подписки                                  | `Sbscription Renewed`        | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`price_description` |
+| Неудачное продление подписки                                 | `Subscription Expired`       | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
+| Возврат денег                                                | `Subscription Refunded`      |                                                              |
+| *Настройки авто-возобновления*                               |                              |                                                              |
+| Отключение авто-возобновления                                | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
+| Включение авто-возобновления                                 | `[Apphud] autorenew_enabled` |                                                              |
 
-Вместе с событиями:
+> Настройте Subscription Status URL, чтобы своевременно получать события `autorenew_disabled` и `autorenew_enabled`. Более подробно о настройке можно почитать [здесь](creating-app.md#subscription-status-url).
 
-- `[Apphud] trial_converted`,
-- `[Apphud] intro_started`,
-- `[Apphud] intro_renewed`,
-- `[Apphud] intro_converted`,
-- `[Apphud] intro_refunded`,
-- `[Apphud] subscription_started` 
-- `[Apphud] subscription_renewed` 
+## Отправка тестового события 
 
-также могут опционально отправляться встроенные в Amplitude события типа *Track Revenue* (более подробно можно почитать [здесь](https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue)). Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
+Вы можете протестировать интеграцию с Telegram, отправив тестовое уведомление. Нажмите *"…"* и выберите *"Send test event"*:
+
+![telegram-test-event](assets/telegram-test-event.png)
