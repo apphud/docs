@@ -100,6 +100,8 @@ const siteConfig = {
     "https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i",
     "/css/code-block-buttons.css"
   ],
+
+  gaTrackingId: "UA-142675040-3",
   // Show documentation's last contributor's name.
   // enableUpdateBy: true,
 
