@@ -83,6 +83,9 @@
 <tr><td style="text-align:left"><code>price_description</code></td><td>Описание цены в формате: <code>local_price</code> <code>currency</code> ~ <code>usd_price</code>, например: 499 RUR ~ 7.8 USD</td></tr>
 <tr><td style="text-align:left"><code>reason</code></td><td>Причина отмены подписки, если это – событие окончания триала, вводного предложения или подписки. Возможные значения: <code>user_canceled</code>, <code>billing_issue</code>, <code>declined_price_increase</code>, <code>unavailable_product</code>, <code>unknown_error</code><br/><br/>Причина возврата денег, если это – событие возврата денег. Возможные значения: <code>app_issue</code>, <code>another_reason</code></td></tr>
 <tr><td style="text-align:left"><code>offer_type</code></td><td>Тип вводного предложения. Возможные значения: <code>pay_up_front</code>, <code>pay_as_you_go</code></td></tr>
+<tr><td style="text-align:left"><code>app_name</code></td><td>Название приложения</td></tr>
+<tr><td style="text-align:left"><code>user_id</code></td><td>Идентификатор пользователя</td></tr>
+<tr><td style="text-align:left"><code>group_name</code></td><td>Название группы покупок</td></tr>
 </tbody>
 </table>
 <p>Типы значений, которые принимают каждый параметр – строковый, логический и прочие – варьируются в зависимости от конкретной интеграции. Чтобы узнать больше, просмотрите документацию по нужной интеграции.</p>
