@@ -31,9 +31,9 @@ Event is sent to analytics under `trial_expired` name.
 Has the following expiration reasons:
 
 * User canceled subscription manually – `user_canceled`;
-* There was an error during billing – `billing_issue`;
-* User declined subscription's price increase – `declined_price_increase`;
-* Subscription was unavailable at the moment of renew – `unavailable_product`;
+* There was a billing error – `billing_issue`;
+* User did not agree to a recent price increase – `declined_price_increase`;
+* Product was not available for purchase at the time of renewal – `unavailable_product`;
 * Unknown error occurred – `unknown_error`.
 
 ## Introductory offer
@@ -78,8 +78,8 @@ Event is sent to analytics under `intro_refunded` name.
 
 Has the following refund reasons:
 
-- Customer canceled his subscription due to an actual or perceived issue within your app – `app_issue`;
--  Subscription was canceled for another reason, for example, if the customer made the purchase accidentally – `another_reason`.
+- User canceled his subscription due to an actual or perceived issue within your app – `app_issue`;
+-  Subscription was canceled for another reason, for example, if the user made the purchase accidentally – `another_reason`.
 
 ## Regular subscription
 

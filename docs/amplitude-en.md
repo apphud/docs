@@ -43,7 +43,7 @@ Amplitude is a powerful mobile analytics service. Send events to Amplitude via A
 
 This is a table of all possible events and their parameters that are being sent to Amplitude. 
 
-> You can get more details regarding events [here](events.md) and event parameters description - [here](integrations.md)
+> You can get more details regarding events [here](events.md) and event parameters description - [here](integrations.md).
 
 | Event                                                      | Default Name        | Parameters                                          |
 | ------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------ |
