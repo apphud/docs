@@ -71,12 +71,12 @@
 <p>Apphud SDK может быть установлен через CocoaPods или вручную.</p>
 <h5><a class="anchor" aria-hidden="true" id="установка-через-cocoapods"></a><a href="#установка-через-cocoapods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Установка через CocoaPods</h5>
 <p>Добавьте эту строку в Podfile:</p>
-<pre><code class="hljs css language-swift">pod 'apphud'
+<pre><code class="hljs css language-ruby">pod <span class="hljs-string">'apphud'</span>
 </code></pre>
 <p>И выполните в терминале:</p>
-<pre><code class="hljs css language-swift">pod install
+<pre><code class="hljs css language-ruby">pod install
 </code></pre>
-<h5><a class="anchor" aria-hidden="true" id="установка-вручную"></a><a href="#установка-вручную" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Установка вручную</h5>
+<h4><a class="anchor" aria-hidden="true" id="установка-вручную"></a><a href="#установка-вручную" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Установка вручную</h4>
 <p>Добавьте все файлы из папки <code>Source</code> в ваш проект.</p>
 <h2><a class="anchor" aria-hidden="true" id="настройка-apphud-sdk"></a><a href="#настройка-apphud-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Настройка Apphud SDK</h2>
 <p>Инициализируйте SDK в <code>AppDelegate</code>:</p>
@@ -137,10 +137,9 @@
 <pre><code class="hljs css language-swift"><span class="hljs-meta">@objc</span> <span class="hljs-keyword">optional</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">apphudDidChangeUserID</span><span class="hljs-params">(<span class="hljs-number">_</span> userID : String)</span></span>
 </code></pre>
 <p>вызывается при изменении идентификатора пользователя – <code>userID</code>. <code>userID</code> однозначно идентифицирует пользователя, даже если он использует несколько устройств. Более подробно о том, как работает идентификация пользователя в Apphud, поговорим ниже.</p>
-<p>Есть три случая, когда вызывается этот метод:</p>
+<p>Есть два случая, когда вызывается этот метод:</p>
 <ul>
-<li>при первом запуске, когда устройство успешно зарегистрировалось на сервере Apphud;</li>
-<li>когда пользователь восстановил или оформил покупку на другом устройстве;</li>
+<li>когда пользователь восстановил покупку на другом устройстве;</li>
 <li>после вызова метода <code>Apphud.updateUserID(_ userID : String)</code>.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="id-пользователя"></a><a href="#id-пользователя" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ID пользователя</h2>
