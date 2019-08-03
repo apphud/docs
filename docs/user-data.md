@@ -1,19 +1,18 @@
 ---
 id: user-data
-title: Собираемые данные
+title: Data We Collect
 ---
-В таблице ниже указаны данные, которые мы собираем о пользователях приложения с установленным Apphud SDK.
+This is a table of user data that we collect using Apphud SDK.
 
-| Наименование        | Описание                                                     |
+| Name                | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
-| Locale              | Регион устройства                                            |
-| Language            | Установленный на устройстве язык                             |
-| Time zone           | Часовой пояс устройства                                      |
-| Current IP address  | Текущий внешний IP адрес устройства                          |
-| Platform            | Платформа устройства. Возможные значения: `iOS`              |
-| Device family       | Тип устройства. Возможные значения: `iPhone`, `iPad`         |
-| Device model        | Модель устройства, например, `iPhone X`                      |
-| OS version          | Версия iOS, установленная на устройстве                      |
-| Current app version | Текущая версия приложения                                    |
-| Start app version   | Первая версия приложения, которые были зарегистрированы Apphud |
-
+| Locale              | Device locale                                                |
+| Language            | Device language                                              |
+| Time zone           | Device time zone                                             |
+| Current IP address  | Current external ip-address                                  |
+| Platform            | Device platform. Possible values: `iOS`                      |
+| Device family       | Device family. Possible values: `iPhone`, `iPad`             |
+| Device model        | Device mode, for example, `iPhone X`                         |
+| OS version          | iOS version at this device                                   |
+| Current app version | Current app version                                          |
+| Start app version   | First app version that was registered in Apphud for this device |

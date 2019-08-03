@@ -1,144 +1,142 @@
 ---
 id: events
-title: События
+title: Events
 ---
-В этом разделе описаны события, которые регистрируются в Apphud и могут отсылаться в сторонние системы аналитики и мессенджеры.
+In this section desribes events which are registered by Apphud and can be sent to third party analytics services and messengers.
 
-В определенные моменты времени Apphud запрашивает с серверов Apple информацию о текущем состоянии авто-возобновляемой подписки каждого подписчика. Если нужно, регистрирует соответствующее событие и отсылает его во внешнюю аналитику или мессенджер.
+In some particular moments of time Apphud fetches from Apple information about auto-renewable subscriptions for each subscriber. It also registers corresponding events if needed and sends to third party analytics or messenger.
 
-## Триальный период
+## Trial period
 
-Триальный период – триал – это бесплатный пробный период. Каждый пользователь с уникальным Apple ID может воспользоваться им только один раз в рамках одной группы подписок.
+Trial period – is a free trial period that every Apple ID user can enable just once within one subscription group.
 
-### Оформление триала
+### Trial period started 
 
-Это событие создается, когда пользователь впервые начинает триальный период подписки.
+This event is created when user purchases a subscription with free trial period.
 
-В сторонние системы аналитики это событие отсылается под названием `trial_started`.
+Event is sent to analytics under `trial_started` name.
 
-### Успешная конвертация триала в обычную подписку
+### Successful conversion from trial period to regular subscription
 
-Это событие создается по окончании триала, если пользователь оплачивает первый цикл обычной подписки.
+This event is created after trial period is finished and user has been charged for the first time with regular subscription price.
 
-В сторонние системы аналитики это событие отсылается под названием `trial_converted`.
+Event is sent to analytics under `trial_converted` name.
 
-### Неудачная конвертация триала в обычную подписку
+### Failed conversion from trial period to regular subscription
 
-Это событие создается *по окончании* триала, если ее не удалось продлить.
+This event is created after trial period is finished but subscription is lapsed.
 
-В сторонние системы аналитики это событие отсылается под названием `trial_expired`.
+Event is sent to analytics under `trial_expired` name.
 
-Продление может не произойти по этим причинам:
+Has the following expiration reasons:
 
-* пользователь самостоятельно отменил подписку – `user_canceled`;
-* произошла ошибка при списании денег пользователя при попытке продления подписки – `billing_issue`;
-* пользователь не согласился с повышением цены на подписку – `declined_price_increase`;
-* продукт (подписка) был недоступен при попытке продления – `unavailable_product`;
-* произошла неизвестная ошибка при попытке продления подписки – `unknown_error`.
+* User canceled subscription manually – `user_canceled`;
+* There was a billing error – `billing_issue`;
+* User did not agree to a recent price increase – `declined_price_increase`;
+* Product was not available for purchase at the time of renewal – `unavailable_product`;
+* Unknown error occurred – `unknown_error`.
 
-## Вводное предложение (Introductory offer)
+## Introductory offer
 
-Вводное предложение (Introductory offer) – это скидка, которая действует только для новых подписчиков. Каждый пользователь с уникальным Apple ID может воспользоваться вводным предложением только один раз в рамках одной группы подписок.
+Introductory offer – is a discount that can be applied to new subscribers. Every Apple ID user can enable just once within one subscription group.
 
-> Более подробно о разновидностях вводных предложений вы можете почитать в <a href="https://blog.apphud.com/ru/introductory-offers/" target="_blank">нашем блоге</a>.
+> Trial Period is a subtype of introductory offer, but we moved it to a separate event.
 
-### Оформление вводного предложения
+> You can read more about introductory offer types in our <a href="https://blog.apphud.com/ru/introductory-offers/" target="_blank">blog</a>.
 
-Это событие создается, когда пользователь впервые оформляет вводное предложение.
+### Introductory offer started
 
-В сторонние системы аналитики это событие отсылается под названием `intro_started`.
+This event is created when user purchases a subscription with introductory offer.
 
-### Успешное продление вводного предложения
+Event is sent to analytics under `intro_started` name.
 
-Это событие создается при продлении подписки, находящейся в рамках вводного предложения. Оно создается, *только* если в результате продления пользователь продолжил пользоваться вводным предложением.
+### Introductory offer renewed
 
-> Это событие может быть создано *только* для вводного предложения типа "Оплата по факту использования" (Pay as you go).
+This event is created when subscription renews during introductory offer with "pay as you go" type.
 
-В сторонние системы аналитики это событие отсылается под названием `intro_renewed`.
+Event is sent to analytics under `intro_renewed` name.
 
-### Успешная конвертация вводного предложения в обычную подписку
+### Successful conversion from introductory offer to regular subscription
 
-Это событие создается по окончании вводного предложения, если пользователь оплачивает первый цикл обычной подписки.
+This event is created when introductory offer is finished and user has been charged for the first time with regular subscription price.
 
-В сторонние системы аналитики это событие отсылается под названием `intro_converted`.
+Event is sent to analytics under `intro_converted` name.
 
-### Неудачная конвертация вводного предложения в обычную подписку либо неудачное продление 
+### Failed conversion from introductory offer to regular subscription or failed renew
 
-Это событие создается, если подписка, находившаяся во вводном предложении, истекла без списаний по обычной цене.
+This event is created when subscription lapses during introductory offer.
 
-В сторонние системы аналитики это событие отсылается под названием `intro_expired`.
+Event is sent to analytics under `intro_expired` name.
 
-> Продление может не произойти по тем же причинам, что и в случае с триалом.
+> Has the same set of expiration reasons as trial period.
 
-### Возврат денег в пределах вводного предложения
+### Refund during introductory offer
 
-Это событие создается, если пользователь вернул деньги за подписку. И *только* если пользователь в это время пользовался вводным предложением. Отмена происходит через службу поддержки Apple Care.
+This event is created when user has refunded subscription with an introductory offer through Apple Care support.
 
-В сторонние системы аналитики это событие отсылается под названием `intro_refunded`.
+Event is sent to analytics under `intro_refunded` name.
 
-Отмена может произойти по этим причинам:
+Has the following refund reasons:
 
-- у вашего приложения имеется какая-то проблема – `app_issue`;
-- другая причина, например, пользователь совершил покупку случайно – `another_reason`.
+- User canceled his subscription due to an actual or perceived issue within your app – `app_issue`;
+-  Subscription was canceled for another reason, for example, if the user made the purchase accidentally – `another_reason`.
 
-## Обычная подписка
+## Regular subscription
 
-Рассмотрим события, которые создаются в рамках обычной подписки. То есть если пользователь не находится в триале или в вводном предложении.
+These are events that are created for a subscription with a regular price.
 
-### Успешное оформление подписки
+### Subscription started
 
-Это событие создается, когда пользователь оформляет обычную подписку. В этот момент с него списываются деньги.
+This event is created when user has purchased subscription with a regular price.
 
-В сторонние системы аналитики это событие отсылается под названием `subscription_started`.
+Event is sent to analytics under `subscription_started` name.
 
-### Успешное продление подписки
+### Subscription renewed
 
-Это событие создается в случае успешного продления подписки. В момент продления с пользователя списываются деньги.
+This event is created when subscription has been renewed and user has been charged a regular price.
 
-В сторонние системы аналитики это событие отсылается под названием `subscription_renewed`.
+Event is sent to analytics under `subscription_renewed` name.
 
-### Неудачное продление подписки
+### Subscription expired
 
-Это событие создается *по окончании* цикла подписки, если ее не удалось продлить.
+This event is created when subscription lapses.
 
-В сторонние системы аналитики это событие отсылается под названием `subscription_expired`.
+Event is sent to analytics under `subscription_expired` name.
 
-> Продление может не произойти по тем же причинам, что и в случае с триалом.
+> Has the same set of expiration reasons as trial period.
 
-### Возврат денег
+### Subscription refunded
 
-Это событие создается, если пользователь вернул деньги за подписку. Отмена происходит через службу поддержки Apple Care.
+This event is created when user has refunded subscription with a regular price through Apple Care support.
 
-В сторонние системы аналитики это событие отсылается под названием `subscription_refunded`.
+Event is sent to analytics under `subscription_refunded` name.
 
-> Отмена может произойти по тем же причинам, что и в случае с вводным предложением.
+> Has the same set of refund reasons as a refund during introductory offer.
 
-## Настройки авто-возобновления
+## Autorenew settings
 
-Пользователь при наличии активной подписки может в любой момент ее отключить через приложения "Настройки" или "App Store". Или вновь активировать, если она была отключена. В зависимости от этого создаются события "Отключение возобления" и "Включение возобновления".
+Users can manage and cancel or re-activate subscriptions in their account settings on the App Store. Depending on user action one of the following events is created.
 
-> Настройте Subscription Status URL, чтобы своевременно получать эти события. Более подробно о настройке можно почитать [здесь](creating-app.md#subscription-status-url).
+> Set up Subscription Status URL to receive such events in real-time. More information is [here](creating-app.md#subscription-status-url).
 
-### Отключение авто-возобновления
+### Autorenew disabled
 
-Это событие создается, если отключается автоматическое продление подписки. Это может произойти, например, если пользователь отключит ее через приложения "Настройки" или "App Store".
+This event is created when subscription autorenewal is turned off.
 
-В сторонние системы аналитики это событие отсылается под названием `autorenew_disabled`.
+Event is sent to analytics under `autorenew_disabled` name.
 
-### Включение авто-возобновления
+### Autorenew enabled
 
-Это событие создается, если включается автоматическое продление подписки.
+This event is created when subscription autorenewal is turned back on.
 
-В сторонние системы аналитики это событие отсылается под названием `autorenew_enabled`.
+Event is sent to analytics under `autorenew_enabled` name.
 
-## Когда создаются события?
+## When events are created?
 
-Apphud регулярно отправляет запросы в App Store, чтобы обновить состояние подписок, и создает новые события, если это необходимо. А используя *Subscription Notifications* Apphud будет регистрировать события практически в реальном времени.
+Apphud regularly sends requests to App Store to update subscriptions state and to create new events if necessary. By enabling *Subscription Notifications* Apphud will be able to register events almost in real-time.
 
-#### Subscription Notifications (или Status Update Notifications или Apple Server-to-Server Notifications)
+#### Subscription Notifications (or Status Update Notifications or Apple Server-to-Server Notifications)
 
-Чтобы настроить Subscription Notifications воспользуйтесь [этим руководством](creating-app.md#subscription-status-url). Мы **настоятельно рекомендуем** их настроить, чтобы получать более точные данные о состоянии подписок.
+To set up Subscription Notifications from App Store follow [this guide](creating-app.md#subscription-status-url). We highly recommend enabling this feature to receive more accurate data.
 
-В определенные моменты времени Apple отсылает уведомления на сервер Apphud. Получив любое из уведомлений, сервер проверяет чек и, если нужно, создает новые события.
-
-> Более подробно о Server Notifications вы можете прочитать в <a href="https://blog.apphud.com/ru/subscriptions-notifications-2/" target="_blank">нашем блоге</a>.
+> Read more about Subscription Notifications in <a href="https://blog.apphud.com/ru/subscriptions-notifications-2/" target="_blank">our blog</a>.

@@ -1,54 +1,54 @@
 ---
 id: sandbox
-title: Тестирование покупок
+title: Testing Purchases
 ---
-В этом разделе мы расскажем, как протестировать автоматические подписки в вашем приложении.
+In this section we will show how to test auto-renewable subscriptions in your app.
 
-## Создание тестового аккаунта
+## Create sandbox account
 
-> Более подробно об авто-возобновляемых подписках, их настройке и тестирование вы так же можете прочитать в <a href="https://blog.apphud.com/ru/swift-tutorial-subscriptions-ru/" target="_blank">нашей статье</a>.
+> You can read more about testing and setting up auto-renewable subscriptions in <a href="https://blog.apphud.com/ru/swift-tutorial-subscriptions-ru/" target="_blank">our blog</a>.
 
-Для тестирования будущих покупок вам нужно будет создать тестового пользователя. Для этого перейдите в <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a> во вкладку *"Пользователи и Доступ"*, далее – в *"Тестировщики Sandbox"*.
+To test in app purchases you need to create sandbox user. Go to <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a> and open *"Users and Access"*, then – *"Sandbox Testers"*.
 
 ![](assets/appstoreconnect-add-tester.png)
 
-> Более подробно о создании sandbox тестировщика вы можете прочитать <a href="https://help.apple.com/app-store-connect/#/dev8b997bee1" target="_blank">здесь</a>.
+> You can read more about creating sandbox tester <a href="https://help.apple.com/app-store-connect/#/dev8b997bee1" target="_blank">here</a>.
 >
 
-Раньше для тестирования покупок необходимо было выходить из App Store в настройках вашего iPhone. Это было неудобно: например, стиралась вся медиатека Apple Music. Но сейчас этого делать не нужно: аккаунт песочницы теперь существует отдельно от основного аккаунта. Вы можете подключить этот аккаунт в настройках iPhone:
+Since iOS 12 you can sign in to sandbox account separately from your App Store account. Sign in to sandbox here:
 
 ![ios-sandbox-account](assets/ios-sandbox-account.png) 
 
-## Оплата
+## Purchasing
 
-Сам процесс оплаты в Sandbox ничем не отличается от реальной оплаты через App Store. Единственная разница – ускоренное время истечения подписок и невозможность отменить автовозобновление в настройках. Подписки возобновляются не более 6 раз в день.
+Purchasing process is the same as real in-app purchases. The only differency is accelerated time and impossibility to cancel subscription manually. Subscriptions in sandbox renew maximum 6 times per day.
 
-| **Фактическая длительность** | **Длительность для тестирования** |
-| ---------------------------- | --------------------------------- |
-| 1 неделя                     | 3 минуты                          |
-| 1 месяц                      | 5 минут                           |
-| 2 месяца                     | 10 минут                          |
-| 3 месяца                     | 15 минут                          |
-| 6 месяцев                    | 30 минут                          |
-| 1 год                        | 1 час                             |
+| **Real duration** | **Duration in sandbox** |
+| ----------------- | ----------------------- |
+| 1 week            | 3 minutes               |
+| 1 month           | 5 minutes               |
+| 2 months          | 10 minutes              |
+| 3 months          | 15 minutes              |
+| 6 months          | 30 minutes              |
+| 1 year            | 1 hour                  |
 
-Если после оплаты на странице пользователей Apphud появился пользователь с оплаченной подпиской, значит, настройка прошла успешно.
+If after purchase in Apphud you can see a user with active subscription, it means that payment process work correctly.
 
-## Какие события можно протестировать в Sandbox?
+## Which events can be tested in sandbox?
 
-Вы можете протестировать следующие события в Sandbox:
+You can test following events in sandbox:
 
 - Trial Started
 - Trial Converted
 - Intro Started
 - Intro Converted
 - Intro Renewed
-- Intro Expired (если вводное предложение имеет тип "Pay as you go" и количество периодов со скидкой *больше шести*)
+- Intro Expired (if payment mode is "Pay as you go" and number of introductory periods is *at least six*)
 - Subscription Started
 - Subscription Renewed
 - Subscription Expired
 - Autorenew Disabled
 - Autorenew Enabled
 
-> Более подробно о событиях вы можете почитать [здесь](events.md).
+> You can read more about events [here](events.md).
 

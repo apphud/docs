@@ -1,78 +1,76 @@
 ---
 id: integrations
-title: Интеграции
+title: Integrations
 ---
-Apphud позволяет отправлять события о подписках в различные сторонние приложения: системы мобильной аналитики и мессенджеры.
+Apphud can send events about subscriptions to third party services: analytics and messengers.
 
-Список доступных на текущий момент интеграций:
+At this moment following services are supported:
 
 * Amplitude
 * Slack
 * Telegram
 
-> Этот список постоянно расширяется. Если вы хотите запросить интеграцию с каким-то другим сервисом, пожалуйста, напишите нам на [email](mailto:hi@apphud.com).
+> We will add new services soon. If you would like us to add integration with specific service, please write us an [email](mailto:hi@apphud.com).
 >
 
-## Параметры событий
+## Events parameters
 
-Вместе с некоторыми событиями отправляются дополнительные параметры. Вот их полный перечень с описаниями:
+This is a list of all available parameters that are sent with events:
 
-| Параметр            | Описание                                                     |
+| Parameter           | Description                                                  |
 | :------------------ | ------------------------------------------------------------ |
-| `product_id`        | Идентификатор продукта                                       |
-| `transaction_id`    | Идентификатор транзакции                                     |
-| `unit`              | Единица измерения длительности триала или вводного предложения. Возможные значения: `day`, `week`, `month`, `year` |
-| `units_count`       | Число `unit`-ов в длительности триала или вводного предложения: так, для двух недель это значение будет равно двум |
-| `local_price`       | Цена покупки в валюте пользователя                           |
-| `currency`          | Код валюты пользователя                                      |
-| `usd_price`         | Цена покупки в долларах США                                  |
-| `price_description` | Описание цены в формате: `local_price` `currency` ~ `usd_price`, например: 499 RUR ~ 7.8 USD |
-| `reason`            | Причина отмены подписки, если это – событие окончания триала, вводного предложения или подписки. Возможные значения: `user_canceled`, `billing_issue`, `declined_price_increase`, `unavailable_product`, `unknown_error`<br/><br/>Причина возврата денег, если это – событие возврата денег. Возможные значения: `app_issue`, `another_reason` |
-| `offer_type`        | Тип вводного предложения. Возможные значения: `pay_up_front`, `pay_as_you_go` |
-| `app_name`          | Название приложения                                          |
-| `user_id`           | Идентификатор пользователя                                   |
-| `group_name`        | Название группы покупок                                      |
+| `product_id`        | Product identifier.                                          |
+| `transaction_id`    | Transaction identifier.                                      |
+| `unit`              | The increment of time that a subscription period is specified in. Possible values: `day`, `week`, `month`, `year` |
+| `units_count`       | The number of units per subscription period.                 |
+| `local_price`       | The cost of the product in the local currency.               |
+| `currency`          | Local currency.                                              |
+| `usd_price`         | The cost of the product in USD.                              |
+| `price_description` | Price description in following format: `local_price` `currency` ~ `usd_price`, for example: 499 RUR ~ 7.8 USD |
+| `reason`            | 1. The reason of an expiration of a subscription. Possible values: `user_canceled`, `billing_issue`, `declined_price_increase`, `unavailable_product`, `unknown_error`<br/><br/>2. The reason of refund. Possible values: `app_issue`, `another_reason` |
+| `offer_type`        | Introductory offer payment mode, if applied. Possible values: `pay_up_front`, `pay_as_you_go` |
+| `app_name`          | App name.                                                    |
+| `user_id`           | User identifier.                                             |
+| `group_name`        | Subscription group name.                                     |
 
-Типы значений, которые принимают каждый параметр – строковый, логический и прочие – варьируются в зависимости от конкретной интеграции. Чтобы узнать больше, просмотрите документацию по нужной интеграции.
+To get more details about parameters in each integration, please check corrensponding integration guide.
 
-### Возможные значения `reason`
+### Possible values of `reason` parameter
 
-Параметр `reason` может принимать одно из следующих значений:
+#### If subscription lapsed:
 
-#### Если это – событие окончания триала, вводного предложения или подписки
+* `user_canceled`: user canceled subscription manually;
+* `billing_issue`: there was an error during billing;
+* `declined_price_increase`: user did not agree to a recent price increase;
+* `unavailable_product`: product was not available for purchase at the time of renewal;
+* `unknown_error`: unknown error occurred.
 
-* `user_canceled`: пользователь отменил подписку через приложение "Настройки" или "App Store";
-* `billing_issue`: возникла ошибка при попытке списания денежных средств с пользователя;
-* `declined_price_increase`: пользователь не согласился с повышением цены на подписку;
-* `unavailable_product`: продукт (подписка) оказался недоступен при попытке продления;
-* `unknown_error`: произошла другая ошибка.
+#### If subscription refunded:
 
-#### Если это – событие возврата денег
+* `app_issue`: user canceled his subscription due to an actual or perceived issue within your app;
+* `another_reason`: subscription was canceled for another reason, for example, if the user made the purchase accidentally.
 
-* `app_issue`: у вашего приложения имеется какая-то проблема;
-* `another_reason`: другая причина, например, пользователь совершил покупку случайно.
+## User properties
 
-## Свойства пользователя
+Besides events Apphud also sends user properties to analytics:
 
-Кроме событий Apphud в некоторых интеграциях отправляет информацию о пользователе. В таблице ниже указано описание возможных свойств пользователя:
-
-| Свойство                                                     | Описание                                                     |
+| Property                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `[Apphud] status-<group_name>`, где `<group_name>` – наименование группы продуктов (подписок) | Статус подписки для этой группы подписок. Возможные значения: `none`, `trial`, `intro`, `regular`, `refunded`, `expired` |
-| `[Apphud] autorenew-<group_name>`, где `<group_name>` – наименование группы продуктов (подписок) | Включено ли автоматическое возобновление для этой группы подписок. |
-| `[Apphud] total_spent`                                       | Общая сумма покупок пользователя до вычета комиссии Apple в долларах США |
-| `[Apphud] paying`                                            | Является пользователь платящим или нет                       |
-| `[Apphud] payments_count`                                    | Общее число платежей пользователя                            |
+| `[Apphud] status-<group_name>`, where `<group_name>` – name of subscription group | Status of subscription. Possible values: `none`, `trial`, `intro`, `regular`, `refunded`, `expired` |
+| `[Apphud] autorenew-<group_name>`, where `<group_name>` – name of subscription group | Whether autorenew option is turned on.                       |
+| `[Apphud] total_spent`                                       | Total amount of money that user has been charged, in USD.    |
+| `[Apphud] paying`                                            | Whether user is paying or not.                               |
+| `[Apphud] payments_count`                                    | Number of transactions user has been charged.                |
 
-Тип значений, которые принимают каждое свойство – строковый, логический и прочие – варьируются в зависимости от конкретной интеграции. Чтобы узнать больше, просмотрите документацию по нужной интеграции.
+To get more details about user properties in each integration, please check corrensponding integration guide.
 
-### Возможные значения `[Apphud] status-<group_name>`
+### Possible values of `[Apphud] status-<group_name>`
 
-Свойство `[Apphud] status-<group_name>` может принимать одно из следующих значений:
+All values are applied for given subscription group:
 
-* `none`: у пользователя нет и никогда не было активной подписки в этой группе подписок;
-* `trial`: у пользователя есть активный триал в этой группе подписок;
-* `intro`: у пользователя есть активное вводное предложение в этой группе подписок;
-* `regular`: у пользователя есть активная подписка в этой группе подписок;
-* `refunded`: пользователь вернул деньги за подписку в этой группе подписок;
-* `expired`: подписка или триал пользователя истек в этой группе подписок.
+* `none`: user has never purchased a subscription;
+* `trial`: user has a subscription that is currently in trial period;
+* `intro`: user has a subscription that is currently in introductory offer;
+* `regular`: user has a subscription with regular price;
+* `refunded`: user has refunded a subscription;
+* `expired`: subscription lapsed.

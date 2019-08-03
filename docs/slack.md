@@ -3,63 +3,63 @@ id: slack
 title: Slack
 ---
 
-Получайте события о новых и существующих подписках в Slack.
+Receive events about subscriptions to Slack.
 
-## Как добавить интеграцию?
+## How to add integration?
 
-1. Добавьте <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks" target="_blank">входящий Webhook</a> в ваш аккаунт в Slack.
-2. Скопируйте полученный *Webhook URL*.
-3. В <a href="https://app.apphud.com/" target="_blank">Apphud</a> перейдите в раздел *"Integrations"* и добавьте Slack: 
+1. Add <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks" target="_blank">incoming webhook</a> in your Slack account.
+2. Copy given *Webhook URL*.
+3. At <a href="https://app.apphud.com/" target="_blank">Apphud</a> go to *"Integrations"* and add Slack: 
 
 ![slack-adding-integration](assets/slack-adding-integration.png)
 
-4. Вставьте скопированный *Webhook URL* в поле *"Webhook"*. Введите имя, от которого будут приходить уведомления, и укажите название канала:
+4. Insert *Webhook URL* at *"Webhook"* field. Enter username which will be shown in notifications and channel name:
 
 ![slack-name-channel](assets/slack-name-channel.png)
 
-5. При желании отключите ненужные уведомления, которые вы не хотите получать:
+5. You can disable events you don't need:
 
 ![slack-disable-events](assets/slack-disable-events.png)
 
-6. Поставьте галочку напротив *"Enable this integration"*:
+6. Make sure *"Enable this integration"* is checked:
 
 ![slack-enable-integration](assets/slack-enable-integration.png)
 
-7. Сохраните изменения:
+7. Save changes:
 
 ![slack-save](assets/slack-save.png)
 
-## События
+## Events
 
-В таблице ниже указаны возможные события и их параметры, которые отсылаются в Slack. Вы можете отключить отправку некоторых событий в настройках интеграции.
+This is a table of all possible events and their parameters that are being sent to Slack.
 
-> Более подробно о событиях можете почитать [здесь](events.md), а о том, что означает каждый из параметров – [здесь](integrations.md).
+> You can get more details regarding events [here](events.md) and event parameters description - [here](integrations.md).
 
-| Событие                                                      | Наименование                 | Параметры и их типы                                          |
+| Event                                                        | Default Name                 | Parameters                                                   |
 | ------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------ |
-| *Триальный период*                                           |                              |                                                              |
-| Оформление триала                                            | `Trial Started`              | `app_name`<br>`group_name`<br>`product_id`<br>`user_id`      |
-| Успешная конвертация триала в обычную подписку               | `Trial Converted`            | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br>`price_description` |
-| Неудачная конвертация триала в обычную подписку              | `Trial Expired`              |                                                              |
-| *Вводное предложение*                                        |                              |                                                              |
-| Оформление вводного предложения                              | `Intro Started`              |                                                              |
-| Успешное продление вводного предложения                      | `Intro Renewed`              |                                                              |
-| Успешная конвертация вводного предложения в обычную подписку | `Intro Converted`            |                                                              |
-| Неудачная конвертация вводного предложения в обычную подписку | `Intro Expired`              |                                                              |
-| Возврат денег в пределах вводного предложения                | `Intro Refunded`             |                                                              |
-| *Обычная подписка*                                           |                              |                                                              |
-| Успешное оформление подписки                                 | `Subscription Started`       |                                                              |
-| Успешное продление подписки                                  | `Sbscription Renewed`        | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`price_description` |
-| Неудачное продление подписки                                 | `Subscription Expired`       | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
-| Возврат денег                                                | `Subscription Refunded`      |                                                              |
-| *Настройки авто-возобновления*                               |                              |                                                              |
-| Отключение авто-возобновления                                | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
-| Включение авто-возобновления                                 | `[Apphud] autorenew_enabled` |                                                              |
+| *Trial Period*                                               |                              |                                                              |
+| Trial period started                                         | `Trial Started`              | `app_name`<br>`group_name`<br>`product_id`<br>`user_id`      |
+| Successful conversion from trial period to regular subscription | `Trial Converted`            | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br>`price_description` |
+| Failed conversion from trial period to regular subscription  | `Trial Expired`              |                                                              |
+| *Introductory offer*                                         |                              |                                                              |
+| Introductory offer started                                   | `Intro Started`              |                                                              |
+| Introductory offer renewed                                   | `Intro Renewed`              |                                                              |
+| Successful conversion from introductory offer to regular subscription | `Intro Converted`            |                                                              |
+| Failed conversion from introductory offer to regular subscription or failed renew | `Intro Expired`              |                                                              |
+| Refund during introductory offer                             | `Intro Refunded`             |                                                              |
+| *Regular subscription*                                       |                              |                                                              |
+| Subscription started                                         | `Subscription Started`       |                                                              |
+| Subscription renewed                                         | `Sbscription Renewed`        | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`price_description` |
+| Subscription expired                                         | `Subscription Expired`       | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
+| Subscription refunded                                        | `Subscription Refunded`      |                                                              |
+| *Autorenew settings*                                         |                              |                                                              |
+| Autorenew disabled                                           | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
+| Autorenew enabled                                            | `[Apphud] autorenew_enabled` |                                                              |
 
-> Настройте Subscription Status URL, чтобы своевременно получать события `autorenew_disabled` и `autorenew_enabled`. Более подробно о настройке можно почитать [здесь](creating-app.md#subscription-status-url).
+> Set up Subscription Status URL to receive `autorenew_disabled` and `autorenew_enabled` events in real-time. More information can be found [here](creating-app.md#subscription-status-url).
 
-## Отправка тестового события
+## Send test event
 
-Вы можете протестировать интеграцию со Slack, отправив тестовое уведомление. Нажмите *"…"* и выберите *"Send test event"*:
+You can test Slack integration by clicking *"…"* and then in dropdown click on *"Send test event"*:
 
 ![slack-test-event](assets/slack-test-event.png)

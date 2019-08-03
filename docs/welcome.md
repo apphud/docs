@@ -1,19 +1,19 @@
 ---
 id: welcome
-title: Добро пожаловать
+title: Welcome
 ---
-Apphud – это инструмент для мониторинга авто-возобновляемых подписок в iOS-приложениях. Скоро добавим поддержку Android.
+Apphud is a tool for tracking iOS auto-renewable subscriptions. Android will be added soon.
 
-## Особенности
+## Features
 
-- Отправляйте события об изменениях статусов подписок: окончание триала, продление, отмена, возврат денег и прочие – в Amplitude.
-- Получайте уведомления о новых и существующих подписках в Slack и Telegram.
-- Просматривайте информацию по каждому пользователю, выручку, историю транзакций и статусы его подписок.
-- Наш SDK легкий и безопасный. Написан на Swift. Open-source.
+- Send events about your subscriptions to Amplitude: trial conversion, renewal, expiration, refund and others.
+- Get notified about new or existing subscriptions in Slack or Telegram.
+- View information about each user, his revenue, transactions history and subscription status.
+- Our SDK is lightweight, safe and open-source.
 
-## С чего начать?
+## Getting started
 
-1. Зарегистрируйтесь в Apphud, создайте [приложение](creating-app.md) и получите API-ключ.
-2. Добавьте [продукты](adding-products.md) в настройках приложения.
-3. Интегрируйте [Apphud SDK](sdk-integration.md) в ваше приложение.
-4. Оформите [тестовую покупку](sandbox.md).
+1. Register in Apphud, [create an app](creating-app.md) and get API key.
+2. [Add products](adding-products.md) in application settings.
+3. [Integrate SDK](sdk-integration.md) in your app.
+4. Make a [test purchase](sandbox.md).

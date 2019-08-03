@@ -2,74 +2,74 @@
 id: amplitude
 title: Amplitude
 ---
-Amplitude это мощная система мобильной аналитики. Отправляйте события из Apphud в Amplitude, анализируйте поведение ваших пользователей и принимайте на их основе решения.
+Amplitude is a powerful mobile analytics service. Send events to Amplitude via Apphud, analyze your users behavior and make necessary desicions.
 
-## Как добавить интеграцию? 
+## How to add integration? 
 
-1. Откройте <a href="https://analytics.amplitude.com/" target="_blank">Amplitude</a> и войдите в ваш аккаунт.
-2. Кликните на *"Manage Data"* в нижней части экрана:
+1. Open <a href="https://analytics.amplitude.com/" target="_blank">Amplitude</a> and sign in.
+2. Click on *"Manage Data"* at the bottom of the screen:
 
 ![Amplitude-step-1](assets/amplitude-step-1.png)
 
-3. Выберите ваше приложение:
+3. Choose your app:
 
 ![Amplitude-step-2](assets/amplitude-step-2.png)
 
-4. Скопируйте *Amplitude API Key*:
+4. Copy *Amplitude API Key*:
 
 ![Amplitude-step-3](assets/amplitude-step-3.png)
 
-5. В <a href="https://app.apphud.com/" target="_blank">Apphud</a> перейдите в раздел *"Integrations"* и добавьте Amplitude: 
+5. At <a href="https://app.apphud.com/" target="_blank">Apphud</a> go to *"Integrations"* section and add Amplitude: 
 
 ![amplitude-adding-integration](assets/amplitude-adding-integration.png)
 
-6. Вставьте скопированный *Amplitude API Key* в поле *"Amplitude API Key"*: 
+6. Enter *Amplitude API Key* at the *"Amplitude API Key"* field: 
 
 ![amplitude-api-key](assets/amplitude-api-key.png)
 
-7. При желании введите собственные названия любого из событий или отключите его отправку в Amplitude:
+7. You can enter your custom event names or disable some:
 
 ![amplitude-custom-event-names](assets/amplitude-custom-event-names.png)
 
-8. Поставьте галочку напротив *"Enable this integration"*:
+8. Tick *"Enable this integration"*:
 
 ![amplitude-enable-integration](assets/amplitude-enable-integration.png)
 
-9. Сохраните изменения:
+9. Save changes:
 
 ![amplitude-save](assets/amplitude-save.png)
 
-## События
+## Events
 
-В таблице ниже указаны возможные события и их параметры, которые отсылаются в Amplitude. Вы можете задать собственные наименования для каждого события и отключить некоторые их них в настройках интеграции, если нужно.
+This is a table of all possible events and their parameters that are being sent to Amplitude. 
 
-> Более подробно о событиях можете почитать [здесь](events.md), а о том, что означает каждый из параметров – [здесь](integrations.md).
+> You can get more details regarding events [here](events.md) and event parameters description - [here](integrations.md).
 
-| Событие                                                      | Наименование по умолчанию        | Параметры и их типы                                          |
+| Event                                                      | Default Name        | Parameters                                          |
 | ------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------ |
-| *Триальный период*                                           |                                  |                                                              |
-| Оформление триала                                            | `[Apphud] trial_started`         | `product_id`: String<br>`unit`: String<br>`units_count`: Integer |
-| Успешная конвертация триала в обычную подписку               | `[Apphud] trial_converted`       | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
-| Неудачная конвертация триала в обычную подписку              | `[Apphud] trial_expired`         | `product_id`: String<br>`reason`: String                     |
-| *Вводное предложение*                                        |                                  |                                                              |
-| Оформление вводного предложения                              | `[Apphud] intro_started`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
-| Успешное продление вводного предложения                      | `[Apphud] intro_renewed`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
-| Успешная конвертация вводного предложения в обычную подписку | `[Apphud] intro_converted`       | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
-| Неудачная конвертация вводного предложения в обычную подписку | `[Apphud] intro_expired`         | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
-| Возврат денег в пределах вводного предложения                | `[Apphud] intro_refunded`        | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
-| *Обычная подписка*                                           |                                  |                                                              |
-| Успешное оформление подписки                                 | `[Apphud] subscription_started`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
-| Успешное продление подписки                                  | `[Apphud] subscription_renewed`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
-| Неудачное продление подписки                                 | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
-| Возврат денег                                                | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
-| *Настройки авто-возобновления*                               |                                  |                                                              |
-| Отключение авто-возобновления                                | `[Apphud] autorenew_disabled`    | `product_id`: String<br>`reason`: String                     |
-| Включение авто-возобновления                                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
+| *Trial Period*                               |                                  |                                                              |
+| Trial period started                    | `[Apphud] trial_started`         | `product_id`: String<br>`unit`: String<br>`units_count`: Integer |
+| Successful conversion from trial period to regular subscription | `[Apphud] trial_converted`       | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
+| Failed conversion from trial period to regular subscription | `[Apphud] trial_expired`         | `product_id`: String<br>`reason`: String                     |
+| *Introductory offer*                  |                                  |                                                              |
+| Introductory offer started | `[Apphud] intro_started`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Introductory offer renewed | `[Apphud] intro_renewed`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Successful conversion from introductory offer to regular subscription | `[Apphud] intro_converted`       | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
+| Failed conversion from introductory offer to regular subscription or failed renew | `[Apphud] intro_expired`         | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
+| Refund during introductory offer | `[Apphud] intro_refunded`        | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
+| *Regular subscription*       |                                  |                                                              |
+| Subscription started | `[Apphud] subscription_started`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
+| Subscription renewed     | `[Apphud] subscription_renewed`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
+| Subscription expired | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
+| Subscription refunded | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
+| *Autorenew settings*              |                                  |                                                              |
+| Autorenew disabled         | `[Apphud] autorenew_disabled`    | `product_id`: String<br>`reason`: String                     |
+| Autorenew enabled                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
 
-> Настройте Subscription Status URL, чтобы своевременно получать события `autorenew_disabled` и `autorenew_enabled`. Более подробно о настройке можно почитать [здесь](creating-app.md#subscription-status-url).
+> Set up Subscription Status URL to receive `autorenew_disabled` and `autorenew_enabled` events in real-time. More information can be found [here](creating-app.md#subscription-status-url).
 >
 
-Вместе с событиями:
+These events:
 
 * `[Apphud] trial_converted`,
 * `[Apphud] intro_started`,
@@ -80,26 +80,26 @@ Amplitude это мощная система мобильной аналитик
 * `[Apphud] subscription_renewed`,
 * `[Apphud] subscription_refunded` 
 
-могут опционально отправляться встроенные в Amplitude параметры, относящиеся к отслеживанию покупок. Более подробно можно почитать <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">здесь</a>. Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
+can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's built-in revenue tracking events. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. If you will be able to use Amplitude's built-in revenue tracking reports. By default this option is __off__, but you can enable this feature in integration settings:
 
 **// Картинка**
 
-Вот описание параметров, которые отсылаются вместе с этими событиями:
+This is parameters that are sent with these events:
 
-| Параметр      | Тип     | Описание                                                     |
+| Parameter     | Type    | Description                                                  |
 | ------------- | ------- | ------------------------------------------------------------ |
-| `productID`   | String  | ID продукта                                                  |
-| `quantity`    | Integer | Количество продуктов в покупке. *Всегда равно 1*             |
-| `price`       | Float   | Цена покупки в долларах США                                  |
-| `revenueType` | String  | Название события. Возможные значения: `trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded` |
+| `productID`   | String  | Product ID                                                   |
+| `quantity`    | Integer | Quantity of products. *Always equals 1*                      |
+| `price`       | Float   | The price of purchase in US dollars.                         |
+| `revenueType` | String  | Name of event. Possible value:<br>`trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded` |
 
-## Свойства пользователя 
+## User properties
 
-В таблице ниже указаны свойства пользователя и их типы, которые присваиваются пользователям в Amplitude.
+In the table below you can see the list of user properties that are sent to Amplitude.
 
-> О том, что означает каждое из свойств, вы можете прочитать [здесь](integrations.md).
+> More information about user properties can be found [here](integrations.md).
 
-| Параметр                        | Тип     |
+| Parameter                       | Type    |
 | ------------------------------- | ------- |
 | `[Apphud] status-group_name`    | String  |
 | `[Apphud] autorenew-group_name` | Boolean |
@@ -107,5 +107,5 @@ Amplitude это мощная система мобильной аналитик
 | `[Apphud] paying`               | Boolean |
 | `[Apphud] payments_count`       | Integer |
 
-## Отправка тестового события
+## Sending test event
 

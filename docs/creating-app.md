@@ -1,46 +1,36 @@
 ---
 id: creating-app
-title: Создание приложения
+title: Adding New App
 ---
-Чтобы создать приложение, нажмите *"Add new app"* в верхней части экрана:
+To create a new app, click on "Add new app" at the top:
 
 ![add-new-app](assets/add-new-app.png)
 
-Или просто зарегистрируйтесь и экран создания нового приложения появится автоматически. Заполните информацию о приложении.
+Or just register and application create screens will show automatically. Fill the information about the app.
 
 ## App name
 
-Это название приложение, которое будет указано в отчетах.
+This is a name of the app that will be used in reports.
 
 ## Bundle ID
 
-Узнать уникальный идентификатор iOS-приложения – *Bundle ID* – можно одним из двух способов:
+To get Bunde ID open <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, go to *"My Apps"* and choose your app. 
 
-##### Если у вас есть доступ к App Store Connect
-
-1. Откройте <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, перейдите в раздел *"My Apps"* и выберите нужное приложение.
-2. На странице приложения найдите ваше значение "ID пакета" (*Bundle ID*).
-
-##### Если у вас нет доступа к App Store Connect
-
-1. Найдите приложение в App Store и откройте его страницу (например, <a href="https://itunes.apple.com/us/app/facebook/id284882215?mt=8" target="_blank">https://itunes.apple.com/us/app/facebook/id284882215?mt=8</a>).
-2. Скопируйте число, которое указан в URL между `id` и `?` (в примере: `284882215`).
-3. Вставьте идентификатор в URL `https://itunes.apple.com/lookup?id=` после знака `=`: <a href="https://itunes.apple.com/lookup?id=284882215" target="_blank">https://itunes.apple.com/lookup?id=284882215.</a>
-4. В файле `1.txt`, который браузер скачает по этому URL, найдите текст *"bundleId"*.
+At the app page find *“Your Bundle ID”*.
 
 ## App Store shared secret
 
-Узнать App Store shared secret можно так:
+To get shared secret:
 
-1. Откройте <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, перейдите в раздел *“My Apps”* и выберите нужное приложение.
-2. Перейдите во вкладку *"Functions"*, выберите пункт меню *“In-App Purchases”*.
-3. Нажмите *“View Shared Secret”*.
+1. Open <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, go to my *“My Apps”* and choose your app.
+2. Go to *"Functions"* and select *“In-App Purchases”*.
+3. Click on *“View Shared Secret”*. Generate a new one if you don't have it yet.
 
 ## Subscription Status URL
 
-Мы настоятельно рекомендуем вставить сгенерированный *Subscription Status URL* в настройках вашего приложения в <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Это позволит сильно увеличить точность создаваемых событий и в реальном времени узнавать, *когда* пользователь отключает возобновление подписки.
+We highly recommend to paste generated Subscription Status URL at your app page of <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. It will help to create events in real-time.
 
-> Более подробно о создаваемых событиях можно почитать [здесь](events.md)
+> More information about event can be found [here](events.md).
 
-1. Откройте <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, перейдите в раздел *“My Apps”* и выберите нужное приложение.
-2. В разделе *"General Information"* найдите поле *"Subscription Status URL"*, вставьте сгенерированный URL в это поле и сохраните изменения.
+1. Open <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, go to *“My Apps”* and choose your app.
+2. Under *"General Information"* find *"Subscription Status URL"*, paste generated URL and save changes.

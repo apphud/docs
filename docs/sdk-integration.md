@@ -1,38 +1,39 @@
 ---
 id: sdk-integration
-title: Интеграция Apphud SDK
+title: SDK Integration
 ---
-В этом разделе мы расскажем, как добавить Apphud SDK в ваше iOS-приложение.
+Here we describe how to add Apphud SDK to your iOS app.
 
-## Требования
+## Requirements
 
-iOS 11.2 и выше, Xcode 10 и выше, Swift 5.0 и выше.
+Apphud SDK requires minimum iOS 11.2 and Xcode 10 and uses Swift version 5.0. 
 
-## Установка
+## Installation
 
-Apphud SDK может быть установлен через CocoaPods или вручную.
+Apphud SDK can be installed via CocoaPods or manually.
 
-##### Установка через CocoaPods
+##### Install via CocoaPods
 
-Добавьте эту строку в Podfile:
+Add the following line to your Podfile:
 
 ```ruby
 pod 'apphud'
 ```
 
-И выполните в терминале:
+And then run in the Terminal:
 
 ```ruby
 pod install
 ```
 
-#### Установка вручную
+#### Manual Installation
 
-Добавьте все файлы из папки `Source` в ваш проект.
+Copy all files in `Source` folder to your project.
 
-## Настройка Apphud SDK
 
-Инициализируйте SDK в `AppDelegate`:
+## Configure Apphud SDK
+
+Initialize Apphud SDK at your AppDelegate:
 
 ```swift
 import apphud
@@ -46,17 +47,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-API-ключ – это уникальный идентификатор вашего приложения в Apphud. Он находится в настройках вашего приложения в Apphud в разделе *"General"*:
 
-![API-key](assets/sdk-token.png)
 
-## Отправка событий о подписках
+Api key – is a unique identifier of your Apphud application. You can get it in your Apphud application settings under `General` tab.
 
-Apphud отслеживает все события связанные с авто-возобновляемыми подписками: ее оформление, продление, отмена, возврат денег и прочие.
 
-> Полный список отслеживаемых событий доступен [здесь](events.md).
+## Sending Subscription Events
 
-Вам лишь нужно вызвать этот метод, когда пользователь совершает покупку:
+One of the main features of Apphud is tracking all subscription events: subscription started, renewed, expired, refunded, autorenew disabled, trial converted and many other. 
+
+> See the list of all available events [here](events.md).
+
+All you need to implement when purchase is made:
 
 ```swift
 // when purchase is completed
@@ -65,93 +67,85 @@ Apphud.submitPurchase(productIdentifier, callback: { (subscription, error) in
 })
 ```
 
-Этот метод отправляет чек (App Store receipt) на сервер Apphud, где происходит его проверка и возвращает объект класса `ApphudSubscription`, который содержит информацию о подписке, в том числе дату ее предполагаемого продления. Для более подробной информации просмотрите файл `ApphudSubscription.swift`.
+This will automatically send App Store receipt, validate it and return a subscription model, which contains all relevant info about your subscription, including expiration date. See `ApphudSubscription.swift` file for details.
 
-## Конвертация валют
+## About Currencies
 
-Базовая валюта Apphud – доллар США. Все транзакции автоматически конвертируются в доллар США в момент создания соответствующего события.
+US Dollar – is a base currency in Apphud. All transactions are automatically converted to USD by the exchange rates at the time of event.
 
-## Восстановление покупок
+## Restoring Purchases
 
-Если в вашем приложении нет механизма, позволяющего определить, активна подписка пользователя или нет, то вам нужно реализовать восстановление подписок. Если у вас уже реализовано восстановление, то дополнительно ничего делать не нужно: Apphud автоматически получит и отправит последний чек на сервер, когда восстановление выполнится. 
-
-Однако, вы можете вызвать его принудительно с помощью:
+If your app doesn't have a login system, which identifies a premium user by his credentials, then you need a restore mechanism. If you already have a restore purchases mechanism implemented, then you have nothing to worry about – Apphud SDK will automatically fetch and send latest App Store Receipt to Apphud servers when your own restoration is completed. However, you can use our restore purchases method from SDK:
 
 ```swift
 Apphud.restoreSubscriptions()
 ```
 
-При успешном восстановлении SDK отправит чек на сервер Apphud. Состояние подписки пользователя будет обновлено.
+Once called, the latest receipt will also be sent to Apphud servers and user's subscriptions will be updated in the delegate method.
 
-## Настройка делегата
+## Set up a Delegate
 
-Вы можете задать делегат, вызвав:
+You can set up Apphud delegate by calling:
 
 ```swift
 Apphud.setDelegate(self)
 ```
 
-Вызывайте этот метод в любое время, но только **после инициализации** Apphud SDK. 
+You can set a delegate at any time but after Apphud SDK has been initialized.
 
-В протоколе `ApphudDelegate` реализовано два опциональных метода.
+There are two optional methods that can be implemented in `ApphudDelegate` protocol.
 
-#### Изменение состояния подписки
-
-Первый метод протокола `ApphudDelegate`:
+#### Subscription status updates
 
 ```swift
 @objc optional func apphudSubscriptionsUpdated(_ subscriptions : [ApphudSubscription])
 ```
 
-вызывается в случае изменения состояния подписки.
+This method gets called when one of subscription's state changes. 
 
-> Этот метод **не вызывается** сразу после `Apphud.submitPurchase`, потому что тот имеет свой completion block.
+> This delegate method is not called after `Apphud.submitPurchase` , because that method has it's own completion block.
 
-Есть два случая, когда вызывается этот метод:
+There are two cases when this delegate method is called:
 
-* подписка восстанавливается;
-* изменяется состояние подписки. Например, с триала (`trial`) на обычную (`regular`).
+*  when subscriptions are restored.
+* when one of subscription's state has been changed. For example, if state has changed from `trial` to `regular`.
 
-Apphud SDK запрашивает состояние подписки всякий раз при запуске приложения, после покупки и восстановления подписки.
+Apphud SDK fetches latest subscription information once during launch and after purchase/restore methods.
 
-#### Изменение `userID`
-
-Второй метод:
+#### Change of `userID`.
 
 ```swift
 @objc optional func apphudDidChangeUserID(_ userID : String)
 ```
 
-вызывается при изменении идентификатора пользователя – `userID`. `userID` однозначно идентифицирует пользователя, даже если он использует несколько устройств. Более подробно о том, как работает идентификация пользователя в Apphud, поговорим ниже.
+This method gets called when `userID` value changes. `userID` identifies user across his multiple devices.
 
-Есть два случая, когда вызывается этот метод:
+There are 2 cases when this method gets called:
 
-* когда пользователь восстановил покупку на другом устройстве;
-* после вызова метода `Apphud.updateUserID(_ userID : String)`.
+* when user has restored subsciption from his another device.
+* after manual call of `updateUserID(userID : String)` method. 
 
-## ID пользователя
+## User identifier
 
-В Apphud SDK используются два идентификатора: идентификатор устройства и идентификатор пользователя.
+There are two identifiers in Apphud SDK: device identifier and user identifier. 
 
-### Идентификатор устройства
+### Device Identifier
 
-ID устройства однозначно идентифицирует устройство. Apphud генерирует его при первом запуске приложения на основе UUID и сохраняет в Keychain. Этот идентификатор используется в системных целях. Доступа к нему нет.
+Apphud SDK generates device identifier at the first launch of the app and saves it to keychain. It's used inside Apphud platform and cannot be accessed.
 
-### Идентификатор пользователя
+### User Identifier
 
-ID пользователя идентифицирует его, даже если он использует несколько устройств. Этот идентификатор генерируется при первом запуске приложения, но может измениться позднее.
+If not set explicitly, user identifier is also generated at the first launch of the app.
 
-> `UserID` может измениться, если пользователь впервые запустил приложение на другом своем устройстве и восстановил покупки. В этом случае критерием объединения двух пользователей выступит чек (App Store receipt). Получив чек с нового устройства, Apphud просматривает базу существующих подписок. Если будет найдена существующая подписка с совпадающим `transaction_id`, то пользователи будут объединены: новый пользователь будет удален. В этом случае предполагается, что новое устройство принадлежит одному и тому же пользователю.
+> `userID` may change in case user has restored purchases from his another device. After Apphud receives the App Store receipt from iOS app, the server tries to find the same receipt in the database. If the same App Store receipt has been found and it already belongs to another user, Apphud will merge two users into a single user with two devices and then will return an original `userID`.
 
-Если идентификатор пользователя изменится, Apphud SDK вызовет метод `apphudDidChangeUserID` делегата `ApphudDelegate`.
+### User Identifier and Integrations
 
-### Идентификатор пользователя и интеграции
+If you want to pass subscription events to your analytics services, such as Amplitude, you need to match Apphud `userID` with your analytics user identifier. There are two ways to implement this:
 
-Если вы используете интеграции и отправляете события о подписках в сторонние системы аналитики, например, Amplitude, то нужно соотнести идентификатор пользователя в Apphud с идентификатором пользователя в системе аналитики. Есть два способа это сделать.
+#### 1. Using Apphud `userID`
 
-#### Используя Apphud `userID`
-
-При инициализации SDK добавьте строку:
+Add the following line when initializing SDK:
 
 ```swift
 Apphud.start(apiKey: "YOUR_API_KEY")
@@ -159,7 +153,7 @@ Apphud.setDelegate(self)
 Amplitude.instance()?.setUserId(Apphud.userID()) // or any other analytics
 ```
 
-Выше мы говорили, что `userID` может измениться, если пользователь восстанавливает покупку на другом устройстве. Поэтому нужно обновлять идентификатор аналитики при изменении `userID`:
+As we said previously, `userID` may change if user has restored purchases from his another device. You need to add the following delegate method as well:
 
 ```swift
 func apphudDidChangeUserID(_ userID: String) {
@@ -167,11 +161,11 @@ func apphudDidChangeUserID(_ userID: String) {
 }
 ```
 
-#### Используя собственный `userID`
+#### 2. Using your own `userID`
 
-Используйте этот способ, только если вы уверены что ваш `userID` однозначно идентифицирует пользователя, даже если он использует несколько устройств. Например, если у вас реализована аутентификация пользователя через логин и пароль, вы можете использовать логин в качестве `userID`. Единственное требование – обновлять Apphud `userID` и `userID`, используемый в аналитике, одновременно.
+Only do this if you are sure that your `userID`  explicitly identifies a user across his multiple devices. For example, if you have a login system with unique username and password, you can pass username as user ID. The only requirement is to update Apphud `userID` and your analytics `userID` simultaneously.
 
-Это можно сделать, например, при запуске приложения:
+This can be done at app launch:
 
 ```swift
 // at AppDelegate
@@ -179,7 +173,7 @@ Apphud.start(apiKey: "YOUR_API_KEY", userID: "YOUR_OWN_USER_ID")
 Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 ```
 
-или позже, например, после аутентификации:
+Or can be done later:
 
 ```swift
 // if authenticated

@@ -1,7 +1,7 @@
 {
   "docs": {
-    "Начало работы": ["welcome", "creating-app", "adding-products", "sdk-integration", "events", "sandbox"],
-    "Интеграции": ["integrations", "amplitude", "slack", "telegram"],
-    "Прочее": ["user-data"]
+    "Getting started": ["welcome", "creating-app", "adding-products", "sdk-integration", "events", "sandbox"],
+    "Integrations": ["integrations", "amplitude", "slack", "telegram"],
+    "Other": ["user-data"]
   }
 }
