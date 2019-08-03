@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Slack · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Получайте события о новых и существующих подписках в Slack.&lt;/p&gt;
-"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Slack · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.apphud.com/"/><meta property="og:description" content="&lt;p&gt;Получайте события о новых и существующих подписках в Slack.&lt;/p&gt;
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Slack · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Receive events about subscriptions to Slack.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Slack · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.apphud.com/"/><meta property="og:description" content="&lt;p&gt;Receive events about subscriptions to Slack.&lt;/p&gt;
 "/><meta property="og:image" content="https://docs.apphud.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.apphud.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -8,7 +8,19 @@
 
               ga('create', 'UA-142675040-3', 'auto');
               ga('send', 'pageview');
-            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://code.tidio.co/gdrvzh9vn6fev1qclymh8n4y4iu7fkst.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/docs-logo-2.svg" alt="Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://apphud.com" target="_self">Get Apphud</a></li><li class=""><a href="https://apphud.com/contacts" target="_self">Contacts</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Интеграции</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Начало работы</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/welcome">Добро пожаловать</a></li><li class="navListItem"><a class="navItem" href="/docs/en/creating-app">Создание приложения</a></li><li class="navListItem"><a class="navItem" href="/docs/en/adding-products">Добавление продуктов</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sdk-integration">Интеграция Apphud SDK</a></li><li class="navListItem"><a class="navItem" href="/docs/en/events">События</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sandbox">Тестирование покупок</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Интеграции</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/integrations">Интеграции</a></li><li class="navListItem"><a class="navItem" href="/docs/en/amplitude">Amplitude</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/en/telegram">Telegram</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Прочее</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/user-data">Собираемые данные</a></li></ul></div></div></section></div><script>
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://code.tidio.co/gdrvzh9vn6fev1qclymh8n4y4iu7fkst.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/docs-logo-2.svg" alt="Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://apphud.com" target="_self">Get Apphud</a></li><li class=""><a href="https://apphud.com/contacts" target="_self">Contacts</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/ru/slack">Русский</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Integrations</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/en/creating-app">Adding New App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/adding-products">Adding Products</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sdk-integration">SDK Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/en/events">Events</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sandbox">Testing Purchases</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/integrations">Integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/en/amplitude">Amplitude</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/en/telegram">Telegram</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/user-data">Data We Collect</a></li></ul></div></div></section></div><script>
             var coll = document.getElementsByClassName('collapsible');
             var checkActiveCategory = true;
             for (var i = 0; i < coll.length; i++) {
@@ -64,64 +76,64 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Slack</h1></header><article><div><span><p>Получайте события о новых и существующих подписках в Slack.</p>
-<h2><a class="anchor" aria-hidden="true" id="как-добавить-интеграцию"></a><a href="#как-добавить-интеграцию" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Как добавить интеграцию?</h2>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Slack</h1></header><article><div><span><p>Receive events about subscriptions to Slack.</p>
+<h2><a class="anchor" aria-hidden="true" id="how-to-add-integration"></a><a href="#how-to-add-integration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to add integration?</h2>
 <ol>
-<li>Добавьте <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks" target="_blank">входящий Webhook</a> в ваш аккаунт в Slack.</li>
-<li>Скопируйте полученный <em>Webhook URL</em>.</li>
-<li>В <a href="https://app.apphud.com/" target="_blank">Apphud</a> перейдите в раздел <em>&quot;Integrations&quot;</em> и добавьте Slack:</li>
+<li>Add <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks" target="_blank">incoming webhook</a> in your Slack account.</li>
+<li>Copy given <em>Webhook URL</em>.</li>
+<li>At <a href="https://app.apphud.com/" target="_blank">Apphud</a> go to <em>&quot;Integrations&quot;</em> and add Slack:</li>
 </ol>
 <p><img src="/docs/assets/slack-adding-integration.png" alt="slack-adding-integration"></p>
 <ol start="4">
-<li>Вставьте скопированный <em>Webhook URL</em> в поле <em>&quot;Webhook&quot;</em>. Введите имя, от которого будут приходить уведомления, и укажите название канала:</li>
+<li>Insert <em>Webhook URL</em> at <em>&quot;Webhook&quot;</em> field. Enter username which will be shown in notifications and channel name:</li>
 </ol>
 <p><img src="/docs/assets/slack-name-channel.png" alt="slack-name-channel"></p>
 <ol start="5">
-<li>При желании отключите ненужные уведомления, которые вы не хотите получать:</li>
+<li>You can disable events you don't need:</li>
 </ol>
 <p><img src="/docs/assets/slack-disable-events.png" alt="slack-disable-events"></p>
 <ol start="6">
-<li>Поставьте галочку напротив <em>&quot;Enable this integration&quot;</em>:</li>
+<li>Make sure <em>&quot;Enable this integration&quot;</em> is checked:</li>
 </ol>
 <p><img src="/docs/assets/slack-enable-integration.png" alt="slack-enable-integration"></p>
 <ol start="7">
-<li>Сохраните изменения:</li>
+<li>Save changes:</li>
 </ol>
 <p><img src="/docs/assets/slack-save.png" alt="slack-save"></p>
-<h2><a class="anchor" aria-hidden="true" id="события"></a><a href="#события" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>События</h2>
-<p>В таблице ниже указаны возможные события и их параметры, которые отсылаются в Slack. Вы можете отключить отправку некоторых событий в настройках интеграции.</p>
+<h2><a class="anchor" aria-hidden="true" id="events"></a><a href="#events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Events</h2>
+<p>This is a table of all possible events and their parameters that are being sent to Slack.</p>
 <blockquote>
-<p>Более подробно о событиях можете почитать <a href="/docs/en/events">здесь</a>, а о том, что означает каждый из параметров – <a href="/docs/en/integrations">здесь</a>.</p>
+<p>You can get more details regarding events <a href="/docs/en/events">here</a> and event parameters description - <a href="/docs/en/integrations">here</a>.</p>
 </blockquote>
 <table>
 <thead>
-<tr><th>Событие</th><th>Наименование</th><th>Параметры и их типы</th></tr>
+<tr><th>Event</th><th>Default Name</th><th>Parameters</th></tr>
 </thead>
 <tbody>
-<tr><td><em>Триальный период</em></td><td></td><td></td></tr>
-<tr><td>Оформление триала</td><td><code>Trial Started</code></td><td><code>app_name</code><br><code>group_name</code><br><code>product_id</code><br><code>user_id</code></td></tr>
-<tr><td>Успешная конвертация триала в обычную подписку</td><td><code>Trial Converted</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br><code>price_description</code></td></tr>
-<tr><td>Неудачная конвертация триала в обычную подписку</td><td><code>Trial Expired</code></td><td></td></tr>
-<tr><td><em>Вводное предложение</em></td><td></td><td></td></tr>
-<tr><td>Оформление вводного предложения</td><td><code>Intro Started</code></td><td></td></tr>
-<tr><td>Успешное продление вводного предложения</td><td><code>Intro Renewed</code></td><td></td></tr>
-<tr><td>Успешная конвертация вводного предложения в обычную подписку</td><td><code>Intro Converted</code></td><td></td></tr>
-<tr><td>Неудачная конвертация вводного предложения в обычную подписку</td><td><code>Intro Expired</code></td><td></td></tr>
-<tr><td>Возврат денег в пределах вводного предложения</td><td><code>Intro Refunded</code></td><td></td></tr>
-<tr><td><em>Обычная подписка</em></td><td></td><td></td></tr>
-<tr><td>Успешное оформление подписки</td><td><code>Subscription Started</code></td><td></td></tr>
-<tr><td>Успешное продление подписки</td><td><code>Sbscription Renewed</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>price_description</code></td></tr>
-<tr><td>Неудачное продление подписки</td><td><code>Subscription Expired</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>reason</code></td></tr>
-<tr><td>Возврат денег</td><td><code>Subscription Refunded</code></td><td></td></tr>
-<tr><td><em>Настройки авто-возобновления</em></td><td></td><td></td></tr>
-<tr><td>Отключение авто-возобновления</td><td><code>Autorenew Disabled</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>reason</code></td></tr>
-<tr><td>Включение авто-возобновления</td><td><code>[Apphud] autorenew_enabled</code></td><td></td></tr>
+<tr><td><em>Trial Period</em></td><td></td><td></td></tr>
+<tr><td>Trial period started</td><td><code>Trial Started</code></td><td><code>app_name</code><br><code>group_name</code><br><code>product_id</code><br><code>user_id</code></td></tr>
+<tr><td>Successful conversion from trial period to regular subscription</td><td><code>Trial Converted</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br><code>price_description</code></td></tr>
+<tr><td>Failed conversion from trial period to regular subscription</td><td><code>Trial Expired</code></td><td></td></tr>
+<tr><td><em>Introductory offer</em></td><td></td><td></td></tr>
+<tr><td>Introductory offer started</td><td><code>Intro Started</code></td><td></td></tr>
+<tr><td>Introductory offer renewed</td><td><code>Intro Renewed</code></td><td></td></tr>
+<tr><td>Successful conversion from introductory offer to regular subscription</td><td><code>Intro Converted</code></td><td></td></tr>
+<tr><td>Failed conversion from introductory offer to regular subscription or failed renew</td><td><code>Intro Expired</code></td><td></td></tr>
+<tr><td>Refund during introductory offer</td><td><code>Intro Refunded</code></td><td></td></tr>
+<tr><td><em>Regular subscription</em></td><td></td><td></td></tr>
+<tr><td>Subscription started</td><td><code>Subscription Started</code></td><td></td></tr>
+<tr><td>Subscription renewed</td><td><code>Sbscription Renewed</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>price_description</code></td></tr>
+<tr><td>Subscription expired</td><td><code>Subscription Expired</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>reason</code></td></tr>
+<tr><td>Subscription refunded</td><td><code>Subscription Refunded</code></td><td></td></tr>
+<tr><td><em>Autorenew settings</em></td><td></td><td></td></tr>
+<tr><td>Autorenew disabled</td><td><code>Autorenew Disabled</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>reason</code></td></tr>
+<tr><td>Autorenew enabled</td><td><code>[Apphud] autorenew_enabled</code></td><td></td></tr>
 </tbody>
 </table>
 <blockquote>
-<p>Настройте Subscription Status URL, чтобы своевременно получать события <code>autorenew_disabled</code> и <code>autorenew_enabled</code>. Более подробно о настройке можно почитать <a href="/docs/en/creating-app#subscription-status-url">здесь</a>.</p>
+<p>Set up Subscription Status URL to receive <code>autorenew_disabled</code> and <code>autorenew_enabled</code> events in real-time. More information can be found <a href="/docs/en/creating-app#subscription-status-url">here</a>.</p>
 </blockquote>
-<h2><a class="anchor" aria-hidden="true" id="отправка-тестового-события"></a><a href="#отправка-тестового-события" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Отправка тестового события</h2>
-<p>Вы можете протестировать интеграцию со Slack, отправив тестовое уведомление. Нажмите <em>&quot;…&quot;</em> и выберите <em>&quot;Send test event&quot;</em>:</p>
+<h2><a class="anchor" aria-hidden="true" id="send-test-event"></a><a href="#send-test-event" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Send test event</h2>
+<p>You can test Slack integration by clicking <em>&quot;…&quot;</em> and then in dropdown click on <em>&quot;Send test event&quot;</em>:</p>
 <p><img src="/docs/assets/slack-test-event.png" alt="slack-test-event"></p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/amplitude"><span class="arrow-prev">← </span><span>Amplitude</span></a><a class="docs-next button" href="/docs/en/telegram"><span>Telegram</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#как-добавить-интеграцию">Как добавить интеграцию?</a></li><li><a href="#события">События</a></li><li><a href="#отправка-тестового-события">Отправка тестового события</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docs-footer-2.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Community</h5><a href="https://t.me/apphud_chat" target="_blank" rel="noreferrer noopener">Telegram Chat</a><a href="https://facebook.com/apphud/" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/apphud" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://github.com/apphud" target="_blank" rel="noreferrer noopener">GitHub</a></div></section><section class="copyright">Copyright © 2019 Softeam Inc.</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/amplitude"><span class="arrow-prev">← </span><span>Amplitude</span></a><a class="docs-next button" href="/docs/en/telegram"><span>Telegram</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-add-integration">How to add integration?</a></li><li><a href="#events">Events</a></li><li><a href="#send-test-event">Send test event</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docs-footer-2.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Community</h5><a href="https://t.me/apphud_chat" target="_blank" rel="noreferrer noopener">Telegram Chat</a><a href="https://facebook.com/apphud/" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/apphud" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://github.com/apphud" target="_blank" rel="noreferrer noopener">GitHub</a></div></section><section class="copyright">Copyright © 2019 Softeam Inc.</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
