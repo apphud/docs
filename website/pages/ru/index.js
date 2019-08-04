@@ -37,8 +37,8 @@ class HomeSplash extends React.Component {
 
     const ProjectTitle = () => (
       <h2 className="projectTitle">
-        <font color="#1A344B">Track iOS autorenewable subscriptions</font>
-        <small><font color="#1A344B">Documentation</font></small>
+        <font color="#1A344B">Отслеживайте подписки в iOS-приложениях</font>
+        <small><font color="#1A344B">Документация</font></small>
       </h2>
     );
 
@@ -63,7 +63,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-          <Button href={docUrl('welcome.html')}>Getting started</Button>
+          <Button href={docUrl('welcome.html')}>Начало работы</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -146,28 +146,28 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'Send subscriptions events to Amplitude, Slack and Telegram',
+            content: 'Отправляйте события о подписках в Amplitude, Slack и Telegram',
             image: `${baseUrl}img/image-integrations.svg`,
             imageAlign: 'top',
-            title: 'Integrations',
+            title: 'Интеграции',
           },
           {
-            content: 'Validate App Store receipts on our server, get real-time state of user’s subscription',
+            content: 'Валидируйте чеки App Store на нашем сервере, узнавайте состояние подписки пользователей в реальном времени',
             image: `${baseUrl}img/image-developers.svg`,
             imageAlign: 'top',
-            title: 'Tools for developers',
+            title: 'Для разработчиков',
           },
           {
-            content: 'Know how your users start trials, convert to paying customers, renew their subscriptions and much more',
+            content: 'Узнайте, как пользователи взаимодействуют с подписками: оформляют триал, конвертируются в платящих и уходят',
             image: `${baseUrl}img/image-history.svg`,
             imageAlign: 'top',
-            title: 'View history',
+            title: 'История транзакций',
           },
           {
-            content: 'Try our 45 days trial today. No credit card required',
+            content: 'Бесплатный 45-дневный триал. Кредитная карта не требуется',
             image: `${baseUrl}img/image-rocket.svg`,
             imageAlign: 'top',
-            title: 'Try today',
+            title: 'Попробуйте сегодня',
           },
         ]}
       </Block>

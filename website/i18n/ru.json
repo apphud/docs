@@ -31,8 +31,12 @@
       }
     },
     "links": {
-      "Docs": "Документация",
-      "Blog": "Блог"
+      "Docs" : "Документация",
+      "Blog" : "Блог",
+      "Get Apphud" : "Установите Apphud",
+      "Contacts" : "Контакты",
+      "Community" : "Ссылки",
+      "Telegram Chat" : "Чат в Telegram"
     },
     "categories": {
       "Docusaurus": "Docusaurus",
