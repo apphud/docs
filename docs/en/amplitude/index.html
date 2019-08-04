@@ -137,7 +137,7 @@
 <tr><td>Subscription expired</td><td><code>[Apphud] subscription_expired</code></td><td><code>product_id</code>: String<br><code>reason</code>: String</td></tr>
 <tr><td>Subscription refunded</td><td><code>[Apphud] subscription_refunded</code></td><td><code>product_id</code>: String<br><code>local_price</code>: Float<br><code>currency</code>: String<br><code>usd_price</code>: Float<br><code>reason</code>: String</td></tr>
 <tr><td><em>Autorenew settings</em></td><td></td><td></td></tr>
-<tr><td>Autorenew disabled</td><td><code>[Apphud] autorenew_disabled</code></td><td><code>product_id</code>: String<br><code>reason</code>: String</td></tr>
+<tr><td>Autorenew disabled</td><td><code>[Apphud] autorenew_disabled</code></td><td><code>product_id</code>: String</td></tr>
 <tr><td>Autorenew enabled</td><td><code>[Apphud] autorenew_enabled</code></td><td><code>product_id</code>: String</td></tr>
 </tbody>
 </table>
@@ -155,9 +155,9 @@
 <li><code>[Apphud] subscription_renewed</code>,</li>
 <li><code>[Apphud] subscription_refunded</code></li>
 </ul>
-<p>can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's built-in revenue tracking events. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. If you will be able to use Amplitude's built-in revenue tracking reports. By default this option is <strong>off</strong>, but you can enable this feature in integration settings:</p>
-<p><strong>// Картинка</strong></p>
-<p>This is parameters that are sent with these events:</p>
+<p>can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's built-in revenue tracking events. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. Using this you will be able to use Amplitude's built-in revenue tracking reports. By default this option is <strong>off</strong>, but you can enable this feature in integration settings:</p>
+<p><img src="/docs/assets/amplitude-revenue-tracking.png" alt="amplitude-revenue-tracking"></p>
+<p>These are parameters that are sent with these events:</p>
 <table>
 <thead>
 <tr><th>Parameter</th><th>Type</th><th>Description</th></tr>
@@ -187,4 +187,8 @@
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="sending-test-event"></a><a href="#sending-test-event" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending test event</h2>
+<p>You may send test event to Amplitude to check if integration is set up correctly. Click <em>&quot;…&quot;</em> and then in dropdown click on <em>&quot;Send test event&quot;</em>:</p>
+<p><img src="/docs/assets/amplitude-test-event.png" alt="amplitude-test-event"></p>
+<p>You will see new user under <em>&quot;User Look-Up&quot;</em> report:</p>
+<p><img src="/docs/assets/amplitude-test-event-received.png" alt="amplitude-test-event-received"></p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/integrations"><span class="arrow-prev">← </span><span>Integrations</span></a><a class="docs-next button" href="/docs/en/slack"><span>Slack</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-to-add-integration">How to add integration?</a></li><li><a href="#events">Events</a></li><li><a href="#user-properties">User properties</a></li><li><a href="#sending-test-event">Sending test event</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docs-footer-2.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Community</h5><a href="https://t.me/apphud_chat" target="_blank" rel="noreferrer noopener">Telegram Chat</a><a href="https://facebook.com/apphud/" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/apphud" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://github.com/apphud" target="_blank" rel="noreferrer noopener">GitHub</a></div></section><section class="copyright">Copyright © 2019 Softeam Inc.</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
