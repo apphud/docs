@@ -63,7 +63,7 @@ This is a table of all possible events and their parameters that are being sent 
 | Subscription expired | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
 | Subscription refunded | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
 | *Autorenew settings*              |                                  |                                                              |
-| Autorenew disabled         | `[Apphud] autorenew_disabled`    | `product_id`: String<br>`reason`: String                     |
+| Autorenew disabled         | `[Apphud] autorenew_disabled`    | `product_id`: String                     |
 | Autorenew enabled                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
 
 > Set up Subscription Status URL to receive `autorenew_disabled` and `autorenew_enabled` events in real-time. More information can be found [here](creating-app.md#subscription-status-url).
@@ -80,11 +80,11 @@ These events:
 * `[Apphud] subscription_renewed`,
 * `[Apphud] subscription_refunded` 
 
-can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's built-in revenue tracking events. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. If you will be able to use Amplitude's built-in revenue tracking reports. By default this option is __off__, but you can enable this feature in integration settings:
+can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's built-in revenue tracking events. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. Using this you will be able to use Amplitude's built-in revenue tracking reports. By default this option is __off__, but you can enable this feature in integration settings:
 
-**// Картинка**
+![amplitude-revenue-tracking](assets/amplitude-revenue-tracking.png)
 
-This is parameters that are sent with these events:
+These are parameters that are sent with these events:
 
 | Parameter     | Type    | Description                                                  |
 | ------------- | ------- | ------------------------------------------------------------ |
@@ -109,3 +109,10 @@ In the table below you can see the list of user properties that are sent to Ampl
 
 ## Sending test event
 
+You may send test event to Amplitude to check if integration is set up correctly. Click *"…"* and then in dropdown click on *"Send test event"*:
+
+![amplitude-test-event](assets/amplitude-test-event.png)
+
+You will see new user under *"User Look-Up"* report:
+
+![amplitude-test-event-received](assets/amplitude-test-event-received.png)

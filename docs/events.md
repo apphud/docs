@@ -2,13 +2,13 @@
 id: events
 title: Events
 ---
-In this section desribes events which are registered by Apphud and can be sent to third party analytics services and messengers.
+This section desribes events which are registered by Apphud and can be sent to third party analytics services and messengers.
 
 In some particular moments of time Apphud fetches from Apple information about auto-renewable subscriptions for each subscriber. It also registers corresponding events if needed and sends to third party analytics or messenger.
 
 ## Trial period
 
-Trial period – is a free trial period that every Apple ID user can enable just once within one subscription group.
+Trial period is a free trial period that every Apple ID user can enable just once within one subscription group.
 
 ### Trial period started 
 
@@ -38,11 +38,11 @@ Has the following expiration reasons:
 
 ## Introductory offer
 
-Introductory offer – is a discount that can be applied to new subscribers. Every Apple ID user can enable just once within one subscription group.
+Introductory offer is a discount that can be applied to new subscribers. Every Apple ID user can enable just once within one subscription group.
 
 > Trial Period is a subtype of introductory offer, but we moved it to a separate event.
 
-> You can read more about introductory offer types in our <a href="https://blog.apphud.com/ru/introductory-offers/" target="_blank">blog</a>.
+> You can read more about introductory offer types in our <a href="https://blog.apphud.com/introductory-offers-in-ios/" target="_blank">blog</a>.
 
 ### Introductory offer started
 
@@ -103,7 +103,7 @@ This event is created when subscription lapses.
 
 Event is sent to analytics under `subscription_expired` name.
 
-> Has the same set of expiration reasons as trial period.
+> Has the same set of expiration reasons as a trial period.
 
 ### Subscription refunded
 
@@ -139,4 +139,4 @@ Apphud regularly sends requests to App Store to update subscriptions state and t
 
 To set up Subscription Notifications from App Store follow [this guide](creating-app.md#subscription-status-url). We highly recommend enabling this feature to receive more accurate data.
 
-> Read more about Subscription Notifications in <a href="https://blog.apphud.com/ru/subscriptions-notifications-2/" target="_blank">our blog</a>.
+> Read more about Subscription Notifications in <a href="https://blog.apphud.com/subscriptions-notifications/" target="_blank">our blog</a>.

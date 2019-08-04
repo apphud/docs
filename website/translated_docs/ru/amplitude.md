@@ -59,7 +59,7 @@ Amplitude это мощная система мобильной аналитик
 | Неудачное продление подписки                                 | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
 | Возврат денег                                                | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
 | *Настройки авто-возобновления*                               |                                  |                                                              |
-| Отключение авто-возобновления                                | `[Apphud] autorenew_disabled`    | `product_id`: String<br>`reason`: String                     |
+| Отключение авто-возобновления                                | `[Apphud] autorenew_disabled`    | `product_id`: String                                         |
 | Включение авто-возобновления                                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
 
 > Настройте Subscription Status URL, чтобы своевременно получать события `autorenew_disabled` и `autorenew_enabled`. Более подробно о настройке можно почитать [здесь](creating-app.md#subscription-status-url).
@@ -78,7 +78,7 @@ Amplitude это мощная система мобильной аналитик
 
 могут опционально отправляться встроенные в Amplitude параметры, относящиеся к отслеживанию покупок. Более подробно можно почитать <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">здесь</a>. Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
 
-**// Картинка**
+![amplitude-revenue-tracking](assets/amplitude-revenue-tracking.png)
 
 Вот описание параметров, которые отсылаются вместе с этими событиями:
 
@@ -105,3 +105,10 @@ Amplitude это мощная система мобильной аналитик
 
 ## Отправка тестового события
 
+Вы можете протестировать интеграцию с Amplitude, отправив тестовое событие. Нажмите *"…"* и выберите *"Send test event"*:
+
+![amplitude-test-event](assets/amplitude-test-event.png)
+
+После этого вы увидите нового пользователя и событие в отчете *"User Look-Up"*:
+
+![amplitude-test-event-received](assets/amplitude-test-event-received.png)

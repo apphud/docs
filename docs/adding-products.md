@@ -15,7 +15,7 @@ Click on *“Add products group”*. The name of subscription group will be show
 
 ![adding-products-group](assets/adding-products-group.png)
 
-## Adding product
+## Adding a product
 
 To add a product click on *“Add a product”*. Enter your *Product ID* and click *“Create”*.
 

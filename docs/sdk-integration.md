@@ -49,7 +49,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 
 
-Api key – is a unique identifier of your Apphud application. You can get it in your Apphud application settings under `General` tab.
+API key is a unique identifier of your Apphud application. You can get it in your Apphud application settings under `General` tab.
 
 
 ## Sending Subscription Events
@@ -58,7 +58,7 @@ One of the main features of Apphud is tracking all subscription events: subscrip
 
 > See the list of all available events [here](events.md).
 
-All you need to implement when purchase is made:
+All you need is to implement when purchase is made:
 
 ```swift
 // when purchase is completed
@@ -71,7 +71,7 @@ This will automatically send App Store receipt, validate it and return a subscri
 
 ## About Currencies
 
-US Dollar – is a base currency in Apphud. All transactions are automatically converted to USD by the exchange rates at the time of event.
+US Dollar is a base currency in Apphud. All transactions are automatically converted to USD by the exchange rates at the time of event.
 
 ## Restoring Purchases
 
@@ -110,7 +110,7 @@ There are two cases when this delegate method is called:
 *  when subscriptions are restored.
 * when one of subscription's state has been changed. For example, if state has changed from `trial` to `regular`.
 
-Apphud SDK fetches latest subscription information once during launch and after purchase/restore methods.
+Apphud SDK fetches the latest subscription information once during launch and after purchase/restore methods.
 
 #### Change of `userID`.
 
@@ -173,7 +173,7 @@ Apphud.start(apiKey: "YOUR_API_KEY", userID: "YOUR_OWN_USER_ID")
 Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 ```
 
-Or can be done later:
+Or this can be done later:
 
 ```swift
 // if authenticated

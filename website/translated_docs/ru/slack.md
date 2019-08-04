@@ -48,7 +48,7 @@
 | Неудачное продление подписки                                 | `Subscription Expired`       | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
 | Возврат денег                                                | `Subscription Refunded`      |                                                              |
 | *Настройки авто-возобновления*                               |                              |                                                              |
-| Отключение авто-возобновления                                | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
+| Отключение авто-возобновления                                | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`   |
 | Включение авто-возобновления                                 | `[Apphud] autorenew_enabled` |                                                              |
 
 > Настройте Subscription Status URL, чтобы своевременно получать события `autorenew_disabled` и `autorenew_enabled`. Более подробно о настройке можно почитать [здесь](creating-app.md#subscription-status-url).

@@ -6,7 +6,7 @@ In this section we will show how to test auto-renewable subscriptions in your ap
 
 ## Create sandbox account
 
-> You can read more about testing and setting up auto-renewable subscriptions in <a href="https://blog.apphud.com/ru/swift-tutorial-subscriptions-ru/" target="_blank">our blog</a>.
+> You can read more about testing and setting up auto-renewable subscriptions in <a href="https://blog.apphud.com/swift-tutorial-subscriptions/" target="_blank">our blog</a>.
 
 To test in app purchases you need to create sandbox user. Go to <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a> and open *"Users and Access"*, then – *"Sandbox Testers"*.
 

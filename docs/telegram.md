@@ -63,7 +63,7 @@ This is a table of all possible events and their parameters that are being sent 
 | Subscription expired                                         | `Subscription Expired`       | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
 | Subscription refunded                                        | `Subscription Refunded`      |                                                              |
 | *Autorenew settings*                                         |                              |                                                              |
-| Autorenew disabled                                           | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
+| Autorenew disabled                                           | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`   |
 | Autorenew enabled                                            | `[Apphud] autorenew_enabled` |                                                              |
 
 > Set up Subscription Status URL to receive `autorenew_disabled` and `autorenew_enabled` events in real-time. More information can be found [here](creating-app.md#subscription-status-url).
