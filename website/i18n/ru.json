@@ -7,6 +7,27 @@
     "docs": {
       "welcome": {
         "title": "Добро Пожаловать"
+      },
+      "creating-app": {
+          "title": "Добавление Приложения"
+      },
+      "adding-products": {
+          "title": "Добавление Продуктов"
+      },
+      "events": {
+          "title": "События"
+      },
+      "Integrations": {
+          "title": "Интеграции"
+      },
+      "sandbox": {
+          "title": "Тестирование Покупок"
+      },
+      "sdk-integration": {
+          "title": "Интеграция SDK"
+      },
+      "user-data": {
+          "title": "Дополнительные Данные"
       }
     },
     "links": {
@@ -16,7 +37,10 @@
     "categories": {
       "Docusaurus": "Docusaurus",
       "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Second Category": "Second Category",
+      "Getting Started" : "Начало Работы",
+      "Integrations" : "Интеграции",
+      "Other" : "Прочее"
     }
   },
   "pages-strings": {
