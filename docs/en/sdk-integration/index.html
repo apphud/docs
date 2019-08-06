@@ -91,7 +91,9 @@
 <h4><a class="anchor" aria-hidden="true" id="manual-installation"></a><a href="#manual-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manual Installation</h4>
 <p>Copy all files in <code>Source</code> folder to your project.</p>
 <h2><a class="anchor" aria-hidden="true" id="configure-apphud-sdk"></a><a href="#configure-apphud-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure Apphud SDK</h2>
-<p>Initialize Apphud SDK at your AppDelegate:</p>
+<p>To set up Apphud SDK you will need API Key. It is a unique identifier of your Apphud application. You can get it in your Apphud application settings under <code>General</code> tab.</p>
+<p><img src="/docs/assets/sdk-token.png" alt="API-key"></p>
+<p>Basic initialization looks like this:</p>
 <pre><code class="hljs css language-swift"><span class="hljs-keyword">import</span> apphud
 
 <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: <span class="hljs-keyword">Any</span>]?)</span></span> -&gt; <span class="hljs-type">Bool</span> {
@@ -102,7 +104,7 @@
   <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
 }
 </code></pre>
-<p>API key is a unique identifier of your Apphud application. You can get it in your Apphud application settings under <code>General</code> tab.</p>
+<p>However if you want to use Integrations, you will need to update the code to set user identifier. See the bottom of this guide for details.</p>
 <h2><a class="anchor" aria-hidden="true" id="sending-subscription-events"></a><a href="#sending-subscription-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sending Subscription Events</h2>
 <p>One of the main features of Apphud is tracking all subscription events: subscription started, renewed, expired, refunded, autorenew disabled, trial converted and many other.</p>
 <blockquote>
