@@ -33,7 +33,11 @@ Copy all files in `Source` folder to your project.
 
 ## Configure Apphud SDK
 
-Initialize Apphud SDK at your AppDelegate:
+To set up Apphud SDK you will need API Key. It is a unique identifier of your Apphud application. You can get it in your Apphud application settings under `General` tab.
+
+![API-key](assets/sdk-token.png)
+
+Basic initialization looks like this:
 
 ```swift
 import apphud
@@ -47,9 +51,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-
-
-API key is a unique identifier of your Apphud application. You can get it in your Apphud application settings under `General` tab.
+However if you want to use Integrations, you will need to update the code to set user identifier. See the bottom of this guide for details.
 
 
 ## Sending Subscription Events
