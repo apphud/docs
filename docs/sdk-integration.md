@@ -183,3 +183,19 @@ Apphud.updateUserID("YOUR_OWN_USER_ID")
 Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 ```
 
+
+
+# Migrate existing subscribers
+
+If you already have an app with active subscribers and you want Apphud to track their subscriptions, you should submit their App Store receipts to Apphud at the first launch.
+
+You can submit App Store receipt using `restoreSubscriptions()` method at any time after launch. You should also toggle a boolean value to avoid re-sending receipt at the next launch.
+
+```swift
+// isSubscriber - is your boolean value from your own purchase tracking code
+if isSubscriber && !UserDefaults.standard.bool(forKey: "SubscriberReceiptSubmitted") {
+	Apphud.restoreSubscriptions()
+  UserDefaults.standard.set(true, forKey: "SubscriberReceiptSubmitted")
+}
+```
+

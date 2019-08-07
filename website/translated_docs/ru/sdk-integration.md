@@ -185,3 +185,19 @@ Apphud.updateUserID("YOUR_OWN_USER_ID")
 Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 ```
 
+
+
+# Перенос платящих пользователей
+
+Если у вас уже есть приложение с существующими платящими пользователями и вы хотите, чтобы Apphud отслеживал их подписки, вам следует отправить чеки этих пользователей при первом запуске.
+
+Вы можете отправить App Store чек, используя метод `restoreSubscriptions()` при первом запуске. Так же добавьте булевский флаг для избежания повторной отправки чека:
+
+```swift
+// isSubscriber - is your boolean value from your own purchase tracking code
+if isSubscriber && !UserDefaults.standard.bool(forKey: "SubscriberReceiptSubmitted") {
+	Apphud.restoreSubscriptions()
+  UserDefaults.standard.set(true, forKey: "SubscriberReceiptSubmitted")
+}
+```
+
