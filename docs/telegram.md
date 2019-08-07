@@ -41,30 +41,30 @@ Receive events about subscriptions in Telegram using Webhook URL.
 
 ## Events
 
-This is a table of all possible events and their parameters that are being sent to Telegram.
+This is a table of all possible events that are being sent to Telegram.
 
-> You can get more details regarding events [here](events.md) and event parameters description - [here](integrations.md).
+> You can get more details regarding events [here](events.md).
 
-| Event                                                        | Default Name                 | Parameters                                                   |
-| ------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------ |
-| *Trial Period*                                               |                              |                                                              |
-| Trial period started                                         | `Trial Started`              | `app_name`<br>`group_name`<br>`product_id`<br>`user_id`      |
-| Successful conversion from trial period to regular subscription | `Trial Converted`            | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br>`price_description` |
-| Failed conversion from trial period to regular subscription  | `Trial Expired`              |                                                              |
-| *Introductory offer*                                         |                              |                                                              |
-| Introductory offer started                                   | `Intro Started`              |                                                              |
-| Introductory offer renewed                                   | `Intro Renewed`              |                                                              |
-| Successful conversion from introductory offer to regular subscription | `Intro Converted`            |                                                              |
-| Failed conversion from introductory offer to regular subscription or failed renew | `Intro Expired`              |                                                              |
-| Refund during introductory offer                             | `Intro Refunded`             |                                                              |
-| *Regular subscription*                                       |                              |                                                              |
-| Subscription started                                         | `Subscription Started`       |                                                              |
-| Subscription renewed                                         | `Sbscription Renewed`        | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`price_description` |
-| Subscription expired                                         | `Subscription Expired`       | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`<br/>`reason` |
-| Subscription refunded                                        | `Subscription Refunded`      |                                                              |
-| *Autorenew settings*                                         |                              |                                                              |
-| Autorenew disabled                                           | `Autorenew Disabled`         | `app_name`<br/>`group_name`<br/>`product_id`<br/>`user_id`   |
-| Autorenew enabled                                            | `[Apphud] autorenew_enabled` |                                                              |
+| Event                                                        | Default Name            |
+| ------------------------------------------------------------ | ----------------------- |
+| *Trial Period*                                               |                         |
+| Trial period started                                         | `Trial Started`         |
+| Successful conversion from trial period to regular subscription | `Trial Converted`       |
+| Failed conversion from trial period to regular subscription  | `Trial Expired`         |
+| *Introductory offer*                                         |                         |
+| Introductory offer started                                   | `Intro Started`         |
+| Introductory offer renewed                                   | `Intro Renewed`         |
+| Successful conversion from introductory offer to regular subscription | `Intro Converted`       |
+| Failed conversion from introductory offer to regular subscription or failed renew | `Intro Expired`         |
+| Refund during introductory offer                             | `Intro Refunded`        |
+| *Regular subscription*                                       |                         |
+| Subscription started                                         | `Subscription Started`  |
+| Subscription renewed                                         | `Subscription Renewed`  |
+| Subscription expired                                         | `Subscription Expired`  |
+| Subscription refunded                                        | `Subscription Refunded` |
+| *Autorenew settings*                                         |                         |
+| Autorenew disabled                                           | `Autorenew Disabled`    |
+| Autorenew enabled                                            | `Autorenew Enabled`     |
 
 > Set up Subscription Status URL to receive `autorenew_disabled` and `autorenew_enabled` events in real-time. More information can be found [here](creating-app.md#subscription-status-url).
 
