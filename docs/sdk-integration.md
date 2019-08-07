@@ -185,7 +185,7 @@ Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 
 
 
-# Migrate existing subscribers
+## Migrate existing subscribers
 
 If you already have an app with active subscribers and you want Apphud to track their subscriptions, you should submit their App Store receipts to Apphud at the first launch.
 
