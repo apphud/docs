@@ -111,33 +111,33 @@
 </ol>
 <p><img src="/docs/assets/telegram-save.png" alt="telegram-save"></p>
 <h2><a class="anchor" aria-hidden="true" id="events"></a><a href="#events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Events</h2>
-<p>This is a table of all possible events and their parameters that are being sent to Telegram.</p>
+<p>This is a table of all possible events that are being sent to Telegram.</p>
 <blockquote>
-<p>You can get more details regarding events <a href="/docs/en/events">here</a> and event parameters description - <a href="/docs/en/integrations">here</a>.</p>
+<p>You can get more details regarding events <a href="/docs/en/events">here</a>.</p>
 </blockquote>
 <table>
 <thead>
-<tr><th>Event</th><th>Default Name</th><th>Parameters</th></tr>
+<tr><th>Event</th><th>Default Name</th></tr>
 </thead>
 <tbody>
-<tr><td><em>Trial Period</em></td><td></td><td></td></tr>
-<tr><td>Trial period started</td><td><code>Trial Started</code></td><td><code>app_name</code><br><code>group_name</code><br><code>product_id</code><br><code>user_id</code></td></tr>
-<tr><td>Successful conversion from trial period to regular subscription</td><td><code>Trial Converted</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br><code>price_description</code></td></tr>
-<tr><td>Failed conversion from trial period to regular subscription</td><td><code>Trial Expired</code></td><td></td></tr>
-<tr><td><em>Introductory offer</em></td><td></td><td></td></tr>
-<tr><td>Introductory offer started</td><td><code>Intro Started</code></td><td></td></tr>
-<tr><td>Introductory offer renewed</td><td><code>Intro Renewed</code></td><td></td></tr>
-<tr><td>Successful conversion from introductory offer to regular subscription</td><td><code>Intro Converted</code></td><td></td></tr>
-<tr><td>Failed conversion from introductory offer to regular subscription or failed renew</td><td><code>Intro Expired</code></td><td></td></tr>
-<tr><td>Refund during introductory offer</td><td><code>Intro Refunded</code></td><td></td></tr>
-<tr><td><em>Regular subscription</em></td><td></td><td></td></tr>
-<tr><td>Subscription started</td><td><code>Subscription Started</code></td><td></td></tr>
-<tr><td>Subscription renewed</td><td><code>Sbscription Renewed</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>price_description</code></td></tr>
-<tr><td>Subscription expired</td><td><code>Subscription Expired</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code><br/><code>reason</code></td></tr>
-<tr><td>Subscription refunded</td><td><code>Subscription Refunded</code></td><td></td></tr>
-<tr><td><em>Autorenew settings</em></td><td></td><td></td></tr>
-<tr><td>Autorenew disabled</td><td><code>Autorenew Disabled</code></td><td><code>app_name</code><br/><code>group_name</code><br/><code>product_id</code><br/><code>user_id</code></td></tr>
-<tr><td>Autorenew enabled</td><td><code>[Apphud] autorenew_enabled</code></td><td></td></tr>
+<tr><td><em>Trial Period</em></td><td></td></tr>
+<tr><td>Trial period started</td><td><code>Trial Started</code></td></tr>
+<tr><td>Successful conversion from trial period to regular subscription</td><td><code>Trial Converted</code></td></tr>
+<tr><td>Failed conversion from trial period to regular subscription</td><td><code>Trial Expired</code></td></tr>
+<tr><td><em>Introductory offer</em></td><td></td></tr>
+<tr><td>Introductory offer started</td><td><code>Intro Started</code></td></tr>
+<tr><td>Introductory offer renewed</td><td><code>Intro Renewed</code></td></tr>
+<tr><td>Successful conversion from introductory offer to regular subscription</td><td><code>Intro Converted</code></td></tr>
+<tr><td>Failed conversion from introductory offer to regular subscription or failed renew</td><td><code>Intro Expired</code></td></tr>
+<tr><td>Refund during introductory offer</td><td><code>Intro Refunded</code></td></tr>
+<tr><td><em>Regular subscription</em></td><td></td></tr>
+<tr><td>Subscription started</td><td><code>Subscription Started</code></td></tr>
+<tr><td>Subscription renewed</td><td><code>Subscription Renewed</code></td></tr>
+<tr><td>Subscription expired</td><td><code>Subscription Expired</code></td></tr>
+<tr><td>Subscription refunded</td><td><code>Subscription Refunded</code></td></tr>
+<tr><td><em>Autorenew settings</em></td><td></td></tr>
+<tr><td>Autorenew disabled</td><td><code>Autorenew Disabled</code></td></tr>
+<tr><td>Autorenew enabled</td><td><code>Autorenew Enabled</code></td></tr>
 </tbody>
 </table>
 <blockquote>
