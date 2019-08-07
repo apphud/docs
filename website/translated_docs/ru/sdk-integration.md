@@ -13,7 +13,7 @@ Apphud SDK может быть установлен через CocoaPods или 
 Добавьте эту строку в Podfile:
 
 ```ruby
-pod 'apphud'
+pod 'ApphudSDK'
 ```
 
 И выполните в терминале:
@@ -35,7 +35,7 @@ API-ключ – это уникальный идентификатор ваше
 Базовая инициализация SDK выглядит так:
 
 ```swift
-import apphud
+import ApphudSDK
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 	

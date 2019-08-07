@@ -17,7 +17,7 @@ Apphud SDK can be installed via CocoaPods or manually.
 Add the following line to your Podfile:
 
 ```ruby
-pod 'apphud'
+pod 'ApphudSDK'
 ```
 
 And then run in the Terminal:
@@ -40,7 +40,7 @@ To set up Apphud SDK you will need API Key. It is a unique identifier of your Ap
 Basic initialization looks like this:
 
 ```swift
-import apphud
+import ApphudSDK
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 	
