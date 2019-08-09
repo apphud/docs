@@ -23,7 +23,7 @@ At the app page find *“Your Bundle ID”*.
 To get shared secret:
 
 1. Open <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, go to my *“My Apps”* and choose your app.
-2. Go to *"Functions"* and select *“In-App Purchases”*.
+2. Go to *"Features"* and select *“In-App Purchases”*.
 3. Click on *“View Shared Secret”*. Generate a new one if you don't have it yet.
 
 ## Subscription Status URL
