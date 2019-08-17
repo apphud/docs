@@ -14,11 +14,17 @@
       "creating-app": {
         "title": "Adding New App"
       },
+      "dashboard": {
+        "title": "Dashboard"
+      },
       "events": {
         "title": "Events"
       },
       "integrations": {
         "title": "Integrations"
+      },
+      "mixpanel": {
+        "title": "Mixpanel"
       },
       "sandbox": {
         "title": "Testing Purchases"
@@ -46,6 +52,7 @@
     "categories": {
       "Getting Started": "Getting Started",
       "Integrations": "Integrations",
+      "Analyze": "Analyze",
       "Other": "Other"
     }
   },
