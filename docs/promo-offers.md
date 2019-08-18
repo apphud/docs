@@ -1,18 +1,14 @@
----
-id: promo-offers
-title: Subscription Offers
----
-Apps with auto-renewable subscriptions can offer a discounted price or free trial period for existing or lapsed customers. This feature is called subscription promotional offers and is available for users with iOS 12.2. Unlike introductory offer, subscription offers can be applied as many times as you decide but requires generating a signature on your server before purchasing. However Apphud does everything for you.
+Apps with auto-renewable subscriptions can offer a discounted price or free period for existing or lapsed customers. This feature is called subscription offers and is available for users with iOS 12.2 or higher. Unlike introductory offer, subscription offers can be applied as many times as you decide but requires generating a signature on your server before purchasing. Apphud does the job for you.
 
 
 
-## Set up promotional offers in App Store Connect
+## Set up Subscription Offers in App Store Connect
 
 To create a new subscription offer go to [App Store Connect](https://appstoreconnect.apple.com), then go to your app's subscription product page. Click on the "+" option under *Subscription Prices* and then click on *Create Promotional Offer*.
 
 ![](assets/promo-offers-1.jpg)
 
-You will need to specify Reference Name, which is just title, and Promotional Offer Product Code, which is actually your promotional offer identifier. 
+You will need to specify Reference Name, which is just a title, and Promotional Offer Product Code, which is actually your offer's identifier. 
 
 ![](assets/promo-offers-2.jpg)
 
@@ -30,15 +26,15 @@ Don't forget to save changes.
 
 ## Subscription Keys
 
-As being said above, a special signature must be generated before purchasing subscription offer. Apphud will do job, but you will need to create subscription key and upload it to Apphud.
+As being said above, a special signature must be generated before purchasing subscription offer. Apphud will do the job, but you will need to create subscription key and upload it to Apphud.
 
-Go to *Users and Access* section, then select *Keys* tab. If you don't have any subscription keys, click on '*Generate Subscription Key*'. You will be prompted to enter it's name.
+Go to *Users and Access* section, then select *Keys* tab. If you don't have any subscription keys, click on *Generate Subscription Key*. You will be prompted to enter it's name.
 
 ![](assets/promo-offers-3.jpg)
 
-Once created, click on '*Download API Key*' and move downloaded file to the safe place. You will need to upload it to Apphud. 
+Once created, click on *Download API Key* and move downloaded file to the safe place. You will need to upload it to Apphud. 
 
-> Subscription Key file is .p8 file with the following name: SubscriptionKey_[KEY_ID].p8, where KEY_ID is your Subscription Key Identifier. **Please do not rename the file**.
+> Subscription Key file name has the following format: SubscriptionKey_[KEY_ID].p8, where KEY_ID is your Key Identifier. **Please do not rename the file**.
 
 
 
@@ -56,7 +52,7 @@ Go to [Apphud Dashboard](https://app.apphud.com) and open *App settings*, there 
 
 You decide the criteria for which subscribers qualify for an offer. In your app, the details of the offers you set up in App Store Connect will appear in the `discounts` array in `SKProduct` object.
 
-Once user decided to redeem promotional offer, call a method from Apphud SDK to generate a signature:
+Once a customer decided to redeem promotional offer, call a method from Apphud SDK to generate a signature:
 
 ```swift
 @available(iOS 12.2, *)
@@ -85,3 +81,4 @@ There is also a method in Apphud SDK to make a purchase with subscription offer:
         }
     }
 ```
+
