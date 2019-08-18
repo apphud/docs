@@ -29,6 +29,7 @@ This is a list of all available parameters that are sent with events:
 | `usd_price`         | The cost of the product in USD                               |
 | `price_description` | Price description in following format: `local_price` `currency` ~ `usd_price`, for example: 499 RUR ~ 7.8 USD |
 | `reason`            | 1. The reason of an expiration of a subscription. Possible values: `user_canceled`, `billing_issue`, `declined_price_increase`, `unavailable_product`, `unknown_error`<br/><br/>2. The reason of refund. Possible values: `app_issue`, `another_reason` |
+| `offer_id`          | Promotional offer identifier                                 |
 | `offer_type`        | Introductory or promotional offer payment mode, if applied. Possible values: `pay_up_front`, `pay_as_you_go`, `trial` (for promotional offers) |
 | `app_name`          | App name                                                     |
 | `user_id`           | User identifier                                              |

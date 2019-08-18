@@ -63,11 +63,11 @@ This is a table of all possible events and their parameters that are being sent 
 | Subscription expired | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
 | Subscription refunded | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
 | *Promotional offer* |  |  |
-| Promotional offer started | `[Apphud] promo_started` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
-| Promotional offer renewed | `[Apphud] promo_renewed` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
-| Successful conversion from promotional offer to regular subscription | `[Apphud] promo_converted` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
-| Failed conversion from promotional offer to regular subscription or failed renew | `[Apphud] promo_expired` | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
-| Refund during promotional offer | `[Apphud] promo_refunded` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
+| Promotional offer started | `[Apphud] promo_started` | `product_id`: String<br/>`offer_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Promotional offer renewed | `[Apphud] promo_renewed` | `product_id`: String<br/>`offer_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Successful conversion from promotional offer to regular subscription | `[Apphud] promo_converted` | `product_id`: String<br/>`offer_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
+| Failed conversion from promotional offer to regular subscription or failed renew | `[Apphud] promo_expired` | `product_id`: String<br/>`offer_id`: String<br/>`reason`: String<br>`offer_type`: String |
+| Refund during promotional offer | `[Apphud] promo_refunded` | `product_id`: String<br/>`offer_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
 | *Autorenew settings*              |                                  |                                                              |
 | Autorenew disabled         | `[Apphud] autorenew_disabled`    | `product_id`: String                     |
 | Autorenew enabled                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
