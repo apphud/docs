@@ -127,7 +127,7 @@ There are 2 cases when this method gets called:
 * when user has restored subsciption from his another device.
 * after manual call of `updateUserID(userID : String)` method. 
 
-## User identifier
+## User Identifier
 
 There are two identifiers in Apphud SDK: device identifier and user identifier. 
 
@@ -185,7 +185,7 @@ Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 
 
 
-## Migrate existing subscribers
+## Migrate Existing Subscribers
 
 If you already have an app with active subscribers and you want Apphud to track their subscriptions, you should submit their App Store receipts to Apphud at the first launch.
 

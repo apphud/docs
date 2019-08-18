@@ -6,28 +6,34 @@
     "tagline": "A website for testing",
     "docs": {
       "welcome": {
-        "title": "Добро Пожаловать"
+        "title": "Добро пожаловать"
       },
       "creating-app": {
-          "title": "Добавление Приложения"
+          "title": "Добавление приложения"
       },
       "adding-products": {
-          "title": "Добавление Продуктов"
+          "title": "Добавление продуктов"
       },
       "events": {
           "title": "События"
       },
-      "Integrations": {
+      "integrations": {
           "title": "Интеграции"
       },
       "sandbox": {
-          "title": "Тестирование Покупок"
+          "title": "Тестирование покупок"
       },
       "sdk-integration": {
           "title": "Интеграция SDK"
       },
+      "dashboard": {
+          "title": "Дашборд"
+      },
+      "promo-offers": {
+          "title": "Промо-предложения"
+      },
       "user-data": {
-          "title": "Дополнительные Данные"
+          "title": "Дополнительные данные"
       }
     },
     "links": {
@@ -40,11 +46,10 @@
     },
     "categories": {
       "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category",
-      "Getting Started" : "Начало Работы",
+      "Getting Started" : "Начало работы",
       "Integrations" : "Интеграции",
-      "Other" : "Прочее"
+      "Other" : "Прочее",
+      "Analyze" : "Аналитика"
     }
   },
   "pages-strings": {

@@ -58,6 +58,12 @@ Mixpanel это мощная система мобильной аналитик�
 | Успешное продление подписки                                  | `[Apphud] subscription_renewed`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
 | Неудачное продление подписки                                 | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
 | Возврат денег                                                | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
+| *Промо-предложение*                                          |                                  |                                                              |
+| Оформление промо-предложения                                 | `[Apphud] promo_started`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Успешное продление промо-предложения                         | `[Apphud] promo_renewed`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Успешная конвертация промо-предложения в обычную подписку    | `[Apphud] promo_converted`       | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
+| Неудачная конвертация промо-предложения в обычную подписку   | `[Apphud] promo_expired`         | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
+| Возврат денег в пределах промо-предложения                   | `[Apphud] promo_refunded`        | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
 | *Настройки авто-возобновления*                               |                                  |                                                              |
 | Отключение авто-возобновления                                | `[Apphud] autorenew_disabled`    | `product_id`: String                                         |
 | Включение авто-возобновления                                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
@@ -67,16 +73,20 @@ Mixpanel это мощная система мобильной аналитик�
 
 Вместе с событиями:
 
-* `[Apphud] trial_converted`,
-* `[Apphud] intro_started`,
-* `[Apphud] intro_renewed`,
-* `[Apphud] intro_converted`,
-* `[Apphud] intro_refunded`,
-* `[Apphud] subscription_started` 
-* `[Apphud] subscription_renewed`,
-* `[Apphud] subscription_refunded` 
+- `[Apphud] trial_converted`,
+- `[Apphud] intro_started`,
+- `[Apphud] intro_renewed`,
+- `[Apphud] intro_converted`,
+- `[Apphud] intro_refunded`,
+- `[Apphud] subscription_started` 
+- `[Apphud] subscription_renewed`,
+- `[Apphud] subscription_refunded`,
+- `[Apphud] promo_started`,
+- `[Apphud] promo_renewed`,
+- `[Apphud] promo_converted`,
+- `[Apphud] promo_refunded`,
 
-могут опционально отправляться встроенные в Mixpanel данные о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
+могут опционально отправляться **встроенные в Mixpanel данные о выручке**. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
 
 ![mixpanel-revenue-tracking](assets/mixpanel-revenue-tracking.png)
 

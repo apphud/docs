@@ -8,7 +8,7 @@ To create a new app, click on "Add new app" at the top:
 
 Or just register and application create screens will show automatically. Fill the information about the app.
 
-## App name
+## App Name
 
 This is a name of the app that will be used in reports.
 
@@ -18,7 +18,7 @@ To get Bunde ID open <a href="https://appstoreconnect.apple.com/" target="_blank
 
 At the app page find *“Your Bundle ID”*.
 
-## App Store shared secret
+## App Store Shared Secret
 
 To get shared secret:
 

@@ -4,7 +4,7 @@ title: Amplitude
 ---
 Amplitude is a powerful mobile analytics service. Send events to Amplitude via Apphud, analyze your users behavior and make necessary desicions.
 
-## How to add integration? 
+## How to Add Integration? 
 
 1. Open <a href="https://analytics.amplitude.com/" target="_blank">Amplitude</a> and sign in.
 2. Click on *"Manage Data"* at the bottom of the screen:
@@ -62,6 +62,12 @@ This is a table of all possible events and their parameters that are being sent 
 | Subscription renewed     | `[Apphud] subscription_renewed`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
 | Subscription expired | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
 | Subscription refunded | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
+| *Promotional offer* |  |  |
+| Promotional offer started | `[Apphud] promo_started` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Promotional offer renewed | `[Apphud] promo_renewed` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Successful conversion from promotional offer to regular subscription | `[Apphud] promo_converted` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
+| Failed conversion from promotional offer to regular subscription or failed renew | `[Apphud] promo_expired` | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
+| Refund during promotional offer | `[Apphud] promo_refunded` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
 | *Autorenew settings*              |                                  |                                                              |
 | Autorenew disabled         | `[Apphud] autorenew_disabled`    | `product_id`: String                     |
 | Autorenew enabled                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
@@ -71,16 +77,20 @@ This is a table of all possible events and their parameters that are being sent 
 
 These events:
 
-* `[Apphud] trial_converted`,
-* `[Apphud] intro_started`,
-* `[Apphud] intro_renewed`,
-* `[Apphud] intro_converted`,
-* `[Apphud] intro_refunded`,
-* `[Apphud] subscription_started` 
-* `[Apphud] subscription_renewed`,
-* `[Apphud] subscription_refunded` 
+- `[Apphud] trial_converted`,
+- `[Apphud] intro_started`,
+- `[Apphud] intro_renewed`,
+- `[Apphud] intro_converted`,
+- `[Apphud] intro_refunded`,
+- `[Apphud] subscription_started` 
+- `[Apphud] subscription_renewed`,
+- `[Apphud] subscription_refunded`,
+- `[Apphud] promo_started`,
+- `[Apphud] promo_renewed`,
+- `[Apphud] promo_converted`,
+- `[Apphud] promo_refunded`,
 
-can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's built-in revenue tracking events. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. Using this you will be able to use Amplitude's built-in revenue tracking reports. By default this option is __off__, but you can enable this feature in integration settings:
+can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's **built-in revenue tracking events**. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. Using this you will be able to use Amplitude's built-in revenue tracking reports. By default this option is __off__, but you can enable this feature in integration settings:
 
 ![amplitude-revenue-tracking](assets/amplitude-revenue-tracking.png)
 
@@ -91,9 +101,9 @@ These are parameters that are sent with these events:
 | `productID`   | String  | Product ID                                                   |
 | `quantity`    | Integer | Quantity of products. *Always equals 1*                      |
 | `price`       | Float   | The price of purchase in US dollars.                         |
-| `revenueType` | String  | Name of event. Possible value:<br>`trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded` |
+| `revenueType` | String  | Name of event. Possible value:<br/>`trial_converted`,<br/>`intro_started`,<br/>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br/>`subscription_renewed`,<br/>`subscription_refunded`,<br/>`promo_started`,<br/>`promo_renewed`,<br/>`promo_converted`,<br/>`promo_refunded` |
 
-## User properties
+## User Properties
 
 In the table below you can see the list of user properties that are sent to Amplitude.
 
@@ -107,7 +117,7 @@ In the table below you can see the list of user properties that are sent to Ampl
 | `[Apphud] paying`               | Boolean |
 | `[Apphud] payments_count`       | Integer |
 
-## Sending test event
+## Sending Test Event
 
 You may send test event to Amplitude to check if integration is set up correctly. Click *"…"* and then in dropdown click on *"Send test event"*:
 

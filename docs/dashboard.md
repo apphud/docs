@@ -9,23 +9,23 @@ View metrics of your app in a convenient dashboard.
 > These metrics are real-time.
 >
 
-### Active subscriptions
+### Active Subscriptions
 
 Number of currently active subscriptions: trials, introductory and promotional offers and regular subscriptions. You can also see a number of subscriptions with autorenew enabled and disabled.
 
-### Active trials
+### Active Trials
 
 Number of currently active subscriptions in trial period. You can also see a number of subscriptions with autorenew enabled and disabled.
 
-### Active intro offers
+### Active Intro Offers
 
 Number of currently active subscriptions in introductory period. You can also see a number of subscriptions with autorenew enabled and disabled.
 
-### Total users
+### Total Users
 
 Total count of users, registered by Apphud.
 
-## Key metrics
+## Key Metrics
 
 > Metrics below are being calculated using selected time interval.
 >
@@ -34,15 +34,15 @@ Total count of users, registered by Apphud.
 
 App revenue for selected period.
 
-### New active subscriptions
+### New Active Subscriptions
 
 Number of subscriptions created within selected period that are still active. Includes trials, introductory and promotional offers and regular subscriptions.
 
-### New trials
+### New Trials
 
 Number of trials activated within selected period.
 
-### Failed charges
+### Failed Charges
 
 Number of subscription suspensions due to billing issue within selected period.
 

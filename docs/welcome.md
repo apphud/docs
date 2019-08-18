@@ -11,7 +11,7 @@ Apphud is a tool for tracking iOS auto-renewable subscriptions. Android will be 
 - View information about each user, his revenue, transactions history and subscription status.
 - Our SDK is lightweight, safe and open-source.
 
-## Getting started
+## Getting Started
 
 1. Register in Apphud, [create an app](creating-app.md) and get API key.
 2. [Add products](adding-products.md) in application settings.

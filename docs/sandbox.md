@@ -4,7 +4,7 @@ title: Testing Purchases
 ---
 In this section we will show how to test auto-renewable subscriptions in your app.
 
-## Create sandbox account
+## Create Sandbox Account
 
 > You can read more about testing and setting up auto-renewable subscriptions in <a href="https://blog.apphud.com/swift-tutorial-subscriptions/" target="_blank">our blog</a>.
 
@@ -34,7 +34,7 @@ Purchasing process is the same as real in-app purchases. The only differency is 
 
 If after purchase in Apphud you can see a user with active subscription, it means that payment process work correctly.
 
-## Which events can be tested in sandbox?
+## Which Events Can Be Tested in Sandbox?
 
 You can test following events in sandbox:
 
@@ -44,6 +44,10 @@ You can test following events in sandbox:
 - Intro Converted
 - Intro Renewed
 - Intro Expired (if payment mode is "Pay as you go" and number of introductory periods is *at least six*)
+- Promo Started
+- Promo Converted
+- Promo Renewed
+- Promo Expired
 - Subscription Started
 - Subscription Renewed
 - Subscription Expired

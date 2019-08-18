@@ -58,6 +58,12 @@ Amplitude это мощная система мобильной аналитик
 | Успешное продление подписки                                  | `[Apphud] subscription_renewed`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
 | Неудачное продление подписки                                 | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
 | Возврат денег                                                | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
+| *Промо-предложение*                                          |                                  |                                                              |
+| Оформление промо-предложения                                 | `[Apphud] promo_started`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Успешное продление промо-предложения                         | `[Apphud] promo_renewed`         | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Успешная конвертация промо-предложения в обычную подписку    | `[Apphud] promo_converted`       | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
+| Неудачная конвертация промо-предложения в обычную подписку   | `[Apphud] promo_expired`         | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
+| Возврат денег в пределах промо-предложения                   | `[Apphud] promo_refunded`        | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
 | *Настройки авто-возобновления*                               |                                  |                                                              |
 | Отключение авто-возобновления                                | `[Apphud] autorenew_disabled`    | `product_id`: String                                         |
 | Включение авто-возобновления                                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
@@ -74,9 +80,13 @@ Amplitude это мощная система мобильной аналитик
 * `[Apphud] intro_refunded`,
 * `[Apphud] subscription_started` 
 * `[Apphud] subscription_renewed`,
-* `[Apphud] subscription_refunded` 
+* `[Apphud] subscription_refunded`,
+* `[Apphud] promo_started`,
+* `[Apphud] promo_renewed`,
+* `[Apphud] promo_converted`,
+* `[Apphud] promo_refunded`,
 
-могут опционально отправляться встроенные в Amplitude параметры, относящиеся к отслеживанию покупок. Более подробно можно почитать <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">здесь</a>. Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
+могут опционально отправляться **встроенные в Amplitude параметры, относящиеся к отслеживанию покупок**. Более подробно можно почитать <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">здесь</a>. Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
 
 ![amplitude-revenue-tracking](assets/amplitude-revenue-tracking.png)
 
@@ -87,7 +97,7 @@ Amplitude это мощная система мобильной аналитик
 | `productID`   | String  | ID продукта                                                  |
 | `quantity`    | Integer | Количество продуктов в покупке. *Всегда равно 1*             |
 | `price`       | Float   | Цена покупки в долларах США                                  |
-| `revenueType` | String  | Название события. Возможные значения: `trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded` |
+| `revenueType` | String  | Название события. Возможные значения:<br>`trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded`,<br/>`promo_started`,<br/>`promo_renewed`,<br/>`promo_converted`,<br/>`promo_refunded` |
 
 ## Свойства пользователя 
 

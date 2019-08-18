@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting Started": ["welcome", "creating-app", "adding-products", "sdk-integration", "events", "sandbox"],
+    "Getting Started": ["welcome", "creating-app", "adding-products", "sdk-integration", "promo-offers", "events", "sandbox"],
     "Integrations": ["integrations", "amplitude", "mixpanel", "slack", "telegram"],
     "Analyze": ["dashboard"],
     "Other": ["user-data"]

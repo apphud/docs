@@ -4,7 +4,7 @@ title: Mixpanel
 ---
 Mixpanel is a powerful mobile analytics service. Send events to Mixpanel via Apphud, analyze your users behavior and make necessary desicions.
 
-## How to add integration? 
+## How to Add Integration? 
 
 1. Open <a href="https://mixpanel.com/" target="_blank">Mixpanel</a> and sign in.
 2. Open *Project Settings*:
@@ -62,6 +62,12 @@ This is a table of all possible events and their parameters that are being sent 
 | Subscription renewed     | `[Apphud] subscription_renewed`  | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float |
 | Subscription expired | `[Apphud] subscription_expired`  | `product_id`: String<br>`reason`: String                     |
 | Subscription refunded | `[Apphud] subscription_refunded` | `product_id`: String<br>`local_price`: Float<br>`currency`: String<br>`usd_price`: Float<br>`reason`: String |
+| *Promotional offer* |  |  |
+| Promotional offer started | `[Apphud] promo_started` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Promotional offer renewed | `[Apphud] promo_renewed` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String<br/>`unit`: String<br/>`units_count`: Integer |
+| Successful conversion from promotional offer to regular subscription | `[Apphud] promo_converted` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`offer_type`: String |
+| Failed conversion from promotional offer to regular subscription or failed renew | `[Apphud] promo_expired` | `product_id`: String<br/>`reason`: String<br>`offer_type`: String |
+| Refund during promotional offer | `[Apphud] promo_refunded` | `product_id`: String<br/>`local_price`: Float<br/>`currency`: String<br/>`usd_price`: Float<br/>`reason`: String<br>`offer_type`: String |
 | *Autorenew settings*              |                                  |                                                              |
 | Autorenew disabled         | `[Apphud] autorenew_disabled`    | `product_id`: String                     |
 | Autorenew enabled                 | `[Apphud] autorenew_enabled`     | `product_id`: String                                         |
@@ -71,20 +77,24 @@ This is a table of all possible events and their parameters that are being sent 
 
 These events:
 
-* `[Apphud] trial_converted`,
-* `[Apphud] intro_started`,
-* `[Apphud] intro_renewed`,
-* `[Apphud] intro_converted`,
-* `[Apphud] intro_refunded`,
-* `[Apphud] subscription_started` 
-* `[Apphud] subscription_renewed`,
-* `[Apphud] subscription_refunded` 
+- `[Apphud] trial_converted`,
+- `[Apphud] intro_started`,
+- `[Apphud] intro_renewed`,
+- `[Apphud] intro_converted`,
+- `[Apphud] intro_refunded`,
+- `[Apphud] subscription_started` 
+- `[Apphud] subscription_renewed`,
+- `[Apphud] subscription_refunded`,
+- `[Apphud] promo_started`,
+- `[Apphud] promo_renewed`,
+- `[Apphud] promo_converted`,
+- `[Apphud] promo_refunded`,
 
-can be optionally sent to Mixpanel with Mixpanel's build-in Revenue parameter converted to USD. By default this option is __off__, but you can enable this feature in integration settings:
+can be optionally sent to Mixpanel with Mixpanel's build-in **Revenue parameter** converted to USD. By default this option is __off__, but you can enable this feature in integration settings:
 
 ![mixpanel-revenue-tracking](assets/mixpanel-revenue-tracking.png)
 
-## User properties
+## User Properties
 
 In the table below you can see the list of user properties that are sent to Mixpanel.
 
@@ -98,7 +108,7 @@ In the table below you can see the list of user properties that are sent to Mixp
 | `[Apphud] paying`               | Boolean |
 | `[Apphud] payments_count`       | Integer |
 
-## Sending test event
+## Sending Test Event
 
 You may send test event to Mixpanel to check if integration is set up correctly. Click *"…"* and then in dropdown click on *"Send test event"*:
 

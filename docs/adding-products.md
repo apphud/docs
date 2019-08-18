@@ -9,13 +9,13 @@ The structure of your subscription products and their subscription groups should
 
 *Important: if you add new products at App Store Connect, don't forget to add them to Apphud. If you delete live products from App Store Connect, there is no need to delete them from Apphud. Also it's not recommended to change subscriptions prices after SDK integration as it may show incorrect revenue in some cases. You can create new product with new price instead.*
 
-## Adding subscription groups
+## Adding Subscription Groups
 
 Click on *“Add products group”*. The name of subscription group will be shown in reports and analytics.
 
 ![adding-products-group](assets/adding-products-group.png)
 
-## Adding a product
+## Adding a Product
 
 To add a product click on *“Add a product”*. Enter your *Product ID* and click *“Create”*.
 

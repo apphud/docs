@@ -40,6 +40,10 @@
 - Intro Converted
 - Intro Renewed
 - Intro Expired (если вводное предложение имеет тип "Pay as you go" и количество периодов со скидкой *больше шести*)
+- Promo Started
+- Promo Converted
+- Promo Renewed
+- Promo Expired
 - Subscription Started
 - Subscription Renewed
 - Subscription Expired

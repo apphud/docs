@@ -5,7 +5,7 @@ title: Slack
 
 Receive events about subscriptions to Slack.
 
-## How to add integration?
+## How to Add Integration?
 
 1. Add <a href="https://slack.com/apps/A0F7XDUAZ-incoming-webhooks" target="_blank">incoming webhook</a> in your Slack account.
 2. Copy given *Webhook URL*.
@@ -52,13 +52,19 @@ This is a table of all possible events that are being sent to Slack.
 | Subscription renewed                                         | `Subscription Renewed`  |
 | Subscription expired                                         | `Subscription Expired`  |
 | Subscription refunded                                        | `Subscription Refunded` |
+| *Promotional offer*                                          |                         |
+| Promotional offer started                                    | `Promo Started`         |
+| Promotional offer renewed                                    | `Promo Renewed`         |
+| Successful conversion from promotional offer to regular subscription | `Promo Converted`       |
+| Failed conversion from promotional offer to regular subscription or failed renew | `Promo Expired`         |
+| Refund during promotional offer                              | `Promo Refunded`        |
 | *Autorenew settings*                                         |                         |
 | Autorenew disabled                                           | `Autorenew Disabled`    |
 | Autorenew enabled                                            | `Autorenew Enabled`     |
 
 > Set up Subscription Status URL to receive `autorenew_disabled` and `autorenew_enabled` events in real-time. More information can be found [here](creating-app.md#subscription-status-url).
 
-## Send test event
+## Send Test Event
 
 You can test Slack integration by clicking *"…"* and then in dropdown click on *"Send test event"*:
 

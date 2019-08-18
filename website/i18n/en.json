@@ -26,6 +26,9 @@
       "mixpanel": {
         "title": "Mixpanel"
       },
+      "promo-offers": {
+        "title": "Promotional Offers"
+      },
       "sandbox": {
         "title": "Testing Purchases"
       },
