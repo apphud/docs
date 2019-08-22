@@ -36,8 +36,8 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
   //  {doc: 'welcome', label: 'Docs'},
-    {href: 'https://apphud.com', label: 'Get Apphud'},
-    {href: 'https://apphud.com/contacts', label: 'Contacts'},
+    {href: 'https://apphud.com/?utm_source=docs', label: 'Get Apphud'},
+    {href: 'https://apphud.com/contacts?utm_source=docs', label: 'Contacts'},
     {languages: true}
   ],
 

@@ -1,47 +1,47 @@
 ---
-id: amplitude
-title: Amplitude
+id: mixpanel
+title: Mixpanel
 ---
-Amplitude is a powerful mobile analytics service. Send events to Amplitude via Apphud, analyze your users behavior and make necessary desicions.
+Mixpanel is a powerful mobile analytics service. Send events to Mixpanel via Apphud, analyze your users behavior and make necessary desicions.
 
 ## How to Add Integration? 
 
-1. Open <a href="https://analytics.amplitude.com/" target="_blank">Amplitude</a> and sign in.
-2. Click on *"Manage Data"* at the bottom of the screen:
+1. Open <a href="https://mixpanel.com/" target="_blank">Mixpanel</a> and sign in.
+2. Open *Project Settings*:
 
-![Amplitude-step-1](assets/amplitude-step-1.png)
+![mixpanel-step-1](assets/mixpanel-step-1.png)
 
-3. Choose your app:
+3. Scroll down and copy *API Key*:
 
-![Amplitude-step-2](assets/amplitude-step-2.png)
+![mixpanel-step-2](assets/mixpanel-step-2.png)
 
-4. Copy *Amplitude API Key*:
+4. In order not to receive Mixpanel's automatic In-App purchase events **we highly recommend** to disable collection common mobile events. Otherwise if user, for example, starts a trial period Mixpanel will consider this as a revenue.
 
-![Amplitude-step-3](assets/amplitude-step-3.png)
+![mixpanel-disable-autocollect](assets/mixpanel-disable-autocollect.png)
 
-5. At <a href="https://app.apphud.com/" target="_blank">Apphud</a> go to *"Integrations"* section and add Amplitude: 
+5. At <a href="https://app.apphud.com/" target="_blank">Apphud</a> go to *"Integrations"* section and add Mixpanel: 
 
-![amplitude-adding-integration](assets/amplitude-adding-integration.png)
+![mixpanel-adding-integration](assets/mixpanel-adding-integration.png)
 
-6. Enter *Amplitude API Key* at the *"Amplitude API Key"* field: 
+6. Enter *Mixpanel API Key* at the *"API Key"* field: 
 
-![amplitude-api-key](assets/amplitude-api-key.png)
+![mixpanel-api-key](assets/mixpanel-api-key.png)
 
 7. You can enter your custom event names or disable some:
 
-![amplitude-custom-event-names](assets/amplitude-custom-event-names.png)
+![mixpanel-custom-event-names](assets/mixpanel-custom-event-names.png)
 
 8. Tick *"Enable this integration"*:
 
-![amplitude-enable-integration](assets/amplitude-enable-integration.png)
+![mixpanel-enable-integration](assets/mixpanel-enable-integration.png)
 
-9. Save changes:
+9. If you want to send Revenue information to Mixpanel, check *"Send Revenue properties to Mixpanel"*. Click *"Save"*:
 
-![amplitude-save](assets/amplitude-save.png)
+![mixpanel-save](assets/mixpanel-save.png)
 
 ## Events
 
-This is a table of all possible events and their parameters that are being sent to Amplitude. 
+This is a table of all possible events and their parameters that are being sent to Mixpanel. 
 
 > You can get more details regarding events [here](events.md) and event parameters description - [here](integrations.md).
 
@@ -90,22 +90,13 @@ These events:
 - `[Apphud] promo_converted`,
 - `[Apphud] promo_refunded`,
 
-can be optionally sent to Amplitude with additional parameters. You can enable Amplitude's **built-in revenue tracking events**. More information can be found <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">here</a>. Using this you will be able to use Amplitude's built-in revenue tracking reports. By default this option is __off__, but you can enable this feature in integration settings:
+can be optionally sent to Mixpanel with Mixpanel's build-in **Revenue parameter** converted to USD. By default this option is __off__, but you can enable this feature in integration settings:
 
-![amplitude-revenue-tracking](assets/amplitude-revenue-tracking.png)
-
-These are parameters that are sent with these events:
-
-| Parameter     | Type    | Description                                                  |
-| ------------- | ------- | ------------------------------------------------------------ |
-| `productID`   | String  | Product ID                                                   |
-| `quantity`    | Integer | Quantity of products. *Always equals 1*                      |
-| `price`       | Float   | The price of purchase in US dollars.                         |
-| `revenueType` | String  | Name of event. Possible value:<br/>`trial_converted`,<br/>`intro_started`,<br/>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br/>`subscription_renewed`,<br/>`subscription_refunded`,<br/>`promo_started`,<br/>`promo_renewed`,<br/>`promo_converted`,<br/>`promo_refunded` |
+![mixpanel-revenue-tracking](assets/mixpanel-revenue-tracking.png)
 
 ## User Properties
 
-In the table below you can see the list of user properties that are sent to Amplitude.
+In the table below you can see the list of user properties that are sent to Mixpanel.
 
 > More information about user properties can be found [here](integrations.md).
 
@@ -119,10 +110,10 @@ In the table below you can see the list of user properties that are sent to Ampl
 
 ## Sending Test Event
 
-You may send test event to Amplitude to check if integration is set up correctly. Click *"…"* and then in dropdown click on *"Send test event"*:
+You may send test event to Mixpanel to check if integration is set up correctly. Click *"…"* and then in dropdown click on *"Send test event"*:
 
-![amplitude-test-event](assets/amplitude-test-event.png)
+![mixpanel-test-event](assets/mixpanel-test-event.png)
 
-You will see new user under *"User Look-Up"* report:
+You will see new user in *"Live view"* report:
 
-![amplitude-test-event-received](assets/amplitude-test-event-received.png)
+![mixpanel-test-event-received](assets/mixpanel-test-event-received.png)

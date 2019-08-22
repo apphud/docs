@@ -1,43 +1,43 @@
-Amplitude это мощная система мобильной аналитики. Отправляйте события из Apphud в Amplitude, анализируйте поведение ваших пользователей и принимайте на их основе решения.
+Mixpanel это мощная система мобильной аналитики. Отправляйте события из Apphud в Mixpanel, анализируйте поведение ваших пользователей и принимайте на их основе решения.
 
 ## Как добавить интеграцию? 
 
-1. Откройте <a href="https://analytics.amplitude.com/" target="_blank">Amplitude</a> и войдите в ваш аккаунт.
-2. Кликните на *"Manage Data"* в нижней части экрана:
+1. Откройте <a href="https://mixpanel.com/" target="_blank">Mixpanel</a> и войдите в ваш аккаунт.
+2. Откройте *"Project settings"*:
 
-![Amplitude-step-1](assets/amplitude-step-1.png)
+![mixpanel-step-1](assets/mixpanel-step-1.png)
 
-3. Выберите ваше приложение:
+3. Прокрутите вниз и скопируйте *API Key*:
 
-![Amplitude-step-2](assets/amplitude-step-2.png)
+![mixpanel-step-3](assets/mixpanel-step-2.png)
 
-4. Скопируйте *Amplitude API Key*:
+4. Мы **рекомендуем** отключить опцию *"Automatically collect common mobile events"*, чтобы Mixpanel автоматически не создавал события при покупках. Иначе, например, оформление триального периода будет считаться выручкой:
 
-![Amplitude-step-3](assets/amplitude-step-3.png)
+![mixpanel-disable-autocollect](assets/mixpanel-disable-autocollect.png)
 
-5. В <a href="https://app.apphud.com/" target="_blank">Apphud</a> перейдите в раздел *"Integrations"* и добавьте Amplitude: 
+5. В <a href="https://app.apphud.com/" target="_blank">Apphud</a> перейдите в раздел *"Integrations"* и добавьте Mixpanel: 
 
-![amplitude-adding-integration](assets/amplitude-adding-integration.png)
+![mixpanel-adding-integration](assets/mixpanel-adding-integration.png)
 
-6. Вставьте скопированный *Amplitude API Key* в поле *"Amplitude API Key"*: 
+6. Вставьте скопированный *Mixpanel API Key* в поле *"API Key"*: 
 
-![amplitude-api-key](assets/amplitude-api-key.png)
+![mixpanel-api-key](assets/mixpanel-api-key.png)
 
-7. При желании введите собственные названия любого из событий или отключите его отправку в Amplitude:
+7. При желании введите собственные названия любого из событий или отключите его отправку в Mixpanel:
 
-![amplitude-custom-event-names](assets/amplitude-custom-event-names.png)
+![mixpanel-custom-event-names](assets/mixpanel-custom-event-names.png)
 
 8. Поставьте галочку напротив *"Enable this integration"*:
 
-![amplitude-enable-integration](assets/amplitude-enable-integration.png)
+![mixpanel-enable-integration](assets/mixpanel-enable-integration.png)
 
-9. Сохраните изменения:
+9. Если хотите, чтобы Apphud отправлял в Mixpanel данные о выручке, поставьте галочку напротив *"Send Revenue properties to Mixpanel"*. Сохраните изменения:
 
-![amplitude-save](assets/amplitude-save.png)
+![mixpanel-save](assets/mixpanel-save.png)
 
 ## События
 
-В таблице ниже указаны возможные события и их параметры, которые отсылаются в Amplitude. Вы можете задать собственные наименования для каждого события и отключить некоторые их них в настройках интеграции, если нужно.
+В таблице ниже указаны возможные события и их параметры, которые отсылаются в Mixpanel. Вы можете задать собственные наименования для каждого события и отключить некоторые их них в настройках интеграции, если нужно.
 
 > Более подробно о событиях можете почитать [здесь](events.md), а о том, что означает каждый из параметров – [здесь](integrations.md).
 
@@ -73,35 +73,26 @@ Amplitude это мощная система мобильной аналитик
 
 Вместе с событиями:
 
-* `[Apphud] trial_converted`,
-* `[Apphud] intro_started`,
-* `[Apphud] intro_renewed`,
-* `[Apphud] intro_converted`,
-* `[Apphud] intro_refunded`,
-* `[Apphud] subscription_started` 
-* `[Apphud] subscription_renewed`,
-* `[Apphud] subscription_refunded`,
-* `[Apphud] promo_started`,
-* `[Apphud] promo_renewed`,
-* `[Apphud] promo_converted`,
-* `[Apphud] promo_refunded`,
+- `[Apphud] trial_converted`,
+- `[Apphud] intro_started`,
+- `[Apphud] intro_renewed`,
+- `[Apphud] intro_converted`,
+- `[Apphud] intro_refunded`,
+- `[Apphud] subscription_started` 
+- `[Apphud] subscription_renewed`,
+- `[Apphud] subscription_refunded`,
+- `[Apphud] promo_started`,
+- `[Apphud] promo_renewed`,
+- `[Apphud] promo_converted`,
+- `[Apphud] promo_refunded`,
 
-могут опционально отправляться **встроенные в Amplitude параметры, относящиеся к отслеживанию покупок**. Более подробно можно почитать <a href="https://help.amplitude.com/hc/en-us/articles/115002278527#tracking-revenue" target="_blank">здесь</a>. Это позволит пользоваться встроенными в Amplitude отчетами о выручке. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
+могут опционально отправляться **встроенные в Mixpanel данные о выручке**. По умолчанию эта опция **отключена**, но вы можете включить ее в настройках интеграции: 
 
-![amplitude-revenue-tracking](assets/amplitude-revenue-tracking.png)
-
-Вот описание параметров, которые отсылаются вместе с этими событиями:
-
-| Параметр      | Тип     | Описание                                                     |
-| ------------- | ------- | ------------------------------------------------------------ |
-| `productID`   | String  | ID продукта                                                  |
-| `quantity`    | Integer | Количество продуктов в покупке. *Всегда равно 1*             |
-| `price`       | Float   | Цена покупки в долларах США                                  |
-| `revenueType` | String  | Название события. Возможные значения:<br>`trial_converted`,<br>`intro_started`,<br>`intro_renewed`,<br/>`intro_converted`,<br/>`intro_refunded`,<br/>`subscription_started`,<br>`subscription_renewed`,<br>`subscription_refunded`,<br/>`promo_started`,<br/>`promo_renewed`,<br/>`promo_converted`,<br/>`promo_refunded` |
+![mixpanel-revenue-tracking](assets/mixpanel-revenue-tracking.png)
 
 ## Свойства пользователя 
 
-В таблице ниже указаны свойства пользователя и их типы, которые присваиваются пользователям в Amplitude.
+В таблице ниже указаны свойства пользователя и их типы, которые присваиваются пользователям в Mixpanel.
 
 > О том, что означает каждое из свойств, вы можете прочитать [здесь](integrations.md).
 
@@ -115,10 +106,10 @@ Amplitude это мощная система мобильной аналитик
 
 ## Отправка тестового события
 
-Вы можете протестировать интеграцию с Amplitude, отправив тестовое событие. Нажмите *"…"* и выберите *"Send test event"*:
+Вы можете протестировать интеграцию с Mixpanel, отправив тестовое событие. Нажмите *"…"* и выберите *"Send test event"*:
 
-![amplitude-test-event](assets/amplitude-test-event.png)
+![mixpanel-test-event](assets/mixpanel-test-event.png)
 
-После этого вы увидите нового пользователя и событие в отчете *"User Look-Up"*:
+После этого вы увидите нового пользователя и событие в разделе *"Live view"*:
 
-![amplitude-test-event-received](assets/amplitude-test-event-received.png)
+![mixpanel-test-event-received](assets/mixpanel-test-event-received.png)
