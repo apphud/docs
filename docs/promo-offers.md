@@ -68,7 +68,7 @@ There is also a method in Apphud SDK to make a purchase with subscription offer:
             if let discount = paymentDiscount {
                 Apphud.makePurchase(product: product, discount: discount, callback: { (subsription, error) in
                     // Purchase finished, check subscription object and an error
-                })                
+                })
             } else {
                 // Signing error occurred, probably because you didn't add Subscription Key file to Apphud.
             }
