@@ -119,7 +119,7 @@
             <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> discount = paymentDiscount {
                 <span class="hljs-type">Apphud</span>.makePurchase(product: product, discount: discount, callback: { (subsription, error) <span class="hljs-keyword">in</span>
                     <span class="hljs-comment">// Purchase finished, check subscription object and an error</span>
-                })                
+                })
             } <span class="hljs-keyword">else</span> {
                 <span class="hljs-comment">// Signing error occurred, probably because you didn't add Subscription Key file to Apphud.</span>
             }
