@@ -44,6 +44,17 @@
 
 Вы сами решаете, когда показать промо-предложение пользователю. Промо-предложения появятся в массиве `discounts` вашего объекта `SKProduct`.
 
+Проверьте, может ли пользователь воспользоваться промо-предложением, вызвав метод:
+
+```swift
+// Checking eligibility for promotional offer
+Apphud.checkEligibilityForPromotionalOffer(product: myProduct) { result in
+  if result {
+    // User is eligible to purchase promotional offer
+  }
+}
+```
+
 После того, как пользователь решил использовать промо-предложение, вызовите метод `signPromoOffer` для генерации подписи:
 
 ```swift

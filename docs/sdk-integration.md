@@ -183,8 +183,6 @@ Apphud.updateUserID("YOUR_OWN_USER_ID")
 Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 ```
 
-
-
 ## Migrate Existing Subscribers
 
 If you already have an app with active subscribers and you want Apphud to track their subscriptions, you should submit their App Store receipts to Apphud at the first launch.
@@ -199,3 +197,23 @@ if isSubscriber && !UserDefaults.standard.bool(forKey: "SubscriberReceiptSubmitt
 }
 ```
 
+## Determing User Eligibility
+
+You can use Apphud to determine if a user eligible to activate introductory or promotional offer:
+```swift
+// Checking eligibility for introductory offer
+Apphud.checkEligibilityForIntroductoryOffer(product: myProduct) { result in
+  if result {
+    // User is eligible to purchase introductory offer
+  }
+}
+
+// Checking eligibility for promotional offer
+Apphud.checkEligibilityForPromotionalOffer(product: myProduct) { result in
+  if result {
+    // User is eligible to purchase promotional offer
+  }
+}
+```
+
+You may also check eligibility of multiple offers using just one SDK method: `checkEligibilitiesForPromotionalOffers(products: [SKProduct], callback: ApphudEligibilityCallback)` or `checkEligibilitiesForIntroductoryOffers(products: [SKProduct], callback: ApphudEligibilityCallback)`

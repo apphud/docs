@@ -201,3 +201,24 @@ if isSubscriber && !UserDefaults.standard.bool(forKey: "SubscriberReceiptSubmitt
 }
 ```
 
+## Проверка доступности вводных и промо-предложений пользователю
+
+Проверяйте с помощью Apphud, может ли пользователь активировать вводное или промо-предложение. Для этого вызовите нужную функцию:
+
+```swift
+// Checking eligibility for introductory offer
+Apphud.checkEligibilityForIntroductoryOffer(product: myProduct) { result in
+  if result {
+    // User is eligible to purchase introductory offer
+  }
+}
+
+// Checking eligibility for promotional offer
+Apphud.checkEligibilityForPromotionalOffer(product: myProduct) { result in
+  if result {
+    // User is eligible to purchase promotional offer
+  }
+}
+```
+
+Вы также можете проверить доступность сразу нескольких предложений, воспользовавшись одним из методов: `checkEligibilitiesForPromotionalOffers(products: [SKProduct], callback: ApphudEligibilityCallback)` или `checkEligibilitiesForIntroductoryOffers(products: [SKProduct], callback: ApphudEligibilityCallback)`

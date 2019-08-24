@@ -46,6 +46,17 @@ Go to <a href="https://app.apphud.com/" target="_blank">Apphud</a> and open *"Ap
 
 You decide the criteria for which subscribers qualify for an offer. In your app, the details of the offers you set up in App Store Connect will appear in the `discounts` array in `SKProduct` object.
 
+You may check user eligibility to purchase promotional offer using this SDK call:
+
+```swift
+// Checking eligibility for promotional offer
+Apphud.checkEligibilityForPromotionalOffer(product: myProduct) { result in
+  if result {
+    // User is eligible to purchase promotional offer
+  }
+}
+```
+
 Once a customer decided to redeem promotional offer, call `signPromoOffer` method from Apphud SDK to generate a signature:
 
 ```swift
