@@ -76,15 +76,15 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
 
 That's it. Next run the app and make sure that `didRegisterForRemoteNotificationsWithDeviceToken` is called and `deviceToken` is successfully sent to Apphud.
 
-Now you can receive push notifications. 
+Now you are ready to receive push notifications. 
 
 ## Testing Push Notifications
 
-The simplest way to test push notifications is to create any rule and select '*Test*' tab. Enter you device's push token and click '*Send*'.
+To test push notifications simply create any rule and select '*Test*' tab. Enter you device's push token and click '*Send*'.
 
 [IMAGE]
 
-Device push token is a string that can be found with two ways:
+Device push token is a string that can be found either in Apphud or in Xcode:
 
 * On user's page in Apphud '*Users*' section. Just find yourself and get your token. 
 
