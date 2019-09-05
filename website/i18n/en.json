@@ -29,6 +29,12 @@
       "promo-offers": {
         "title": "Promotional Offers"
       },
+      "purchase-screens": {
+        "title": "Purchase Screens"
+      },
+      "rules": {
+        "title": "Rules"
+      },
       "sandbox": {
         "title": "Testing Purchases"
       },
@@ -54,6 +60,7 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
+      "Win Back Users": "Win Back Users",
       "Integrations": "Integrations",
       "Analyze": "Analyze",
       "Other": "Other"
