@@ -28,9 +28,9 @@ To get shared secret:
 
 ## Subscription Status URL
 
-We highly recommend to paste generated Subscription Status URL at your app page of <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. It will help to create events in real-time.
+We **highly recommend** to paste generated Subscription Status URL at your app page of <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. It will help to create events in real-time.
 
-> More information about event can be found [here](events.md).
+> More information about events can be found [here](events.md).
 
 1. Open <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>, go to *“My Apps”* and choose your app.
 2. Under *"General Information"* find *"Subscription Status URL"*, paste generated URL and save changes.
