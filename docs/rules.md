@@ -100,10 +100,16 @@ To test a rule simply create any and select '*Test*' tab. Enter you device's Pus
 
 ![test-rule](assets/test-rule.png)
 
-Device Push token is a string that can be found either in Apphud or in Xcode:
+Device Push token is a string that can be found either in Apphud or in code:
 
 - On user's page in Apphud "*Users*" section. Just find yourself and get your token. 
-- Run your app in Xcode with your device connected and search `push_token` string in console. Apphud logs Push token to console at every launch.
+
+- Inside `application:didRegisterForRemoteNotificationsWithDeviceToken:` method add the following line to get your token string: 
+
+  ```swift
+  let tokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+  ```
+
 
 If you received Push notification then set up is complete.
 
