@@ -1,7 +1,7 @@
 {
   "docs": {
-    "Getting Started": ["welcome", "creating-app", "adding-products", "sdk-integration", "promo-offers", "events", "sandbox"],
-    "Win Back Users": ["rules", "purchase-screens"],
+    "Getting Started": ["welcome", "creating-app", "adding-products", "sdk-integration", "push", "promo-offers", "events", "sandbox"],
+    "Win Back Subscribers": ["rules", "purchase-screens"],
     "Integrations": ["integrations", "amplitude", "mixpanel", "slack", "telegram"],
     "Analyze": ["dashboard"],
     "Other": ["user-data"]

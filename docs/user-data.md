@@ -16,3 +16,4 @@ This is a table of user data that we collect using Apphud SDK.
 | OS version          | iOS version at this device                                   |
 | Current app version | Current app version                                          |
 | Start app version   | First app version that was registered in Apphud for this device |
+| Push token          | Push notifications token                                     |

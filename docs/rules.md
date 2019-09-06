@@ -4,36 +4,45 @@ title: Rules
 ---
 Apphud may win back lapsed subscribers and reduce churn rate of your iOS app using the mechanics below. This can be done using Rules.
 
+> In order to make rules work you must:
+>
+> - add Subscription Status URL to your app settings in <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Read more [here](creating-app.md#app-store-shared-secret).
+> - configure Push notifications. [View instructions](push.md) how to do it.
+>
+
 ### When a user cancels a subscription or trial
 
-When a user cancels a subscription or trial, Apphud will immediately send push-notification offering him to pass a survey. You can specify survey question and available options. Usually this question looks like: "Why did you cancel a subsctiption / trial?". Depending on an answer Apphud will:
+When a user cancels a subscription or trial, Apphud will immediately send push-notification offering him to pass a survey. You can specify survey question and available options. Usually this question looks like: *"Why did you cancel a subsctiption / trial?"*. It looks like this:
 
-* if a user chose an option like "I don't need Premium plan", ask a user to send additional feedback
+![ios-survey](assets/ios-survey.png)
+
+Depending on an answer Apphud will:
+
+* if a user chose an option like *"I don't need Premium plan"*, ask a user to send additional feedback:
+
+![ios-send-feedback](assets/ios-send-feedback.png)
 
 or
 
-* if a user chooses an option "The subscription is too expensive", Apphud will show a [purchase screen](purchase-screens.md), where a user can redeem a discount or activate additional trial period. You don't need to manually design and code purchase screens and implement promotional offers. Apphud will do everything for you.
+* if a user chooses an option *"The subscription is too expensive"*, Apphud will show a [purchase screen](purchase-screens.md), where a user can redeem a discount or activate additional trial period. You don't need to manually design and code purchase screens and implement promotional offers. Apphud will do everything for you. This the example of purchase screen:
+
+![ios-purchase-screen](assets/ios-purchase-screen.png)
 
 Even if a user didn't open push-notification (for example, if it wasn't delivered), he will see a survey next time he opens the app.
 
 ### When a billing issue occurs during renewal
 
-Apphud may also handle a situation if a subsctiption wasn't renewed because of billing issue. Once billing issue occurs a user will receive a push notification with a text you may specify. Usually it's something like: "A billing issue occurred during renewal. Please open notification to update payment info". After opening the app he will see this modal screen:
+Apphud may also handle a situation if a subsctiption wasn't renewed because of billing issue. Once billing issue occurs a user will receive a push notification with a text you may specify. Usually it's something like: *"A billing issue occurred during renewal. Please open notification to update payment info"*. After opening the app he will see this modal screen:
 
-<img src="assets/ios-billing-issue-screen.png" alt="ios-billing-issue-screen" style="zoom:50%;" />
+![ios-billing-issue-screen](assets/ios-billing-issue-screen.png)
 
-If a user taps to "Update payment info" button he will be redirected directly to App Store payment info screen where he could fix the billing issue.
+If a user taps *"Update payment info"* button he will be redirected directly to App Store payment info screen where he could fix the billing issue.
 
 ## Configuring Rules
 
-> **IMPORTANT**: In order to make rules work you must:
->
-> * add Subscription Status URL to your app settings in <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Read more [here](creating-app.md#app-store-shared-secret).
-> * configure sending Push tokens for each user. View instructions how to do it.
+Rules can be configured at *"Rules"* section. To add a new rule, click *"Add a rule"* button. Configure a new rule.
 
-Rules can be configured at "Rules" section. To add a new rule, click "Add a rule" button. Configure new rule.
-
-> **IMPORTANT**: Once created, rule can not be modified. You could change only it's name.
+> Once created, rule can not be modified. You could change only it's name.
 
 ### Rule name
 
@@ -61,9 +70,7 @@ Enter the text which will be shown in push notification.
 
 ### Survey question
 
-The question which will be shown in a survey with a question and options. A survey looks like this:
-
-<img src="assets/ios-survey.png" alt="ios-survey" style="zoom:50%;" />
+The question which will be shown in a survey with a question and options.
 
 ### Survey options
 
@@ -81,6 +88,26 @@ Select what Apphud should do if a user select this option. The possible options 
 
 > You may read more about purchase screens [here](purchase-screens.md).
 
-* question: enter the question that you would like to ask a user to receive feedback. Here is an example of feedback screen:
+* question: enter the question that you would like to ask a user to receive feedback.
 
-<img src="assets/ios-send-feedback.png" alt="ios-send-feedback" style="zoom:50%;" />
+------
+
+> Don't forget to enable "Enable this rule" checkbox.
+
+## Testing Rules
+
+To test a rule simply create any and select '*Test*' tab. Enter you device's Push token and click '*Send*'.
+
+![test-rule](assets/test-rule.png)
+
+Device Push token is a string that can be found either in Apphud or in Xcode:
+
+- On user's page in Apphud "*Users*" section. Just find yourself and get your token. 
+- Run your app in Xcode with your device connected and search `push_token` string in console. Apphud logs Push token to console at every launch.
+
+If you received Push notification then set up is complete.
+
+## Rules Analytics
+
+You can view results of rules efficiency on *"Analyze"* tab.
+

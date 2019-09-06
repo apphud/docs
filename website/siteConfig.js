@@ -38,7 +38,7 @@ const siteConfig = {
   //  {doc: 'welcome', label: 'Docs'},
     {href: 'https://apphud.com/?utm_source=docs', label: 'Get Apphud'},
     {href: 'https://apphud.com/contacts?utm_source=docs', label: 'Contacts'},
-    {languages: true}
+    {languages: false}
   ],
 
   // If you have users set above, you add it here:

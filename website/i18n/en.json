@@ -32,6 +32,9 @@
       "purchase-screens": {
         "title": "Purchase Screens"
       },
+      "push": {
+        "title": "Push Notifications"
+      },
       "rules": {
         "title": "Rules"
       },
@@ -60,7 +63,7 @@
     },
     "categories": {
       "Getting Started": "Getting Started",
-      "Win Back Users": "Win Back Users",
+      "Win Back Subscribers": "Win Back Subscribers",
       "Integrations": "Integrations",
       "Analyze": "Analyze",
       "Other": "Other"
