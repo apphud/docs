@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Push Notifications · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Integrating Push notifications in your app will let you to use Rules – the powerful feature of winning back lapsed customers or notifying them about their billing issues.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Push Notifications · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.apphud.com/"/><meta property="og:description" content="&lt;p&gt;Integrating Push notifications in your app will let you to use Rules – the powerful feature of winning back lapsed customers or notifying them about their billing issues.&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.apphud.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.apphud.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-142675040-3', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://code.tidio.co/gdrvzh9vn6fev1qclymh8n4y4iu7fkst.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/docs-logo-2.svg" alt="Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://apphud.com/?utm_source=docs" target="_self">Get Apphud</a></li><li class=""><a href="https://apphud.com/contacts?utm_source=docs" target="_self">Contacts</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/en/creating-app">Adding New App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/adding-products">Adding Products</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sdk-integration">SDK Integration</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/push">Push Notifications</a></li><li class="navListItem"><a class="navItem" href="/docs/en/promo-offers">Promotional Offers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/events">Events</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sandbox">Testing Purchases</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Win Back Subscribers</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/rules">Rules</a></li><li class="navListItem"><a class="navItem" href="/docs/en/purchase-screens">Purchase Screens</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/integrations">Integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/en/amplitude">Amplitude</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mixpanel">Mixpanel</a></li><li class="navListItem"><a class="navItem" href="/docs/en/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/en/telegram">Telegram</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Analyze</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/dashboard">Dashboard</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/user-data">Data We Collect</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Push Notifications</h1></header><article><div><span><p>Integrating Push notifications in your app will let you to use Rules – the powerful feature of winning back lapsed customers or notifying them about their billing issues.</p>
+<h2><a class="anchor" aria-hidden="true" id="generate-push-notifications-auth-key"></a><a href="#generate-push-notifications-auth-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generate Push Notifications Auth Key</h2>
+<p>Go to the <a href="https://developer.apple.com/account/ios/profile/" target="_blank">Apple Developer Center</a>, then go to <em>&quot;Keys&quot;</em> page, then create a new key by entering a name and choosing <em>&quot;Apple Push Notifications service (APNs)&quot;</em>.</p>
+<p><img src="/docs/assets/generate-push-certificate.png" alt="generate-push-certificate"></p>
+<p>Once created, download the file and move it to the safe place. You will need to upload it to Apphud.</p>
+<p>Also copy your team ID somewhere which can be found in your <a href="https://developer.apple.com/account/#/membership" target="_blank">Developer Account Membership</a> page. We will need it later.</p>
+<blockquote>
+<p>Auth Key file name has the following format: AuthKey_[KEY_ID].p8, where KEY_ID is your Key Identifier.</p>
+<p>By using auth key, Apphud will be able to send Push notifications to all of your apps within the same account and to both sandbox and production environments. That means, you can use the same auth key file for your another app.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="upload-auth-key-to-apphud"></a><a href="#upload-auth-key-to-apphud" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Upload Auth Key to Apphud</h2>
+<p>Go to <a href="https://app.apphud.com" target="_blank">Apphud Dashboard</a> and open <em>&quot;App settings&quot;</em>, there click on <em>&quot;Push&quot;</em> tab. There you will see <em>Upload</em> button for APNs auth key file. Just upload your Key file there. Also enter your Team ID and make sure key identifier is also entered.</p>
+<p><img src="/docs/assets/upload-push-certificate.png" alt="upload-push-certificate"></p>
+<h2><a class="anchor" aria-hidden="true" id="set-up-push-notifications-in-ios-app"></a><a href="#set-up-push-notifications-in-ios-app" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set up Push Notifications in iOS app</h2>
+<p>Make sure that Push Notifications are turned on in <em>&quot;Capabilities&quot;</em> section of your app target:</p>
+<p><img src="/docs/assets/xcode-push-capabilities.png" alt="xcode-push-capabilities"></p>
+<p>Let's write some code in your <code>AppDelegate</code>. First, register for notifications:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-keyword">import</span> UserNotifications
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: <span class="hljs-keyword">Any</span>]?)</span></span> -&gt; <span class="hljs-type">Bool</span> {
+  <span class="hljs-type">Apphud</span>.start(apiKey: <span class="hljs-type">YOUR_API_KEY</span>)
+  registerForNotifications()
+  <span class="hljs-comment">//... the rest of your code</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">registerForNotifications</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-type">UNUserNotificationCenter</span>.current().delegate = <span class="hljs-keyword">self</span>
+    <span class="hljs-type">UNUserNotificationCenter</span>.current().requestAuthorization(options: [.alert, .badge, .sound])  { (granted, error) <span class="hljs-keyword">in</span>            
+        <span class="hljs-comment">// handle if needed</span>
+    }        
+    <span class="hljs-type">UIApplication</span>.shared.registerForRemoteNotifications()
+}
+</code></pre>
+<p>Then you will need to submit device token to Apphud:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)</span></span> {
+    <span class="hljs-type">Apphud</span>.submitPushNotificationsToken(token: deviceToken, callback: {<span class="hljs-number">_</span> <span class="hljs-keyword">in</span>})
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error)</span></span> {
+    <span class="hljs-comment">// error occurred. Probably you have signing issues or push notifications capabilities are  // turned off</span>
+}
+</code></pre>
+<p>After that we should handle incoming Push notification payload. This is done with two methods: one handles payload when app is in background or not launched, another handles payload when app is running.</p>
+<pre><code class="hljs css language-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">userNotificationCenter</span><span class="hljs-params">(<span class="hljs-number">_</span> center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping <span class="hljs-params">()</span></span></span> -&gt; <span class="hljs-type">Void</span>) {
+    <span class="hljs-type">Apphud</span>.handlePushNotification(apsInfo: response.notification.request.content.userInfo)
+    completionHandler()
+}
+    
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">userNotificationCenter</span><span class="hljs-params">(<span class="hljs-number">_</span> center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping <span class="hljs-params">(UNNotificationPresentationOptions)</span></span></span> -&gt; <span class="hljs-type">Void</span>) {
+    <span class="hljs-type">Apphud</span>.handlePushNotification(apsInfo: notification.request.content.userInfo)
+    completionHandler([]) <span class="hljs-comment">// return empty array to skip showing notification banner</span>
+}
+</code></pre>
+<p>That's it. Next run the app and make sure that <code>didRegisterForRemoteNotificationsWithDeviceToken</code> is called and <code>deviceToken</code> is successfully sent to Apphud.</p>
+<p>Now you are ready to receive Push notifications.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/sdk-integration"><span class="arrow-prev">← </span><span>SDK Integration</span></a><a class="docs-next button" href="/docs/en/promo-offers"><span>Promotional Offers</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#generate-push-notifications-auth-key">Generate Push Notifications Auth Key</a></li><li><a href="#upload-auth-key-to-apphud">Upload Auth Key to Apphud</a></li><li><a href="#set-up-push-notifications-in-ios-app">Set up Push Notifications in iOS app</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docs-footer-2.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Community</h5><a href="https://t.me/apphud_chat" target="_blank" rel="noreferrer noopener">Telegram Chat</a><a href="https://facebook.com/apphud/" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/apphud" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://github.com/apphud" target="_blank" rel="noreferrer noopener">GitHub</a></div></section><section class="copyright">Copyright © 2019 Softeam Inc.</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Purchase Screens · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;blockquote&gt;
+&lt;p&gt;Please, read &lt;a href=&quot;/docs/en/rules&quot;&gt;Rules documentation&lt;/a&gt; first.&lt;/p&gt;
+&lt;/blockquote&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Purchase Screens · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.apphud.com/"/><meta property="og:description" content="&lt;blockquote&gt;
+&lt;p&gt;Please, read &lt;a href=&quot;/docs/en/rules&quot;&gt;Rules documentation&lt;/a&gt; first.&lt;/p&gt;
+&lt;/blockquote&gt;
+"/><meta property="og:image" content="https://docs.apphud.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.apphud.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-142675040-3', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://code.tidio.co/gdrvzh9vn6fev1qclymh8n4y4iu7fkst.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/docs-logo-2.svg" alt="Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://apphud.com/?utm_source=docs" target="_self">Get Apphud</a></li><li class=""><a href="https://apphud.com/contacts?utm_source=docs" target="_self">Contacts</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Win Back Subscribers</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/en/creating-app">Adding New App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/adding-products">Adding Products</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sdk-integration">SDK Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/en/push">Push Notifications</a></li><li class="navListItem"><a class="navItem" href="/docs/en/promo-offers">Promotional Offers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/events">Events</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sandbox">Testing Purchases</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Win Back Subscribers</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/rules">Rules</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/purchase-screens">Purchase Screens</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/integrations">Integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/en/amplitude">Amplitude</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mixpanel">Mixpanel</a></li><li class="navListItem"><a class="navItem" href="/docs/en/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/en/telegram">Telegram</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Analyze</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/dashboard">Dashboard</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/user-data">Data We Collect</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Purchase Screens</h1></header><article><div><span><blockquote>
+<p>Please, read <a href="/docs/en/rules">Rules documentation</a> first.</p>
+</blockquote>
+<p>Showing purchase screen with a good discount or additional free trial is a way to win back lapsed subscriber. It will be shown to a user when he selects certain option in a survey. Usually this option similar to &quot;The subscription was too expensive for me&quot;. This screen contains a button to purchase a promotional offer with a discount or additional trial period.</p>
+<p>Apphud offers many templates of purchase screens for every taste. We regularly add new templates. No additional coding required: you just select a screen and properly configure it.</p>
+<h2><a class="anchor" aria-hidden="true" id="configuring-purchase-screen"></a><a href="#configuring-purchase-screen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring Purchase Screen</h2>
+<blockquote>
+<p>Before configuring a screen make sure you have uploaded Subscription Key to update. Here is the <a href="promo-offers#subscription-keys">guide</a> how to do it.</p>
+</blockquote>
+<p>Pick a screen you would to use at &quot;Purchase Screens&quot; section of Apphud. Enter the following information.</p>
+<h3><a class="anchor" aria-hidden="true" id="screen-name"></a><a href="#screen-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Screen Name</h3>
+<p>Enter name to identify a screen.</p>
+<h3><a class="anchor" aria-hidden="true" id="product-id"></a><a href="#product-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Product ID</h3>
+<p>Select a product the promotional offer belongs to.</p>
+<blockquote>
+<p>You can read more about products configuration <a href="/docs/en/adding-products">here</a></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="promotional-offer-id"></a><a href="#promotional-offer-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Promotional Offer ID</h3>
+<p>Promotional offer identifier that will be offered to a user once he taps a confirmation button.</p>
+<blockquote>
+<p>You can read more about promotional offers <a href="/docs/en/promo-offers">here</a></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="image"></a><a href="#image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Image</h3>
+<p>You can upload your own image here. Supported image formats are JPEG, PNG, GIF, SVG.</p>
+<h3><a class="anchor" aria-hidden="true" id="heading-and-subheading"></a><a href="#heading-and-subheading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Heading and Subheading</h3>
+<p>Texts that will be shown on a purchase screen.</p>
+<h3><a class="anchor" aria-hidden="true" id="offer-description"></a><a href="#offer-description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Offer Description</h3>
+<p>This is the text that describes subscription conditions.</p>
+<blockquote>
+<p>According to Apple Review Guidelines you <a href="https://developer.apple.com/app-store/subscriptions/#clear-description" target="_blank">must clearly describe</a> all subscription terms.</p>
+</blockquote>
+<p>You may use the following macroses that will automatically changed to necessary values:</p>
+<ul>
+<li><code>{offer_duration}</code> – the duration of a promotional offer, e.g.: &quot;1 week&quot;, &quot;2 weeks&quot;, &quot;1 month&quot;.</li>
+<li><code>{offer_price}</code> – the price of a promotional offer, including user's currency, e.g.: &quot;$9.99&quot;, &quot;999,00 RUB&quot;.</li>
+<li><code>{offer_unit}</code> – the period of a promotional offer. Possible values: &quot;day&quot;, &quot;week&quot;, &quot;month&quot;, &quot;year&quot;.</li>
+<li><code>{regular_price}</code> – the price of a regular subscription that will take effect once promotional offer expires. This price also includes user's currency, e.g.: &quot;$9.99&quot;, &quot;999,00 RUB&quot;.</li>
+<li><code>{regular_unit}</code> – the period of a regular subscription that will take effect once promotional offer expires. Possible values: &quot;day&quot;, &quot;week&quot;, &quot;month&quot;, &quot;year&quot;.</li>
+</ul>
+<blockquote>
+<p><code>{offer_duration}</code>, <code>{offer_unit}</code>, <code>{regular_price}</code>, <code>{regular_unit}</code> are currently localized to English only.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="confirmation-and-dismiss-buttons-titles"></a><a href="#confirmation-and-dismiss-buttons-titles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Confirmation and Dismiss Buttons Titles</h3>
+<p>Specify a titles that will be shown on confirmation and dismiss buttons.</p>
+<h3><a class="anchor" aria-hidden="true" id="privacy-policy-and-terms-of-use-urls"></a><a href="#privacy-policy-and-terms-of-use-urls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Privacy Policy and Terms of Use URLs</h3>
+<p>Enter a links to your app's Privacy Policy and Terms of Use.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/rules"><span class="arrow-prev">← </span><span>Rules</span></a><a class="docs-next button" href="/docs/en/integrations"><span>Integrations</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configuring-purchase-screen">Configuring Purchase Screen</a><ul class="toc-headings"><li><a href="#screen-name">Screen Name</a></li><li><a href="#product-id">Product ID</a></li><li><a href="#promotional-offer-id">Promotional Offer ID</a></li><li><a href="#image">Image</a></li><li><a href="#heading-and-subheading">Heading and Subheading</a></li><li><a href="#offer-description">Offer Description</a></li><li><a href="#confirmation-and-dismiss-buttons-titles">Confirmation and Dismiss Buttons Titles</a></li><li><a href="#privacy-policy-and-terms-of-use-urls">Privacy Policy and Terms of Use URLs</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docs-footer-2.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Community</h5><a href="https://t.me/apphud_chat" target="_blank" rel="noreferrer noopener">Telegram Chat</a><a href="https://facebook.com/apphud/" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/apphud" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://github.com/apphud" target="_blank" rel="noreferrer noopener">GitHub</a></div></section><section class="copyright">Copyright © 2019 Softeam Inc.</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>

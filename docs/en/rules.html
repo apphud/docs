@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Rules · Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Apphud may win back lapsed subscribers and reduce churn rate of your iOS app using the mechanics below. This can be done using Rules.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Rules · Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.apphud.com/"/><meta property="og:description" content="&lt;p&gt;Apphud may win back lapsed subscribers and reduce churn rate of your iOS app using the mechanics below. This can be done using Rules.&lt;/p&gt;
+"/><meta property="og:image" content="https://docs.apphud.com/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://docs.apphud.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-142675040-3', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i,500,500i"/><link rel="stylesheet" href="/css/code-block-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://code.tidio.co/gdrvzh9vn6fev1qclymh8n4y4iu7fkst.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/docs-logo-2.svg" alt="Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://apphud.com/?utm_source=docs" target="_self">Get Apphud</a></li><li class=""><a href="https://apphud.com/contacts?utm_source=docs" target="_self">Contacts</a></li><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Win Back Subscribers</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/welcome">Welcome</a></li><li class="navListItem"><a class="navItem" href="/docs/en/creating-app">Adding New App</a></li><li class="navListItem"><a class="navItem" href="/docs/en/adding-products">Adding Products</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sdk-integration">SDK Integration</a></li><li class="navListItem"><a class="navItem" href="/docs/en/push">Push Notifications</a></li><li class="navListItem"><a class="navItem" href="/docs/en/promo-offers">Promotional Offers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/events">Events</a></li><li class="navListItem"><a class="navItem" href="/docs/en/sandbox">Testing Purchases</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Win Back Subscribers</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/rules">Rules</a></li><li class="navListItem"><a class="navItem" href="/docs/en/purchase-screens">Purchase Screens</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/integrations">Integrations</a></li><li class="navListItem"><a class="navItem" href="/docs/en/amplitude">Amplitude</a></li><li class="navListItem"><a class="navItem" href="/docs/en/mixpanel">Mixpanel</a></li><li class="navListItem"><a class="navItem" href="/docs/en/slack">Slack</a></li><li class="navListItem"><a class="navItem" href="/docs/en/telegram">Telegram</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Analyze</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/dashboard">Dashboard</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Other</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/user-data">Data We Collect</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Rules</h1></header><article><div><span><p>Apphud may win back lapsed subscribers and reduce churn rate of your iOS app using the mechanics below. This can be done using Rules.</p>
+<blockquote>
+<p>In order to make rules work you must:</p>
+<ul>
+<li>add Subscription Status URL to your app settings in <a href="https://appstoreconnect.apple.com/" target="_blank">App Store Connect</a>. Read more <a href="/docs/en/creating-app#app-store-shared-secret">here</a>.</li>
+<li>configure Push notifications. <a href="/docs/en/push">View instructions</a> how to do it.</li>
+</ul>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="when-a-user-cancels-a-subscription-or-trial"></a><a href="#when-a-user-cancels-a-subscription-or-trial" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>When a user cancels a subscription or trial</h3>
+<p>When a user cancels a subscription or trial, Apphud will immediately send push-notification offering him to pass a survey. You can specify survey question and available options. Usually this question looks like: <em>&quot;Why did you cancel a subsctiption / trial?&quot;</em>. It looks like this:</p>
+<p><img src="/docs/assets/ios-survey.png" alt="ios-survey"></p>
+<p>Depending on an answer Apphud will:</p>
+<ul>
+<li>if a user chose an option like <em>&quot;I don't need Premium plan&quot;</em>, ask a user to send additional feedback:</li>
+</ul>
+<p><img src="/docs/assets/ios-send-feedback.png" alt="ios-send-feedback"></p>
+<p>or</p>
+<ul>
+<li>if a user chooses an option <em>&quot;The subscription is too expensive&quot;</em>, Apphud will show a <a href="/docs/en/purchase-screens">purchase screen</a>, where a user can redeem a discount or activate additional trial period. You don't need to manually design and code purchase screens and implement promotional offers. Apphud will do everything for you. This the example of purchase screen:</li>
+</ul>
+<p><img src="/docs/assets/ios-purchase-screen.png" alt="ios-purchase-screen"></p>
+<p>Even if a user didn't open push-notification (for example, if it wasn't delivered), he will see a survey next time he opens the app.</p>
+<h3><a class="anchor" aria-hidden="true" id="when-a-billing-issue-occurs-during-renewal"></a><a href="#when-a-billing-issue-occurs-during-renewal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>When a billing issue occurs during renewal</h3>
+<p>Apphud may also handle a situation if a subsctiption wasn't renewed because of billing issue. Once billing issue occurs a user will receive a push notification with a text you may specify. Usually it's something like: <em>&quot;A billing issue occurred during renewal. Please open notification to update payment info&quot;</em>. After opening the app he will see this modal screen:</p>
+<p><img src="/docs/assets/ios-billing-issue-screen.png" alt="ios-billing-issue-screen"></p>
+<p>If a user taps <em>&quot;Update payment info&quot;</em> button he will be redirected directly to App Store payment info screen where he could fix the billing issue.</p>
+<h2><a class="anchor" aria-hidden="true" id="configuring-rules"></a><a href="#configuring-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring Rules</h2>
+<p>Rules can be configured at <em>&quot;Rules&quot;</em> section. To add a new rule, click <em>&quot;Add a rule&quot;</em> button. Configure a new rule.</p>
+<blockquote>
+<p>Once created, rule can not be modified. You could change only it's name.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="rule-name"></a><a href="#rule-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rule name</h3>
+<p>A name for the rule.</p>
+<h3><a class="anchor" aria-hidden="true" id="min-ios-version"></a><a href="#min-ios-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Min iOS version</h3>
+<p>Only a users with this (and higher) iOS version installed will receive a notification.</p>
+<blockquote>
+<p>Promotional offers are only available on devices with iOS 12.2+ installed.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="when-to-trigger-a-rule"></a><a href="#when-to-trigger-a-rule" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>When to trigger a rule</h3>
+<p>Select when the rule will be executed. The possible options are:</p>
+<ul>
+<li>a user cancel an active subscription;</li>
+<li>a user cancel trial subscription;</li>
+<li>billing issue occurred.</li>
+</ul>
+<blockquote>
+<p>You can only have one rule of each trigger type at any moment.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="push-notification-text"></a><a href="#push-notification-text" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Push notification text</h3>
+<p>Enter the text which will be shown in push notification.</p>
+<h3><a class="anchor" aria-hidden="true" id="survey-question"></a><a href="#survey-question" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Survey question</h3>
+<p>The question which will be shown in a survey with a question and options.</p>
+<h3><a class="anchor" aria-hidden="true" id="survey-options"></a><a href="#survey-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Survey options</h3>
+<p>Possible options of the question.</p>
+<h4><a class="anchor" aria-hidden="true" id="option-title"></a><a href="#option-title" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option title</h4>
+<p>The title of the option.</p>
+<h4><a class="anchor" aria-hidden="true" id="what-to-do"></a><a href="#what-to-do" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What to do</h4>
+<p>Select what Apphud should do if a user select this option. The possible options are:</p>
+<ul>
+<li>present purchase screen: select a purchase screen to show. You can win back the user by proving him a good discount or additional trial period.</li>
+</ul>
+<blockquote>
+<p>You may read more about purchase screens <a href="/docs/en/purchase-screens">here</a>.</p>
+</blockquote>
+<ul>
+<li>question: enter the question that you would like to ask a user to receive feedback.</li>
+</ul>
+<hr>
+<blockquote>
+<p>Don't forget to enable &quot;Enable this rule&quot; checkbox.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="testing-rules"></a><a href="#testing-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Testing Rules</h2>
+<p>To test a rule simply create any and select '<em>Test</em>' tab. Enter you device's Push token and click '<em>Send</em>'.</p>
+<p><img src="/docs/assets/test-rule.png" alt="test-rule"></p>
+<p>Device Push token is a string that can be found either in Apphud or in Xcode:</p>
+<ul>
+<li>On user's page in Apphud &quot;<em>Users</em>&quot; section. Just find yourself and get your token.</li>
+<li>Run your app in Xcode with your device connected and search <code>push_token</code> string in console. Apphud logs Push token to console at every launch.</li>
+</ul>
+<p>If you received Push notification then set up is complete.</p>
+<h2><a class="anchor" aria-hidden="true" id="rules-analytics"></a><a href="#rules-analytics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rules Analytics</h2>
+<p>You can view results of rules efficiency on <em>&quot;Analyze&quot;</em> tab.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/sandbox"><span class="arrow-prev">← </span><span>Testing Purchases</span></a><a class="docs-next button" href="/docs/en/purchase-screens"><span>Purchase Screens</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configuring-rules">Configuring Rules</a><ul class="toc-headings"><li><a href="#rule-name">Rule name</a></li><li><a href="#min-ios-version">Min iOS version</a></li><li><a href="#when-to-trigger-a-rule">When to trigger a rule</a></li><li><a href="#push-notification-text">Push notification text</a></li><li><a href="#survey-question">Survey question</a></li><li><a href="#survey-options">Survey options</a></li></ul></li><li><a href="#testing-rules">Testing Rules</a></li><li><a href="#rules-analytics">Rules Analytics</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docs-footer-2.svg" alt="Documentation" width="66" height="58"/></a><div><h5>Community</h5><a href="https://t.me/apphud_chat" target="_blank" rel="noreferrer noopener">Telegram Chat</a><a href="https://facebook.com/apphud/" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/apphud" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://github.com/apphud" target="_blank" rel="noreferrer noopener">GitHub</a></div></section><section class="copyright">Copyright © 2019 Softeam Inc.</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
