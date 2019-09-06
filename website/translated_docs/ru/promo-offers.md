@@ -55,32 +55,13 @@ Apphud.checkEligibilityForPromotionalOffer(product: myProduct) { result in
 }
 ```
 
-После того, как пользователь решил использовать промо-предложение, вызовите метод `signPromoOffer` для генерации подписи:
+Для оформления покупки вызовите следующий метод:
 
 ```swift
-@available(iOS 12.2, *)
-    func purchaseProduct(product: SKProduct, promoID: String){
-        Apphud.signPromoOffer(productID: product.productIdentifier, discountID: promoID) { (paymentDiscount, error) in
-            // continue purchasing
-        }
-    }
+// inside your purchase method, where discountID is identifier of SKProductDiscount object
+Apphud.purchasePromo(product: product, discountID: discountID, callback: { (subsc, error) in
+	// handle result
+})
 ```
 
-В ответ вам вернется объект `SKPaymentDiscount` . Создайте `SKMutablePayment`, указав полученный объект `SKPaymentDiscount` в качестве промо-предложения, и иницируйте покупку в App Store как обычно.
-
-В Apphud SDK есть метод покупки с использованием промо-предложений:
-
-```swift
-@available(iOS 12.2, *)
-    func purchaseProduct(product: SKProduct, promoID: String){
-        Apphud.signPromoOffer(productID: product.productIdentifier, discountID: promoID) { (paymentDiscount, error) in
-            if let discount = paymentDiscount {
-                Apphud.makePurchase(product: product, discount: discount, callback: { (subsription, error) in
-                    // Purchase finished, check subscription object and an error
-                })                
-            } else {
-                // Signing error occurred, probably because you didn't add Subscription Key file to Apphud.
-            }
-        }
-    }
-```
+Apphud SDK автоматически отправит чек пользователя в Apphud, так что вам не нужно вызывать метод `submitPurchase`.

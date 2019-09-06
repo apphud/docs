@@ -57,33 +57,13 @@ Apphud.checkEligibilityForPromotionalOffer(product: myProduct) { result in
 }
 ```
 
-Once a customer decided to redeem promotional offer, call `signPromoOffer` method from Apphud SDK to generate a signature:
+To initiate a purchase, just call following method:
 
 ```swift
-@available(iOS 12.2, *)
-    func purchaseProduct(product: SKProduct, promoID: String){
-        Apphud.signPromoOffer(productID: product.productIdentifier, discountID: promoID) { (paymentDiscount, error) in
-            // continue purchasing
-        }
-    }
+// inside your purchase method, where discountID is identifier of SKProductDiscount object
+Apphud.purchasePromo(product: product, discountID: discountID, callback: { (subsc, error) in
+	// handle result
+})
 ```
 
-You will get `SKPaymentDiscount` object that is needed for initiating a payment. Create an `SKMutablePayment`  with the signed `SKPaymentDiscount` object and send it to App Store as usual.
-
-There is also a method in Apphud SDK to make a purchase with subscription offer:
-
-```swift
-@available(iOS 12.2, *)
-    func purchaseProduct(product: SKProduct, promoID: String){
-        Apphud.signPromoOffer(productID: product.productIdentifier, discountID: promoID) { (paymentDiscount, error) in
-            if let discount = paymentDiscount {
-                Apphud.makePurchase(product: product, discount: discount, callback: { (subsription, error) in
-                    // Purchase finished, check subscription object and an error
-                })
-            } else {
-                // Signing error occurred, probably because you didn't add Subscription Key file to Apphud.
-            }
-        }
-    }
-```
-
+This method automatically submits App Store receipt to Apphud, so you don't need to call `submitPurchase` method.
