@@ -116,4 +116,3 @@ If you received Push notification then set up is complete.
 ## Rules Analytics
 
 You can view results of rules efficiency on *"Analyze"* tab.
-

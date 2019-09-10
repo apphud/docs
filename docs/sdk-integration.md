@@ -54,22 +54,28 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 However if you want to use Integrations, you will need to update the code to set user identifier. See the bottom of this guide for details.
 
 
-## Sending Subscription Events
+## Submitting App Store Receipt
 
-One of the main features of Apphud is tracking all subscription events: subscription started, renewed, expired, refunded, autorenew disabled, trial converted and many other. 
+There are two ways of submitting App Store receipt to Apphud: by making a purchase using our SDK or just sending App Store receipt after purchase has been made by yourself.
 
-> See the list of all available events [here](events.md).
-
-All you need is to implement when purchase is made:
+To make a purchase:
 
 ```swift
-// when purchase is completed
-Apphud.submitPurchase(productIdentifier, callback: { (subscription, error) in
+// when purchase button tapped
+Apphud.purchase(product, callback: { (subscription, error) in
      // returns a subscription class that has been purchased and an optional error
 })
 ```
 
-This will automatically send App Store receipt, validate it and return a subscription model, which contains all relevant info about your subscription, including expiration date. See `ApphudSubscription.swift` file for details.
+Or just submit App Store receipt after successful purchase:
+
+```swift
+Apphud.submitReceipt(productIdentifier, callback: { (subscription, error) in
+     // returns a subscription class that has been purchased and an optional error
+})
+```
+
+This will make a purchase and automatically send App Store receipt, validate it and return a subscription model, which contains all relevant info about your subscription, including expiration date. See `ApphudSubscription.swift` file for details.
 
 ## About Currencies
 
