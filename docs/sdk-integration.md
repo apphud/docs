@@ -75,7 +75,7 @@ Apphud.submitReceipt(productIdentifier, callback: { (subscription, error) in
 })
 ```
 
-This will make a purchase and automatically send App Store receipt, validate it and return a subscription model, which contains all relevant info about your subscription, including expiration date. See `ApphudSubscription.swift` file for details.
+Both methods will return a subscription model, which contains all relevant info about your subscription, including expiration date. See `ApphudSubscription.swift` file for details.
 
 ## About Currencies
 
