@@ -20,6 +20,8 @@ Add the following line to your Podfile:
 pod 'ApphudSDK'
 ```
 
+> In Objective-C project make sure `use_frameworks!` is added in your Podfile.
+
 And then run in the Terminal:
 
 ```ruby
@@ -50,6 +52,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true
 }
 ```
+
+> In Objective-C project you should import like this: `#import <ApphudSDK-Swift.h>`
 
 However if you want to use Integrations, you will need to update the code to set user identifier. See the bottom of this guide for details.
 
