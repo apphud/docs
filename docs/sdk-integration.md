@@ -33,7 +33,7 @@ pod install
 Copy all files in `Source` folder to your project.
 
 
-## Configure Apphud SDK
+## Configuring Apphud SDK
 
 To set up Apphud SDK you will need API Key. It is a unique identifier of your Apphud application. You can get it in your Apphud application settings under `General` tab.
 
@@ -58,7 +58,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 However if you want to use Integrations, you will need to update the code to set user identifier. See the bottom of this guide for details.
 
 
-## Submitting App Store Receipt
+## Making a Purchase
 
 There are two ways of submitting App Store receipt to Apphud: by making a purchase using our SDK or just sending App Store receipt after purchase has been made by yourself.
 
@@ -81,21 +81,49 @@ Apphud.submitReceipt(productIdentifier, callback: { (subscription, error) in
 
 Both methods will return a subscription model, which contains all relevant info about your subscription, including expiration date. See `ApphudSubscription.swift` file for details.
 
-## About Currencies
+## Checking Subscription Status
 
-US Dollar is a base currency in Apphud. All transactions are automatically converted to USD by the exchange rates at the time of event.
+```swift
+Apphud.hasActiveSubscription()
+```
+
+Returns `true` if user has active subscription. Use this method to determine whether or not to unlock premium functionality to the user. To get subscription object (which contains expiration date, autorenew status, etc.) use the following method: 
+
+```swift
+Apphud.subscription()
+```
+
+ See `ApphudSubscription.swift` file for details.
 
 ## Restoring Purchases
 
-If your app doesn't have a login system, which identifies a premium user by his credentials, then you need a restore mechanism. If you already have a restore purchases mechanism implemented, then you have nothing to worry about – Apphud SDK will automatically fetch and send latest App Store Receipt to Apphud servers when your own restoration is completed. However, you can use our restore purchases method from SDK:
+If your app doesn't have a login system, which identifies a premium user by his credentials, then you need a restore mechanism. If you already have a restore purchases mechanism by calling `SKPaymentQueue.default().restoreCompletedTransactions()`, then you have nothing to worry about – Apphud SDK will automatically intercept and send latest App Store Receipt to Apphud servers when your restoration is completed. However, better to call our restore method from SDK:
 
 ```swift
-Apphud.restoreSubscriptions()
+Apphud.restoreSubscriptions{ subscriptions in 
+   // handle here
+}
 ```
 
-Once called, the latest receipt will also be sent to Apphud servers and user's subscriptions will be updated in the delegate method.
+Basically it just sends App Store Receipt to Apphud and returns subscriptions in callback (or `nil` if nothing was ever purchased).
 
-## Set up a Delegate
+## Migrating Existing Subscribers
+
+If you already have an app with active subscribers and you want Apphud to track their subscriptions, you should submit their App Store receipts to Apphud at the first launch.
+
+Use `restoreSubscriptions{}` method during first launch. You should also toggle a boolean value to avoid re-sending receipt in the next calls.
+
+```swift
+// isSubscriber - is your boolean value from your own purchase tracking code
+if isSubscriber && !UserDefaults.standard.bool(forKey: "SubscriberReceiptSubmitted") {
+	Apphud.restoreSubscriptions{ subscriptions in 
+     // handle here
+     UserDefaults.standard.set(true, forKey: "SubscriberReceiptSubmitted")
+  }
+}
+```
+
+## Setting up a Delegate
 
 You can set up Apphud delegate by calling:
 
@@ -105,7 +133,15 @@ Apphud.setDelegate(self)
 
 You can set a delegate at any time but after Apphud SDK has been initialized.
 
-There are two optional methods that can be implemented in `ApphudDelegate` protocol.
+There are three optional methods that can be implemented in `ApphudDelegate` protocol.
+
+#### StoreKit products fetched
+
+```swift
+@objc optional func apphudDidFetchStoreKitProducts(_ products: [SKProduct])
+```
+
+Returns array of StoreKit products. Note that you have to add all product identifiers in Apphud settings.
 
 #### Subscription status updates
 
@@ -113,16 +149,7 @@ There are two optional methods that can be implemented in `ApphudDelegate` proto
 @objc optional func apphudSubscriptionsUpdated(_ subscriptions : [ApphudSubscription])
 ```
 
-This method gets called when one of subscription's state changes. 
-
-> This delegate method is not called after `Apphud.submitPurchase` , because that method has it's own completion block.
-
-There are two cases when this delegate method is called:
-
-*  when subscriptions are restored.
-* when one of subscription's state has been changed. For example, if state has changed from `trial` to `regular`.
-
-Apphud SDK fetches the latest subscription information once during launch and after purchase/restore methods.
+Reports when subscription status has been changed (for example, from `trial` to `expired`). In most cases you shouldn't use this method, it's just informational. `Apphud.hasActiveSubscription()` – is what you will need to check whether or not to give premium functionality to the user.
 
 #### Change of `userID`.
 
@@ -193,19 +220,9 @@ Apphud.updateUserID("YOUR_OWN_USER_ID")
 Amplitude.instance()?.setUserId("YOUR_OWN_USER_ID") // or any other analytics
 ```
 
-## Migrate Existing Subscribers
+## About Currencies
 
-If you already have an app with active subscribers and you want Apphud to track their subscriptions, you should submit their App Store receipts to Apphud at the first launch.
-
-You can submit App Store receipt using `restoreSubscriptions()` method at any time after launch. You should also toggle a boolean value to avoid re-sending receipt at the next launch.
-
-```swift
-// isSubscriber - is your boolean value from your own purchase tracking code
-if isSubscriber && !UserDefaults.standard.bool(forKey: "SubscriberReceiptSubmitted") {
-	Apphud.restoreSubscriptions()
-  UserDefaults.standard.set(true, forKey: "SubscriberReceiptSubmitted")
-}
-```
+US Dollar is a base currency in Apphud. All transactions are automatically converted to USD by the exchange rates at the time of event.
 
 ## Determing User Eligibility
 

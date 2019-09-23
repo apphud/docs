@@ -66,4 +66,5 @@ Apphud.purchasePromo(product: product, discountID: discountID, callback: { (subs
 })
 ```
 
-This method automatically submits App Store receipt to Apphud, so you don't need to call `submitPurchase` method.
+This method automatically submits App Store receipt to Apphud, so you don't need to call `submitReceipt` method.
+
