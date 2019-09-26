@@ -133,36 +133,7 @@ Apphud.setDelegate(self)
 
 You can set a delegate at any time but after Apphud SDK has been initialized.
 
-There are three optional methods that can be implemented in `ApphudDelegate` protocol.
-
-#### StoreKit products fetched
-
-```swift
-@objc optional func apphudDidFetchStoreKitProducts(_ products: [SKProduct])
-```
-
-Returns array of StoreKit products. Note that you have to add all product identifiers in Apphud settings.
-
-#### Subscription status updates
-
-```swift
-@objc optional func apphudSubscriptionsUpdated(_ subscriptions : [ApphudSubscription])
-```
-
-Reports when subscription status has been changed (for example, from `trial` to `expired`). In most cases you shouldn't use this method, it's just informational. `Apphud.hasActiveSubscription()` – is what you will need to check whether or not to give premium functionality to the user.
-
-#### Change of `userID`.
-
-```swift
-@objc optional func apphudDidChangeUserID(_ userID : String)
-```
-
-This method gets called when `userID` value changes. `userID` identifies user across his multiple devices.
-
-There are 2 cases when this method gets called:
-
-* when user has restored subsciption from his another device.
-* after manual call of `updateUserID(userID : String)` method. 
+ See `Apphud.swift` file for details.
 
 ## User Identifier
 
