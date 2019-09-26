@@ -12,52 +12,11 @@ Apphud offers many templates of purchase screens for every taste. We regularly a
 
 > Before configuring a screen make sure you have uploaded Subscription Key to update. Here is the [guide](promo-offers#subscription-keys) how to do it.
 
-Pick a screen you would to use at "Purchase Screens" section of Apphud. Enter the following information.
+Pick a screen you would like to use at *"Purchase Screens"* section of Apphud and properly configure it. 
 
-### Screen Name
+While configuring *Confirmation button* you will have to provide *Product ID* and *Promotional offer ID* that will be purchased when a users taps the button.
 
-Enter name to identify a screen.
+> You can read more about products configuration [here](adding-products.md) and about promotional offers [here](promo-offers.md).
 
-### Product ID
 
-Select a product the promotional offer belongs to.
-
-> You can read more about products configuration [here](adding-products.md)
-
-### Promotional Offer ID
-
-Promotional offer identifier that will be offered to a user once he taps a confirmation button.
-
-> You can read more about promotional offers [here](promo-offers.md)
-
-### Image
-
-You can upload your own image here. Supported image formats are JPEG, PNG, GIF, SVG.
-
-### Heading and Subheading
-
-Texts that will be shown on a purchase screen.
-
-### Offer Description
-
-This is the text that describes subscription conditions. 
-
-> According to Apple Review Guidelines you <a href="https://developer.apple.com/app-store/subscriptions/#clear-description" target="_blank">must clearly describe</a> all subscription terms.
-
-You may use the following macroses that will automatically changed to necessary values:
-
-* `{offer_duration}` – the duration of a promotional offer, e.g.: "1 week", "2 weeks", "1 month".
-* `{offer_price}` – the price of a promotional offer, including user's currency, e.g.: "$9.99", "999,00 RUB".
-* `{offer_unit}` – the period of a promotional offer. Possible values: "day", "week", "month", "year".
-* `{regular_price}` – the price of a regular subscription that will take effect once promotional offer expires. This price also includes user's currency, e.g.: "$9.99", "999,00 RUB".
-* `{regular_unit}` – the period of a regular subscription that will take effect once promotional offer expires. Possible values: "day", "week", "month", "year".
-
-> `{offer_duration}`, `{offer_unit}`, `{regular_price}`, `{regular_unit}` are currently localized to English only.
-
-### Confirmation and Dismiss Buttons Titles
-
-Specify a titles that will be shown on confirmation and dismiss buttons.
-
-### Privacy Policy and Terms of Use URLs
-
-Enter a links to your app's Privacy Policy and Terms of Use.
+You can also use *Price macroses* in any text. These macroses will be replaced with a proper value of Subscription or Promotional offer price using a user's local currency. 

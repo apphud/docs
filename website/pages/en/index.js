@@ -164,7 +164,7 @@ class Index extends React.Component {
             title: 'View history',
           },
           {
-            content: 'Try our 45 days trial today. No credit card required',
+            content: 'Free if you earn less than $10K per month. No credit card required',
             image: `${baseUrl}img/image-rocket.svg`,
             imageAlign: 'top',
             title: 'Try today',
