@@ -65,18 +65,17 @@ There are two ways of submitting App Store receipt to Apphud: by making a purcha
 To make a purchase:
 
 ```swift
-// when purchase button tapped
-Apphud.purchase(product, callback: { (subscription, error) in
-     // returns a subscription class that has been purchased and an optional error
-})
+Apphud.purchase(product) { (subscription, error) in
+   // handle result
+}
 ```
 
 Or just submit App Store receipt after successful purchase:
 
 ```swift
-Apphud.submitReceipt(productIdentifier, callback: { (subscription, error) in
-     // returns a subscription class that has been purchased and an optional error
-})
+Apphud.submitReceipt("productID") { (subscription, error) in
+    // handle result
+}
 ```
 
 Both methods will return a subscription model, which contains all relevant info about your subscription, including expiration date. See `ApphudSubscription.swift` file for details.

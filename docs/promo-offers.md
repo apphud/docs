@@ -61,9 +61,9 @@ To initiate a purchase, just call following method:
 
 ```swift
 // inside your purchase method, where discountID is identifier of SKProductDiscount object
-Apphud.purchasePromo(product: product, discountID: discountID, callback: { (subsc, error) in
-	// handle result
-})
+Apphud.purchasePromo(product, discountID: discountID) { (subscription, error) in
+    // handle result
+}
 ```
 
 This method automatically submits App Store receipt to Apphud, so you don't need to call `submitReceipt` method.
